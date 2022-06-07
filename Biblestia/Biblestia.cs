@@ -21,25 +21,6 @@ namespace Biblestia
             InitializeComponent();
             updateList();
         }
-
-        private void updateList()
-        {
-            if (!verifySGBDConnection())
-            {
-                // Debug.WriteLine("Connection not stablished!");
-                return;
-            }
-            SqlCommand cmd = new SqlCommand("select * from Biblestia.Biblioteca", cn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            selecao.Items.Clear();
-
-            while (reader.Read())
-            {
-                selecao.Items.Add(reader["nome"].ToString());
-            }
-            cn.Close();
-        }
-
         private SqlConnection getSGBDConnection()
         {
             // Debug.WriteLine("Tentar conectar");
@@ -56,6 +37,31 @@ namespace Biblestia
 
             return cn.State == ConnectionState.Open;
         }
+
+        private void updateList()
+        {
+            if (!verifySGBDConnection())
+            {
+                // Debug.WriteLine("Connection not stablished!");
+                return;
+            }
+            SqlCommand cmd = new SqlCommand("select * from Biblestia.Biblioteca", cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            selecao.Items.Clear();
+
+            while (reader.Read())
+            {
+                Biblioteca B = new Biblioteca();
+                B.Nome = reader["nome"].ToString();
+                B.Morada = reader["morada"].ToString();
+                B.Email = reader["email"].ToString();
+                B.Telefone = (int)reader["telefone"];
+                selecao.Items.Add(B);
+            }
+            cn.Close();
+        }
+
+        
 
         private void Biblestia_Load(object sender, EventArgs e)
         {
@@ -88,9 +94,16 @@ namespace Biblestia
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Por agr fica so com esta biblioteca se tiversmo tempo fazemos para adicionar
             if (password.Equals("123"))
             {
                 Debug.Print("Entrei");
+                this.Visible = false;
+                Biblioteca b = (Biblioteca)selecao.SelectedItem;
+                // Main mainWindow = new Main(b.Nome);
+                // Por agora
+                Main mainWindow = new Main("Biblioteca Universitária de Aveiro");
+                mainWindow.Show();
             }
         }
 

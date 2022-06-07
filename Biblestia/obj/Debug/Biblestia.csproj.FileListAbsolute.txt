@@ -18,3 +18,4 @@ C:\Users\tiago\Desktop\Universidade\2º Ano - 2º Semestre\BD\BD-Project-Biblest
 C:\Users\tiago\Desktop\Universidade\2º Ano - 2º Semestre\BD\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.csproj.CoreCompileInputs.cache
 C:\Users\tiago\Desktop\Universidade\2º Ano - 2º Semestre\BD\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.exe
 C:\Users\tiago\Desktop\Universidade\2º Ano - 2º Semestre\BD\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.pdb
+C:\Users\tiago\Desktop\Universidade\2º Ano - 2º Semestre\BD\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.Main.resources

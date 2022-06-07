@@ -125,6 +125,7 @@ namespace Biblestia
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Biblestia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome to Biblestia";
             this.Load += new System.EventHandler(this.Biblestia_Load);
             this.ResumeLayout(false);
