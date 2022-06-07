@@ -15,6 +15,7 @@ namespace Biblestia
     public partial class Biblestia : Form
     {
         private SqlConnection cn;
+        private String password = "";
         public Biblestia()
         {
             InitializeComponent();
@@ -62,7 +63,7 @@ namespace Biblestia
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            password = pass.Text.ToString();
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -87,7 +88,10 @@ namespace Biblestia
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (password.Equals("123"))
+            {
+                Debug.Print("Entrei");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
