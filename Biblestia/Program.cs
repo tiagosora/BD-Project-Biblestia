@@ -16,7 +16,8 @@ namespace Biblestia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Biblestia());
+            //Application.Run(new Biblestia());
+            Application.Run(new Main("Biblioteca Universitária de Aveiro"));
         }
     }
 }

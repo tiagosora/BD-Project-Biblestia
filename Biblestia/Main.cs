@@ -16,6 +16,10 @@ namespace Biblestia
     {
         private SqlConnection cn;
         private Biblioteca Biblioteca;
+        public Main()
+        {
+            InitializeComponent();
+        }
         public Main(String BibliotecaName)
         {
             if (!verifySGBDConnection())
@@ -32,20 +36,43 @@ namespace Biblestia
                 Biblioteca.Nome = BibliotecaName;
                 Biblioteca.Morada = reader["morada"].ToString();
                 Biblioteca.Email = reader["email"].ToString();
-                Biblioteca.Telefone = (int)reader["telefone"];
+                Biblioteca.Telefone = reader["telefone"].ToString();
             }
             cn.Close();
             Debug.Print(Biblioteca.ToString());
             InitializeComponent();
+            textBox6.Text = Biblioteca.ToString();
+            updateListFuncionarios();
         }
-        public Main()
+
+        private void updateListFuncionarios()
         {
-            InitializeComponent();
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            SqlCommand cmd = new SqlCommand("select * from Biblestia.obterFuncionários('" + Biblioteca.Nome + "')", cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Funcionario funcionario = new Funcionario();
+                funcionario.Nif = reader["nif"].ToString();
+                funcionario.NomeCompleto = reader["nomeCompleto"].ToString();
+                funcionario.IdFuncionario = reader["idFuncionario"].ToString();
+                funcionario.NomeBiblioteca = reader["nomeBiblioteca"].ToString();
+                funcionario.Ssn = reader["ssn"].ToString();
+                funcionario.Email = reader["email"].ToString();
+                funcionario.Morada = reader["morada"].ToString();
+                funcionario.Telefone = reader["telefone"].ToString();
+                funcionario.DataNascimento = reader["dataNascimento"].ToString();
+                listBox1.Items.Add(funcionario);
+            }
+            cn.Close();
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
-
+            
         }
         private SqlConnection getSGBDConnection()
         {
@@ -62,6 +89,61 @@ namespace Biblestia
                 cn.Open();
 
             return cn.State == ConnectionState.Open;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

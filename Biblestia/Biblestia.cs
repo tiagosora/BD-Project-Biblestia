@@ -55,7 +55,7 @@ namespace Biblestia
                 B.Nome = reader["nome"].ToString();
                 B.Morada = reader["morada"].ToString();
                 B.Email = reader["email"].ToString();
-                B.Telefone = (int)reader["telefone"];
+                B.Telefone = reader["telefone"].ToString();
                 selecao.Items.Add(B);
             }
             cn.Close();
