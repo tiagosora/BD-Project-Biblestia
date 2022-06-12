@@ -15,7 +15,10 @@ namespace Biblestia
     public partial class Main : Form
     {
         private SqlConnection cn;
-        private Biblioteca Biblioteca;
+        private Biblioteca biblioteca;
+        private String listType;
+        private int currentListIndex;
+
         public Main()
         {
             InitializeComponent();
@@ -29,19 +32,19 @@ namespace Biblestia
             }
             SqlCommand cmd = new SqlCommand("select * from Biblestia.Biblioteca", cn);
             SqlDataReader reader = cmd.ExecuteReader();
-            Biblioteca = new Biblioteca();
+            biblioteca = new Biblioteca();
             while (reader.Read())
             {
                 if (reader["nome"].ToString().Equals(BibliotecaName))
-                Biblioteca.Nome = BibliotecaName;
-                Biblioteca.Morada = reader["morada"].ToString();
-                Biblioteca.Email = reader["email"].ToString();
-                Biblioteca.Telefone = reader["telefone"].ToString();
+                biblioteca.Nome = BibliotecaName;
+                biblioteca.Morada = reader["morada"].ToString();
+                biblioteca.Email = reader["email"].ToString();
+                biblioteca.Telefone = reader["telefone"].ToString();
             }
             cn.Close();
-            Debug.Print(Biblioteca.ToString());
+            Debug.Print(biblioteca.ToString());
             InitializeComponent();
-            textBox6.Text = Biblioteca.ToString();
+            textBox6.Text = biblioteca.ToString();
             updateListFuncionarios();
         }
 
@@ -51,7 +54,9 @@ namespace Biblestia
             {
                 return;
             }
-            SqlCommand cmd = new SqlCommand("select * from Biblestia.obterFuncionários('" + Biblioteca.Nome + "')", cn);
+            groupBox1.Visible = true;
+            listType = "Funcionario";
+            SqlCommand cmd = new SqlCommand("select * from Biblestia.obterFuncionários('" + biblioteca.Nome + "')", cn);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -67,6 +72,7 @@ namespace Biblestia
                 funcionario.DataNascimento = reader["dataNascimento"].ToString();
                 listBox1.Items.Add(funcionario);
             }
+            listBox1.SelectedIndex = 0;
             cn.Close();
         }
 
@@ -113,7 +119,40 @@ namespace Biblestia
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            switch (listType)
+            {
+                case "Funcionario":
+                    currentListIndex = listBox1.SelectedIndex;
+                    showFuncionario();
+                    break;
+                default:
+                    break;
+            }
+        }
 
+        public void showFuncionario()
+        {
+            if (listBox1.Items.Count == 0 | currentListIndex < 0)
+                return;
+            Funcionario funcionario = new Funcionario();
+            funcionario = (Funcionario)listBox1.Items[currentListIndex];
+            fid.Text = funcionario.IdFuncionario;
+            fnif.Text = funcionario.Nif;
+            fssn.Text = funcionario.Ssn;
+            fnome.Text = funcionario.NomeCompleto;
+            femail.Text = funcionario.Email;
+            fmorada.Text = funcionario.Morada;
+            ftelefone.Text = funcionario.Telefone;
+            if (funcionario.DataNascimento == "") {
+                dateTimePicker1.Format = DateTimePickerFormat.Custom;
+                dateTimePicker1.CustomFormat = " ";
+            } else
+            {
+                dateTimePicker1.Format = DateTimePickerFormat.Short;
+                dateTimePicker1.Text = funcionario.DataNascimento;
+            }
+            
+            Debug.Print(funcionario.DataNascimento);
         }
 
         private void label1_Click(object sender, EventArgs e)

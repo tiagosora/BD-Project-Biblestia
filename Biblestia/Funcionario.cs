@@ -21,7 +21,7 @@ namespace Biblestia
 
         public override string ToString()
         {
-            return _idFuncionario + " " + _nomeCompleto;
+            return _idFuncionario + "\t" + _nomeCompleto;
         }
     }
 }
