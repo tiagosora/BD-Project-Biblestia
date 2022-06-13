@@ -54,6 +54,7 @@
       <DependentUpon>Biblestia.cs</DependentUpon>
     </Compile>
     <Compile Include="Biblioteca.cs" />
+    <Compile Include="Cargo.cs" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>

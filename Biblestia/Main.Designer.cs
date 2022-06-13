@@ -67,14 +67,39 @@ namespace Biblestia
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.cargoBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.button13 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button3
@@ -113,6 +138,7 @@ namespace Biblestia
             this.button1.TabIndex = 9;
             this.button1.Text = "Funcionários";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button4
             // 
@@ -261,7 +287,7 @@ namespace Biblestia
             // 
             this.Label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.Label2.Location = new System.Drawing.Point(12, 84);
+            this.Label2.Location = new System.Drawing.Point(12, 81);
             this.Label2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 1);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(96, 20);
@@ -272,7 +298,7 @@ namespace Biblestia
             // 
             this.fnome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fnome.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.fnome.Location = new System.Drawing.Point(11, 106);
+            this.fnome.Location = new System.Drawing.Point(11, 103);
             this.fnome.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.fnome.Name = "fnome";
             this.fnome.ReadOnly = true;
@@ -283,7 +309,7 @@ namespace Biblestia
             // 
             this.Label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label11.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.Label11.Location = new System.Drawing.Point(12, 27);
+            this.Label11.Location = new System.Drawing.Point(12, 24);
             this.Label11.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.Label11.Name = "Label11";
             this.Label11.Size = new System.Drawing.Size(96, 20);
@@ -294,18 +320,19 @@ namespace Biblestia
             // 
             this.fid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fid.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.fid.Location = new System.Drawing.Point(11, 50);
+            this.fid.Location = new System.Drawing.Point(11, 47);
             this.fid.Margin = new System.Windows.Forms.Padding(4);
             this.fid.Name = "fid";
             this.fid.ReadOnly = true;
             this.fid.Size = new System.Drawing.Size(92, 26);
             this.fid.TabIndex = 160;
+            this.fid.TextChanged += new System.EventHandler(this.fid_TextChanged);
             // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label8.Location = new System.Drawing.Point(121, 27);
+            this.label8.Location = new System.Drawing.Point(121, 24);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 20);
@@ -317,7 +344,7 @@ namespace Biblestia
             // 
             this.fnif.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fnif.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.fnif.Location = new System.Drawing.Point(120, 50);
+            this.fnif.Location = new System.Drawing.Point(120, 47);
             this.fnif.Margin = new System.Windows.Forms.Padding(4);
             this.fnif.Name = "fnif";
             this.fnif.ReadOnly = true;
@@ -328,7 +355,7 @@ namespace Biblestia
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label3.Location = new System.Drawing.Point(286, 27);
+            this.label3.Location = new System.Drawing.Point(286, 24);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 20);
@@ -339,7 +366,7 @@ namespace Biblestia
             // 
             this.fssn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fssn.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.fssn.Location = new System.Drawing.Point(285, 50);
+            this.fssn.Location = new System.Drawing.Point(285, 47);
             this.fssn.Margin = new System.Windows.Forms.Padding(4);
             this.fssn.Name = "fssn";
             this.fssn.ReadOnly = true;
@@ -350,7 +377,7 @@ namespace Biblestia
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label4.Location = new System.Drawing.Point(12, 143);
+            this.label4.Location = new System.Drawing.Point(12, 140);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 1);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 20);
@@ -361,7 +388,7 @@ namespace Biblestia
             // 
             this.femail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.femail.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.femail.Location = new System.Drawing.Point(11, 165);
+            this.femail.Location = new System.Drawing.Point(11, 162);
             this.femail.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.femail.Name = "femail";
             this.femail.ReadOnly = true;
@@ -372,7 +399,7 @@ namespace Biblestia
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label5.Location = new System.Drawing.Point(12, 201);
+            this.label5.Location = new System.Drawing.Point(12, 198);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 1);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 20);
@@ -383,7 +410,7 @@ namespace Biblestia
             // 
             this.fmorada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fmorada.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.fmorada.Location = new System.Drawing.Point(11, 223);
+            this.fmorada.Location = new System.Drawing.Point(11, 220);
             this.fmorada.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.fmorada.Name = "fmorada";
             this.fmorada.ReadOnly = true;
@@ -394,7 +421,7 @@ namespace Biblestia
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label6.Location = new System.Drawing.Point(12, 257);
+            this.label6.Location = new System.Drawing.Point(38, 254);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 20);
@@ -405,7 +432,7 @@ namespace Biblestia
             // 
             this.ftelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ftelefone.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.ftelefone.Location = new System.Drawing.Point(11, 280);
+            this.ftelefone.Location = new System.Drawing.Point(37, 277);
             this.ftelefone.Margin = new System.Windows.Forms.Padding(4);
             this.ftelefone.Name = "ftelefone";
             this.ftelefone.ReadOnly = true;
@@ -416,7 +443,7 @@ namespace Biblestia
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label7.Location = new System.Drawing.Point(235, 257);
+            this.label7.Location = new System.Drawing.Point(261, 254);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(167, 20);
@@ -428,52 +455,77 @@ namespace Biblestia
             this.dateTimePicker1.CustomFormat = "";
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(238, 280);
+            this.dateTimePicker1.Location = new System.Drawing.Point(264, 277);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(144, 22);
             this.dateTimePicker1.TabIndex = 13;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.cargoBox);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.button10);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.dateTimePicker2);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.dateTimePicker3);
-            this.groupBox2.Location = new System.Drawing.Point(6, 313);
+            this.groupBox2.Location = new System.Drawing.Point(37, 313);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(220, 109);
+            this.groupBox2.Size = new System.Drawing.Size(376, 109);
             this.groupBox2.TabIndex = 176;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cargo Atual";
+            this.groupBox2.Text = "Lista de Cargos";
             // 
-            // textBox7
+            // cargoBox
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox7.Location = new System.Drawing.Point(9, 20);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(204, 26);
-            this.textBox7.TabIndex = 175;
+            this.cargoBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cargoBox.FormattingEnabled = true;
+            this.cargoBox.ItemHeight = 16;
+            this.cargoBox.Location = new System.Drawing.Point(77, 23);
+            this.cargoBox.Name = "cargoBox";
+            this.cargoBox.Size = new System.Drawing.Size(293, 24);
+            this.cargoBox.TabIndex = 187;
+            this.cargoBox.SelectedIndexChanged += new System.EventHandler(this.cargoBox_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label1.Location = new System.Drawing.Point(9, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 20);
+            this.label1.TabIndex = 188;
+            this.label1.Text = "Cargo";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(226, 53);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(144, 50);
+            this.button10.TabIndex = 187;
+            this.button10.Text = "Editar Lista de Cargos";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // label10
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label10.Location = new System.Drawing.Point(9, 84);
+            this.label10.Location = new System.Drawing.Point(9, 83);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 20);
             this.label10.TabIndex = 180;
             this.label10.Text = "Fim";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Enabled = false;
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(67, 53);
+            this.dateTimePicker2.Location = new System.Drawing.Point(76, 53);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(144, 22);
             this.dateTimePicker2.TabIndex = 176;
@@ -495,14 +547,14 @@ namespace Biblestia
             // 
             this.dateTimePicker3.Enabled = false;
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(67, 83);
+            this.dateTimePicker3.Location = new System.Drawing.Point(76, 83);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(144, 22);
             this.dateTimePicker3.TabIndex = 177;
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.ftelefone);
@@ -519,6 +571,8 @@ namespace Biblestia
             this.groupBox1.Controls.Add(this.Label11);
             this.groupBox1.Controls.Add(this.fnome);
             this.groupBox1.Controls.Add(this.Label2);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Location = new System.Drawing.Point(356, 71);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(451, 428);
@@ -527,11 +581,249 @@ namespace Biblestia
             this.groupBox1.Text = "Funcionários";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.button11);
+            this.panel1.Controls.Add(this.button12);
+            this.panel1.Location = new System.Drawing.Point(37, 305);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(376, 117);
+            this.panel1.TabIndex = 191;
+            this.panel1.Visible = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(227, 0);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(119, 21);
+            this.checkBox1.TabIndex = 191;
+            this.checkBox1.Text = "Remover data";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(0, 47);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(144, 50);
+            this.button11.TabIndex = 189;
+            this.button11.Text = "Feito";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Visible = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(232, 47);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(144, 50);
+            this.button12.TabIndex = 190;
+            this.button12.Text = "Cancelar";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Visible = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Location = new System.Drawing.Point(29, 103);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(233, 132);
+            this.listBox2.TabIndex = 193;
+            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox1.Location = new System.Drawing.Point(111, 27);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(302, 26);
+            this.textBox1.TabIndex = 193;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox2.Location = new System.Drawing.Point(29, 27);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(75, 26);
+            this.textBox2.TabIndex = 194;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button18);
+            this.groupBox3.Controls.Add(this.button17);
+            this.groupBox3.Controls.Add(this.button16);
+            this.groupBox3.Controls.Add(this.button15);
+            this.groupBox3.Controls.Add(this.button14);
+            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.dateTimePicker4);
+            this.groupBox3.Controls.Add(this.dateTimePicker5);
+            this.groupBox3.Controls.Add(this.button13);
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.listBox2);
+            this.groupBox3.Location = new System.Drawing.Point(356, 71);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(451, 428);
+            this.groupBox3.TabIndex = 192;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Funcionários";
+            this.groupBox3.Visible = false;
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label16.Location = new System.Drawing.Point(272, 109);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(146, 20);
+            this.label16.TabIndex = 199;
+            this.label16.Text = "Início do Cargo";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label15.Location = new System.Drawing.Point(272, 177);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(146, 20);
+            this.label15.TabIndex = 198;
+            this.label15.Text = "Fim do Cargo";
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.CustomFormat = "";
+            this.dateTimePicker4.Enabled = false;
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker4.Location = new System.Drawing.Point(273, 136);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(144, 22);
+            this.dateTimePicker4.TabIndex = 197;
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.CustomFormat = "";
+            this.dateTimePicker5.Enabled = false;
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker5.Location = new System.Drawing.Point(273, 204);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(144, 22);
+            this.dateTimePicker5.TabIndex = 196;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(95, 374);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(264, 35);
+            this.button13.TabIndex = 193;
+            this.button13.Text = "Edição Concluída";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label17.Location = new System.Drawing.Point(26, 76);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(146, 20);
+            this.label17.TabIndex = 200;
+            this.label17.Text = "Lista de Cargos";
+            // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label18.Location = new System.Drawing.Point(26, 254);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(146, 20);
+            this.label18.TabIndex = 201;
+            this.label18.Text = "Nome do Cargo";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox3.Location = new System.Drawing.Point(173, 251);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(245, 26);
+            this.textBox3.TabIndex = 202;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(29, 306);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(129, 35);
+            this.button14.TabIndex = 203;
+            this.button14.Text = "Adicionar Novo";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(158, 306);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(129, 35);
+            this.button15.TabIndex = 204;
+            this.button15.Text = "Editar Cargo";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(288, 306);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(129, 35);
+            this.button16.TabIndex = 205;
+            this.button16.Text = "Remover Cargo";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(88, 306);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(129, 35);
+            this.button17.TabIndex = 206;
+            this.button17.Text = "Feito";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Visible = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(241, 306);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(129, 35);
+            this.button18.TabIndex = 207;
+            this.button18.Text = "Cancelar";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 569);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox9);
@@ -557,9 +849,12 @@ namespace Biblestia
             this.Text = "Biblestia";
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,11 +896,34 @@ namespace Biblestia
         internal System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox2;
-        internal System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button button10;
         internal System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         internal System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.GroupBox groupBox1;
+        internal System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cargoBox;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ListBox listBox2;
+        internal System.Windows.Forms.TextBox textBox1;
+        internal System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        internal System.Windows.Forms.Label label16;
+        internal System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button14;
+        internal System.Windows.Forms.TextBox textBox3;
+        internal System.Windows.Forms.Label label18;
+        internal System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button17;
     }
 }

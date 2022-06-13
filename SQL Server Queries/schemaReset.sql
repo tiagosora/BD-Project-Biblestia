@@ -194,7 +194,7 @@ alter table Biblestia.RequisicaoMaterial add constraint RequisicaoMaterialMateri
 -- 1 Biblioteca
 insert into Biblestia.Biblioteca values ('Biblioteca Universitária de Aveiro', 'Campus Universitário de, R. Santiago, 3810-193 Aveiro', 234370860 , 'bibliotecaua@ua.pt');
  
--- 14 Funcionários
+-- 14 Funcionários 
 insert into Biblestia.Funcionario values (985211391, 'Garrott Bleibaum', 1, 'Biblioteca Universitária de Aveiro', 42973815340, 'gbleibaum0@surveymonkey.com', '81 Hansons Center', 210519092, '1952-06-03');
 insert into Biblestia.Funcionario values (354332960, 'Ofella Pottell', 2, 'Biblioteca Universitária de Aveiro', 85010758213, 'opottell1@amazon.com', '30 Farragut Pass', 741606794, '1950-06-08');
 insert into Biblestia.Funcionario values (935431014, 'Rosamund Zanetti', 3, 'Biblioteca Universitária de Aveiro', 34640302149, 'rzanetti2@goo.ne.jp', '64 Pond Plaza', 593733149, '1979-04-11');
