@@ -18,6 +18,8 @@ namespace Biblestia
         private Biblioteca biblioteca;
         private String listType;
         private int currentListIndex;
+        private int listBox2currentIndex;
+        private String currentAction = "null";
 
         public Main()
         {
@@ -383,6 +385,10 @@ namespace Biblestia
             textBox2.Text = funcionario.IdFuncionario;
             textBox1.Text = funcionario.NomeCompleto;
             updateCargoList();
+            if (listBox2.Items.Count > 0)
+            {
+                listBox2.SelectedIndex = listBox2.Items.Count - 1;
+            }
         }
         private void updateCargoList()
         {
@@ -406,9 +412,7 @@ namespace Biblestia
             }
             reader.Close();
             cn.Close();
-            if (listBox2.Items.Count > 0) {
-                listBox2.SelectedIndex = listBox2.Items.Count - 1;
-            }
+            
         }
         private void groupBox3_Enter(object sender, EventArgs e)
         {
@@ -422,56 +426,211 @@ namespace Biblestia
 
         private void button15_Click(object sender, EventArgs e)
         {
+            listBox2currentIndex = listBox2.SelectedIndex;
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = false;
-            listBox2.Enabled = false;
-            label15.Enabled = true;
             button13.Enabled = false;
             button14.Visible = false;
             button15.Visible = false;
             button16.Visible = false;
             button17.Visible = true;
             button18.Visible = true;
+            listBox2.Enabled = false;
+            label15.Enabled = true;
             dateTimePicker4.Enabled = true;
             dateTimePicker5.Format = DateTimePickerFormat.Short;
             dateTimePicker5.Enabled = true;
-            textBox3.ReadOnly = false;
+            checkBox2.Visible = true;
+            currentAction = "UpdatingCargo";
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cargo cargo = (Cargo)listBox2.SelectedItem;
-            textBox3.Text = cargo.NomeCargo;
-            dateTimePicker4.Text = cargo.DataInicio;
-            if (cargo.DataFim == "")
+            if (listBox2.Items.Count > 0 && listBox2.SelectedIndex > 0)
             {
-                label15.Enabled = false;
-                dateTimePicker5.Format = DateTimePickerFormat.Custom;
-                dateTimePicker5.CustomFormat = " ";
+                Cargo cargo = (Cargo)listBox2.SelectedItem;
+                textBox3.Text = cargo.NomeCargo;
+                dateTimePicker4.Text = cargo.DataInicio;
+                if (cargo.DataFim == "")
+                {
+                    label15.Enabled = false;
+                    dateTimePicker5.Format = DateTimePickerFormat.Custom;
+                    dateTimePicker5.CustomFormat = " ";
+                }
+                else
+                {
+                    label15.Enabled = true;
+                    dateTimePicker5.Format = DateTimePickerFormat.Short;
+                    dateTimePicker5.Text = cargo.DataFim;
+                }
             }
-            else
-            {
-                label15.Enabled = true;
-                dateTimePicker5.Format = DateTimePickerFormat.Short;
-                dateTimePicker5.Text = cargo.DataFim;
-            }
+            
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
             Cargo cargo = new Cargo();
             cargo.NomeBiblioteca = biblioteca.Nome;
             cargo.IdFuncionario = textBox2.Text;
             cargo.NomeCargo = textBox3.Text;
             cargo.DataInicio = dateTimePicker4.Text;
             cargo.DataFim = dateTimePicker5.Text;
-
-            for (int i = 0; i < listBox2.Items.Count; i++)
+            if (checkBox2.Checked)
             {
-                // ESTOU A FAZER AQUI
+                cargo.DataFim = "";
+            }
+            if (currentAction == "UpdatingCargo")
+            {
+                SqlCommand cmd = new SqlCommand("Biblestia.editarCargo", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", cargo.NomeBiblioteca));
+                cmd.Parameters.Add(new SqlParameter("@idFuncionario", cargo.IdFuncionario));
+                cmd.Parameters.Add(new SqlParameter("@nomeCargo", cargo.NomeCargo));
+                cmd.Parameters.Add(new SqlParameter("@dataInicio", cargo.DataInicio));
+                if (!checkBox2.Checked)
+                {
+                    cmd.Parameters.Add(new SqlParameter("@dataFim", dateTimePicker5.Value.ToString("yyyy-MM-dd")));
+                }
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                listBox2.SelectedItem = cargo;
+            } else if (currentAction == "AddingCargo")
+            {
+                SqlCommand cmd = new SqlCommand("Biblestia.adicionarCargo", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", cargo.NomeBiblioteca));
+                cmd.Parameters.Add(new SqlParameter("@idFuncionario", cargo.IdFuncionario));
+                cmd.Parameters.Add(new SqlParameter("@nomeCargo", cargo.NomeCargo));
+                cmd.Parameters.Add(new SqlParameter("@dataInicio", cargo.DataInicio));
+                if (!checkBox2.Checked)
+                {
+                    cmd.Parameters.Add(new SqlParameter("@dataFim", dateTimePicker5.Value.ToString("yyyy-MM-dd")));
+                }
+                cmd.ExecuteNonQuery();
+                cn.Close();
+                listBox2.Items.Add(cargo);
+            }
+
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+            button13.Enabled = true;
+            button14.Visible = true;
+            button15.Visible = true;
+            button16.Visible = true;
+            button17.Visible = false;
+            button18.Visible = false;
+            listBox2.Enabled = true;
+            label15.Enabled = false;
+            dateTimePicker4.Enabled = false;
+            dateTimePicker5.Enabled = false;
+            textBox3.ReadOnly = true;
+            checkBox2.Visible = false;
+            updateCargoList();
+
+            if (currentAction == "UpdatingCargo")
+            {
+                listBox2.SelectedIndex = listBox2currentIndex;
+            }
+            else if (currentAction == "AddingCargo")
+            {
+                listBox2.SelectedIndex = listBox2.Items.Count - 1;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+            button13.Enabled = true;
+            button14.Visible = true;
+            button15.Visible = true;
+            button16.Visible = true;
+            button17.Visible = false;
+            button18.Visible = false;
+            listBox2.Enabled = true;
+            label15.Enabled = false;
+            dateTimePicker4.Enabled = false;
+            dateTimePicker5.Enabled = false;
+            textBox3.ReadOnly = true;
+            checkBox2.Visible = false;
+            updateCargoList();
+            listBox2.SelectedIndex = listBox2currentIndex;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            listBox2currentIndex = listBox2.SelectedIndex;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button13.Enabled = false;
+            button14.Visible = false;
+            button15.Visible = false;
+            button16.Visible = false;
+            button17.Visible = true;
+            button18.Visible = true;
+            listBox2.Enabled = false;
+            label15.Enabled = true;
+            dateTimePicker4.Enabled = true;
+            dateTimePicker5.Format = DateTimePickerFormat.Short;
+            dateTimePicker5.Enabled = true;
+            dateTimePicker4.ResetText();
+            dateTimePicker5.ResetText();
+            textBox3.Clear();
+            textBox3.ReadOnly = false;
+            checkBox2.Visible = true;
+
+            currentAction = "AddingCargo";
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            Debug.Print(listBox2.SelectedIndex.ToString());
+            if (button16.BackColor.Name == "White")
+            {
+                button16.BackColor = Color.Yellow;
+                button16.Text = "De certeza?";
+            } else
+            {
+                if (!verifySGBDConnection())
+                {
+                    return;
+                }
+                button16.BackColor = Color.White;
+                button16.Text = "Remover Cargo";
+                Cargo cargo = (Cargo)listBox2.SelectedItem;
+
+                SqlCommand cmd = new SqlCommand("Biblestia.removerCargo", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", cargo.NomeBiblioteca));
+                cmd.Parameters.Add(new SqlParameter("@idFuncionario", cargo.IdFuncionario));
+                cmd.Parameters.Add(new SqlParameter("@nomeCargo", cargo.NomeCargo));
+                cmd.ExecuteNonQuery();
+                cn.Close();
+
+                listBox2.Items.Remove(listBox2.SelectedItem);
+                updateCargoList();
+                listBox2.SelectedIndex = listBox2.Items.Count - 1;
             }
         }
     }

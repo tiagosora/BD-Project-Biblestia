@@ -83,19 +83,20 @@ namespace Biblestia
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.button13 = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -166,6 +167,7 @@ namespace Biblestia
             this.button6.TabIndex = 12;
             this.button6.Text = "Sair";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -659,6 +661,8 @@ namespace Biblestia
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dateTimePicker5);
+            this.groupBox3.Controls.Add(this.checkBox2);
             this.groupBox3.Controls.Add(this.button18);
             this.groupBox3.Controls.Add(this.button17);
             this.groupBox3.Controls.Add(this.button16);
@@ -670,7 +674,6 @@ namespace Biblestia
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.dateTimePicker4);
-            this.groupBox3.Controls.Add(this.dateTimePicker5);
             this.groupBox3.Controls.Add(this.button13);
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.textBox1);
@@ -683,6 +686,92 @@ namespace Biblestia
             this.groupBox3.Text = "Funcionários";
             this.groupBox3.Visible = false;
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(241, 306);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(129, 35);
+            this.button18.TabIndex = 207;
+            this.button18.Text = "Cancelar";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Visible = false;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(88, 306);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(129, 35);
+            this.button17.TabIndex = 206;
+            this.button17.Text = "Feito";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Visible = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.White;
+            this.button16.Location = new System.Drawing.Point(288, 306);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(129, 35);
+            this.button16.TabIndex = 205;
+            this.button16.Text = "Remover Cargo";
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(158, 306);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(129, 35);
+            this.button15.TabIndex = 204;
+            this.button15.Text = "Editar Cargo";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(29, 306);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(129, 35);
+            this.button14.TabIndex = 203;
+            this.button14.Text = "Adicionar Novo";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox3.Location = new System.Drawing.Point(173, 251);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(245, 26);
+            this.textBox3.TabIndex = 202;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label18.Location = new System.Drawing.Point(26, 254);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(146, 20);
+            this.label18.TabIndex = 201;
+            this.label18.Text = "Nome do Cargo";
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label17.Location = new System.Drawing.Point(26, 76);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(146, 20);
+            this.label17.TabIndex = 200;
+            this.label17.Text = "Lista de Cargos";
             // 
             // label16
             // 
@@ -736,87 +825,16 @@ namespace Biblestia
             this.button13.Text = "Edição Concluída";
             this.button13.UseVisualStyleBackColor = true;
             // 
-            // label17
+            // checkBox2
             // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label17.Location = new System.Drawing.Point(26, 76);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(146, 20);
-            this.label17.TabIndex = 200;
-            this.label17.Text = "Lista de Cargos";
-            // 
-            // label18
-            // 
-            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label18.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label18.Location = new System.Drawing.Point(26, 254);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(146, 20);
-            this.label18.TabIndex = 201;
-            this.label18.Text = "Nome do Cargo";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox3.Location = new System.Drawing.Point(173, 251);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(245, 26);
-            this.textBox3.TabIndex = 202;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(29, 306);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(129, 35);
-            this.button14.TabIndex = 203;
-            this.button14.Text = "Adicionar Novo";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(158, 306);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(129, 35);
-            this.button15.TabIndex = 204;
-            this.button15.Text = "Editar Cargo";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(288, 306);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(129, 35);
-            this.button16.TabIndex = 205;
-            this.button16.Text = "Remover Cargo";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(88, 306);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(129, 35);
-            this.button17.TabIndex = 206;
-            this.button17.Text = "Feito";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Visible = false;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(241, 306);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(129, 35);
-            this.button18.TabIndex = 207;
-            this.button18.Text = "Cancelar";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Visible = false;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(273, 226);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(84, 21);
+            this.checkBox2.TabIndex = 208;
+            this.checkBox2.Text = "Sem Fim";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.Visible = false;
             // 
             // Main
             // 
@@ -925,5 +943,6 @@ namespace Biblestia
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
