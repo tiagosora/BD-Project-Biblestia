@@ -1,14 +1,4 @@
 use p6g7;
-
-go
-
--- Obter todos os funcionários de uma biblioteca
-drop function Biblestia.obterFuncionários; 
-go 
-create function Biblestia.obterFuncionários(@biblioteca varchar(60)) returns table
-as
-	return	select * from Biblestia.Funcionario
-			where nomeBiblioteca = @biblioteca;
 go
 
 -- Adicionar um funcionário
@@ -52,15 +42,6 @@ create proc Biblestia.editarLeitor (@nif int, @nomeCompleto varchar(60), @idLeit
 as
 	update Biblestia.Leitor set nif = @nif, nomeCompleto = @nomeCompleto, email = @email, morada = @morada, telefone = @telefone, dataNascimento = @dataNascimento where @idLeitor=idLeitor and @nomeBiblioteca=nomeBiblioteca;
 go
-
--- Obter cargos de um dado funcionario
-drop function Biblestia.obterCargosFuncionario; 
-go 
-create function Biblestia.obterCargosFuncionario(@id int, @biblioteca varchar(60)) returns table
-as
-	return	select * from Biblestia.Cargo
-			where idFuncionario = @id and nomeBiblioteca = @biblioteca
-go 
 
 -- Editar um cargo de um funcionario 
 drop proc Biblestia.editarCargo;
