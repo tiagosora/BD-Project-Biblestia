@@ -13,12 +13,10 @@ namespace Biblestia
         private String _nifLeitor, _nomeAtividade, _nomeBiblioteca;
         public String NifLeitor { get => _nifLeitor; set => _nifLeitor = value; }
         public String NomeBiblioteca { get => _nomeBiblioteca; set => _nomeBiblioteca = value; }
-        public String NomeAtividade { get => _nomeAtividade; set => _nomeAtivadade = value; }
-       
-
+        public String NomeAtividade { get => _nomeAtividade; set => _nomeAtividade = value; }
         public override string ToString()
         {
-            return _nifLeitor + "\t" + _nomeAtividade + "\t" + _nome;
+            return _nifLeitor + "\t" + _nomeAtividade;
         }
     }
 }

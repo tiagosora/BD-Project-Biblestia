@@ -29,7 +29,6 @@ namespace Biblestia
         {
             if (!verifySGBDConnection())
             {
-                // Debug.Print("Connection not stablished!");
                 return;
             }
             SqlCommand cmd = new SqlCommand("select * from Biblestia.Biblioteca", cn);
@@ -45,7 +44,6 @@ namespace Biblestia
             }
             reader.Close();
             cn.Close();
-            Debug.Print(biblioteca.ToString());
             InitializeComponent();
             textBox6.Text = biblioteca.ToString();
             updateListFuncionarios();
@@ -95,7 +93,6 @@ namespace Biblestia
         }
         private SqlConnection getSGBDConnection()
         {
-            // Debug.WriteLine("Tentar conectar");
             return new SqlConnection("data source = tcp:mednat.ieeta.pt\\SQLSERVER,8101; Initial Catalog = p6g7; uid = p6g7; password = Albertos3csu4l;");
 
         }
@@ -126,6 +123,11 @@ namespace Biblestia
         }
         private void button8_Click(object sender, EventArgs e)
         {
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
             button8.Enabled = false;
             button7.Enabled = false;
             button9.Enabled = false;
@@ -142,24 +144,26 @@ namespace Biblestia
             button11.Visible = true;
             button12.Visible = true;
             listBox1.Enabled = false;
+
+            currentAction = "updatingFuncionario";
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!verifySGBDConnection())
+            if (listBox1.SelectedIndex > -1)
             {
-                return;
+                switch (listType)
+                {
+                    case "Funcionario":
+                        currentListIndex = listBox1.SelectedIndex;
+                        showFuncionario();
+                        getCargosDoFuncionario();
+                        break;
+                    default:
+                        break;
+                }
             }
-            switch (listType)
-            {
-                case "Funcionario":
-                    currentListIndex = listBox1.SelectedIndex;
-                    showFuncionario();
-                    getCargosDoFuncionario();
-                    break;
-                default:
-                    break;
-            }
+            
         }
 
         public void showFuncionario()
@@ -187,6 +191,7 @@ namespace Biblestia
                 dateTimePicker1.Format = DateTimePickerFormat.Short;
                 dateTimePicker1.Text = funcionario.DataNascimento;
             }
+            cn.Close();
         }
 
         private void getCargosDoFuncionario()
@@ -306,21 +311,42 @@ namespace Biblestia
             {
                 funcionario.DataNascimento = "";
             }
-            SqlCommand cmd = new SqlCommand("Biblestia.editarFuncionario", cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@nif", funcionario.Nif));
-            cmd.Parameters.Add(new SqlParameter("@nomeCompleto", funcionario.NomeCompleto));
-            cmd.Parameters.Add(new SqlParameter("@idFuncionario", funcionario.IdFuncionario));
-            cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", biblioteca.Nome));
-            cmd.Parameters.Add(new SqlParameter("@ssn", funcionario.Ssn));
-            cmd.Parameters.Add(new SqlParameter("@email", funcionario.Email));
-            cmd.Parameters.Add(new SqlParameter("@morada", funcionario.Morada));
-            cmd.Parameters.Add(new SqlParameter("@telefone", funcionario.Telefone));
-            if (!checkBox1.Checked)
+            if (currentAction == "updatingFuncionario")
             {
-                cmd.Parameters.Add(new SqlParameter("@dataNascimento", dateTimePicker1.Value.ToString("yyyy-MM-dd")));
+                SqlCommand cmd = new SqlCommand("Biblestia.editarFuncionario", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@nif", funcionario.Nif));
+                cmd.Parameters.Add(new SqlParameter("@nomeCompleto", funcionario.NomeCompleto));
+                cmd.Parameters.Add(new SqlParameter("@idFuncionario", funcionario.IdFuncionario));
+                cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", biblioteca.Nome));
+                cmd.Parameters.Add(new SqlParameter("@ssn", funcionario.Ssn));
+                cmd.Parameters.Add(new SqlParameter("@email", funcionario.Email));
+                cmd.Parameters.Add(new SqlParameter("@morada", funcionario.Morada));
+                cmd.Parameters.Add(new SqlParameter("@telefone", funcionario.Telefone));
+                if (!checkBox1.Checked)
+                {
+                    cmd.Parameters.Add(new SqlParameter("@dataNascimento", dateTimePicker1.Value.ToString("yyyy-MM-dd")));
+                }
+                cmd.ExecuteNonQuery();
+            } else if (currentAction == "addingFuncionario")
+            {
+                SqlCommand cmd = new SqlCommand("Biblestia.adicionarFuncionario", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@nif", funcionario.Nif));
+                cmd.Parameters.Add(new SqlParameter("@nomeCompleto", funcionario.NomeCompleto));
+                cmd.Parameters.Add(new SqlParameter("@idFuncionario", funcionario.IdFuncionario));
+                cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", biblioteca.Nome));
+                cmd.Parameters.Add(new SqlParameter("@ssn", funcionario.Ssn));
+                cmd.Parameters.Add(new SqlParameter("@email", funcionario.Email));
+                cmd.Parameters.Add(new SqlParameter("@morada", funcionario.Morada));
+                cmd.Parameters.Add(new SqlParameter("@telefone", funcionario.Telefone));
+                if (!checkBox1.Checked)
+                {
+                    cmd.Parameters.Add(new SqlParameter("@dataNascimento", dateTimePicker1.Value.ToString("yyyy-MM-dd")));
+                }
+                cmd.ExecuteNonQuery();
             }
-            cmd.ExecuteNonQuery();
+            cn.Close();
             listBox1.SelectedItem = funcionario;
             saidaEdicao();
         }
@@ -343,7 +369,15 @@ namespace Biblestia
             listBox1.Enabled = true;
             int saveIndex = currentListIndex;
             updateListFuncionarios();
-            listBox1.SelectedIndex = saveIndex;
+            if (currentAction == "updatingFuncionario")
+            {
+                listBox1.SelectedIndex = saveIndex;
+
+            }
+            else if (currentAction == "addingFuncionario")
+            {
+                listBox1.SelectedIndex = listBox1.Items.Count - 1;
+            }
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -449,7 +483,7 @@ namespace Biblestia
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBox2.Items.Count > 0 && listBox2.SelectedIndex > 0)
+            if (listBox2.Items.Count > 0 && listBox2.SelectedIndex > -1)
             {
                 Cargo cargo = (Cargo)listBox2.SelectedItem;
                 textBox3.Text = cargo.NomeCargo;
@@ -578,6 +612,7 @@ namespace Biblestia
         private void button14_Click(object sender, EventArgs e)
         {
             listBox2currentIndex = listBox2.SelectedIndex;
+            listBox2.ClearSelected();
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
@@ -605,7 +640,6 @@ namespace Biblestia
 
         private void button16_Click(object sender, EventArgs e)
         {
-            Debug.Print(listBox2.SelectedIndex.ToString());
             if (button16.BackColor.Name == "White")
             {
                 button16.BackColor = Color.Yellow;
@@ -632,6 +666,55 @@ namespace Biblestia
                 updateCargoList();
                 listBox2.SelectedIndex = listBox2.Items.Count - 1;
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            fid.Clear();
+            fnif.Clear();
+            fssn.Clear();
+            fnome.Clear();
+            femail.Clear();
+            fmorada.Clear();
+            ftelefone.Clear();
+
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button8.Enabled = false;
+            button7.Enabled = false;
+            button9.Enabled = false;
+            listBox1.ClearSelected();
+            fid.Text = "-------------";
+            fnif.ReadOnly = false;
+            fssn.ReadOnly = false;
+            fnome.ReadOnly = false;
+            femail.ReadOnly = false;
+            fmorada.ReadOnly = false;
+            ftelefone.ReadOnly = false;
+            dateTimePicker1.Enabled = true;
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            groupBox2.Visible = false;
+            panel1.Visible = true;
+            button11.Visible = true;
+            button12.Visible = true;
+            listBox1.Enabled = false;
+
+            currentAction = "addingFuncionario";
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            groupsVisibleFalse();
+            groupBox1.Visible = true;
+            button8.Visible = true;
+            button7.Visible = true;
+            button9.Visible = true;
+            listBox1.Enabled = true;
+            showFuncionario();
+            getCargosDoFuncionario();
         }
     }
 }

@@ -15,7 +15,7 @@ go
 drop proc Biblestia.adicionarFuncionario;
 go      
 create proc Biblestia.adicionarFuncionario (@nif int, @nomeCompleto varchar(60), @nomeBiblioteca varchar(60), @ssn bigint, @email varchar(60), @morada varchar(60), @telefone int, @dataNascimento date = null)
-as
+as 
 	declare @idFuncionario as int
 
 	select @idFuncionario = max(idFuncionario) from Biblestia.Funcionario
