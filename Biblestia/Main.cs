@@ -248,7 +248,7 @@ namespace Biblestia
                 cargoBox.Items.Add(cargo);
                 
             }
-            cargoBox.SelectedIndex = 0;
+            cargoBox.SelectedIndex = cargoBox.Items.Count -1;
             for (int i = 0; i < cargoBox.Items.Count; i++)
             {
                 Cargo c = (Cargo)cargoBox.Items[i];
@@ -293,19 +293,22 @@ namespace Biblestia
 
         private void cargoBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cargo cargo = (Cargo)cargoBox.Items[cargoBox.SelectedIndex];
-            dateTimePicker2.Text = cargo.DataInicio;
-            if (cargo.DataFim == "")
+            if (cargoBox.Items.Count > 0 && cargoBox.SelectedIndex > -1)
             {
-                label10.Enabled = false;
-                dateTimePicker3.Format = DateTimePickerFormat.Custom;
-                dateTimePicker3.CustomFormat = " ";
-            }
-            else
-            {
-                label10.Enabled = true;
-                dateTimePicker3.Format = DateTimePickerFormat.Short;
-                dateTimePicker3.Text = cargo.DataFim;
+                Cargo cargo = (Cargo)cargoBox.Items[cargoBox.SelectedIndex];
+                dateTimePicker2.Text = cargo.DataInicio;
+                if (cargo.DataFim == "")
+                {
+                    label10.Enabled = false;
+                    dateTimePicker3.Format = DateTimePickerFormat.Custom;
+                    dateTimePicker3.CustomFormat = " ";
+                }
+                else
+                {
+                    label10.Enabled = true;
+                    dateTimePicker3.Format = DateTimePickerFormat.Short;
+                    dateTimePicker3.Text = cargo.DataFim;
+                }
             }
         }
 
