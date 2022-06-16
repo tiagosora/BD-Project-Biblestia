@@ -57,7 +57,10 @@
     </Compile>
     <Compile Include="Biblioteca.cs" />
     <Compile Include="Cargo.cs" />
+    <Compile Include="CD.cs" />
     <Compile Include="Funcionario.cs" />
+    <Compile Include="Jogo.cs" />
+    <Compile Include="Jornal.cs" />
     <Compile Include="Leitor.cs" />
     <Compile Include="Livro.cs" />
     <Compile Include="Main.cs">
@@ -71,6 +74,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requisicao.cs" />
     <Compile Include="RequisicaoMaterial.cs" />
+    <Compile Include="Revista.cs" />
     <EmbeddedResource Include="Biblestia.resx">
       <DependentUpon>Biblestia.cs</DependentUpon>
     </EmbeddedResource>

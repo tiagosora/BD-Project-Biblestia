@@ -19,3 +19,15 @@ C:\Users\tiago\Desktop\Universidade\2º Ano - 2º Semestre\BD\BD-Project-Biblest
 C:\Users\tiago\Desktop\Universidade\2º Ano - 2º Semestre\BD\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.exe
 C:\Users\tiago\Desktop\Universidade\2º Ano - 2º Semestre\BD\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.pdb
 C:\Users\tiago\Desktop\Universidade\2º Ano - 2º Semestre\BD\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.Main.resources
+C:\Users\catar\OneDrive\Ambiente de Trabalho\UNI\2 ano-2\BD\projeto\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.csproj.AssemblyReference.cache
+C:\Users\catar\OneDrive\Ambiente de Trabalho\UNI\2 ano-2\BD\projeto\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.csproj.SuggestedBindingRedirects.cache
+C:\Users\catar\OneDrive\Ambiente de Trabalho\UNI\2 ano-2\BD\projeto\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.Biblestia.resources
+C:\Users\catar\OneDrive\Ambiente de Trabalho\UNI\2 ano-2\BD\projeto\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.Main.resources
+C:\Users\catar\OneDrive\Ambiente de Trabalho\UNI\2 ano-2\BD\projeto\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.Properties.Resources.resources
+C:\Users\catar\OneDrive\Ambiente de Trabalho\UNI\2 ano-2\BD\projeto\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.csproj.GenerateResource.cache
+C:\Users\catar\OneDrive\Ambiente de Trabalho\UNI\2 ano-2\BD\projeto\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.csproj.CoreCompileInputs.cache
+C:\Users\catar\OneDrive\Ambiente de Trabalho\UNI\2 ano-2\BD\projeto\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.exe
+C:\Users\catar\OneDrive\Ambiente de Trabalho\UNI\2 ano-2\BD\projeto\BD-Project-Biblestia\Biblestia\obj\Debug\Biblestia.pdb
+C:\Users\catar\OneDrive\Ambiente de Trabalho\UNI\2 ano-2\BD\projeto\BD-Project-Biblestia\Biblestia\bin\Debug\Biblestia.exe.config
+C:\Users\catar\OneDrive\Ambiente de Trabalho\UNI\2 ano-2\BD\projeto\BD-Project-Biblestia\Biblestia\bin\Debug\Biblestia.exe
+C:\Users\catar\OneDrive\Ambiente de Trabalho\UNI\2 ano-2\BD\projeto\BD-Project-Biblestia\Biblestia\bin\Debug\Biblestia.pdb

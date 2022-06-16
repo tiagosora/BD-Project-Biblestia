@@ -20,7 +20,7 @@ namespace Biblestia
 
         public override string ToString()
         {
-            return _idMaterial + "\t" + _nomeCompleto + "\t" + _titulo;
+            return _idMaterial + "\t" + _nomeBiblioteca + "\t" + _titulo;
         }
     }
 }

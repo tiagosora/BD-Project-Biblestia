@@ -87,6 +87,39 @@ namespace Biblestia
             listBox1.SelectedIndex = 0;
         }
 
+        private void updateListLeitores()
+        {
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            groupBox1.Visible = true;
+            listBox1.Enabled = true;
+            button8.Visible = true;
+            button7.Visible = true;
+            button9.Visible = true;
+            listType = "Funcionario";
+            SqlCommand cmd = new SqlCommand("select * from Biblestia.obterFuncionários('" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            listBox1.Items.Clear();
+            while (reader.Read())
+            {
+                Leitor leitor = new Leitor();
+                leitor.Nif = reader["nif"].ToString();
+                leitor.NomeCompleto = reader["nomeCompleto"].ToString();
+                leitor.IdLeitor = reader["idFuncionario"].ToString();
+                leitor.NomeBiblioteca = reader["nomeBiblioteca"].ToString();
+                leitor.Email = reader["email"].ToString();
+                leitor.Morada = reader["morada"].ToString();
+                leitor.Telefone = reader["telefone"].ToString();
+                leitor.DataNascimento = reader["dataNascimento"].ToString();
+                listBox1.Items.Add(leitor);
+            }
+            reader.Close();
+            cn.Close();
+            listBox1.SelectedIndex = 0;
+        }
+
         private void Main_Load(object sender, EventArgs e)
         {
             
