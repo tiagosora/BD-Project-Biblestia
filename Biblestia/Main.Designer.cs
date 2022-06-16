@@ -149,6 +149,7 @@ namespace Biblestia
             this.button4.TabIndex = 10;
             this.button4.Text = "Leitores";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -861,8 +862,8 @@ namespace Biblestia
             this.Controls.Add(this.bibliotecaName);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

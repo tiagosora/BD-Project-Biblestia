@@ -59,6 +59,7 @@ namespace Biblestia
             {
                 return;
             }
+            groupsVisibleFalse();
             groupBox1.Visible = true;
             listBox1.Enabled = true;
             button8.Visible = true;
@@ -93,6 +94,7 @@ namespace Biblestia
             {
                 return;
             }
+            groupsVisibleFalse();
             groupBox1.Visible = true;
             listBox1.Enabled = true;
             button8.Visible = true;
@@ -751,6 +753,11 @@ namespace Biblestia
             listBox1.Enabled = true;
             showFuncionario();
             getCargosDoFuncionario();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
