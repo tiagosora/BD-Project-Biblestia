@@ -22,6 +22,15 @@ as
 	update Biblestia.Funcionario set nif = @nif, nomeCompleto = @nomeCompleto, ssn = @ssn, email = @email, morada = @morada, telefone = @telefone, dataNascimento = @dataNascimento where @idFuncionario=idFuncionario and @nomeBiblioteca=nomeBiblioteca;
 go
 
+-- Remover um funcionário
+drop proc Biblestia.removerFuncionario;
+go
+create proc Biblestia.removerFuncionario (@nomeBiblioteca varchar(60), @idFuncionario int)
+as
+	delete from Biblestia.Funcionario where nomeBiblioteca = @nomeBiblioteca and idFuncionario = @idFuncionario;
+go
+
+
 -- Adicionar um leitor
 drop proc Biblestia.adicionarLeitor;
 go      
@@ -65,4 +74,4 @@ go
 create proc Biblestia.removerCargo (@nomeBiblioteca varchar(60), @idFuncionario int, @nomeCargo varchar(60))
 as
 	delete from Biblestia.Cargo where @nomeBiblioteca=nomeBiblioteca and @idFuncionario=idFuncionario and @nomeCargo=nomeCargo
-go 
+go

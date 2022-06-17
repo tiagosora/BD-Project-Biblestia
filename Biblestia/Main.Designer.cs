@@ -75,6 +75,10 @@ namespace Biblestia
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.label25 = new System.Windows.Forms.Label();
@@ -92,10 +96,6 @@ namespace Biblestia
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -114,15 +114,21 @@ namespace Biblestia
             this.label15 = new System.Windows.Forms.Label();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.button13 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.button23 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // button3
@@ -194,7 +200,7 @@ namespace Biblestia
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(114, 3);
+            this.button7.Location = new System.Drawing.Point(439, 3);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(230, 35);
             this.button7.TabIndex = 13;
@@ -204,7 +210,7 @@ namespace Biblestia
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(0, 3);
+            this.button8.Location = new System.Drawing.Point(325, 3);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(108, 35);
             this.button8.TabIndex = 172;
@@ -214,12 +220,13 @@ namespace Biblestia
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(350, 3);
+            this.button9.Location = new System.Drawing.Point(675, 3);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(101, 35);
             this.button9.TabIndex = 173;
             this.button9.Text = "Remover";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // textBox6
             // 
@@ -245,7 +252,7 @@ namespace Biblestia
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label12.Location = new System.Drawing.Point(25, 505);
+            this.label12.Location = new System.Drawing.Point(-3, 2);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(96, 20);
@@ -256,7 +263,7 @@ namespace Biblestia
             // 
             this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox8.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox8.Location = new System.Drawing.Point(28, 530);
+            this.textBox8.Location = new System.Drawing.Point(0, 21);
             this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
@@ -267,7 +274,7 @@ namespace Biblestia
             // 
             this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox9.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox9.Location = new System.Drawing.Point(128, 530);
+            this.textBox9.Location = new System.Drawing.Point(100, 21);
             this.textBox9.Margin = new System.Windows.Forms.Padding(4);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
@@ -278,7 +285,7 @@ namespace Biblestia
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label13.Location = new System.Drawing.Point(125, 505);
+            this.label13.Location = new System.Drawing.Point(97, 2);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(96, 20);
@@ -290,7 +297,7 @@ namespace Biblestia
             // 
             this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox10.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox10.Location = new System.Drawing.Point(229, 530);
+            this.textBox10.Location = new System.Drawing.Point(201, 21);
             this.textBox10.Margin = new System.Windows.Forms.Padding(4);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
@@ -301,7 +308,7 @@ namespace Biblestia
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label14.Location = new System.Drawing.Point(229, 505);
+            this.label14.Location = new System.Drawing.Point(201, 2);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(96, 20);
@@ -607,12 +614,57 @@ namespace Biblestia
             this.groupBox1.Text = "Funcionários";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.button11);
+            this.panel1.Controls.Add(this.button12);
+            this.panel1.Location = new System.Drawing.Point(40, 302);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(376, 117);
+            this.panel1.TabIndex = 191;
+            this.panel1.Visible = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(227, 0);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(119, 21);
+            this.checkBox1.TabIndex = 191;
+            this.checkBox1.Text = "Remover data";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(0, 47);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(144, 50);
+            this.button11.TabIndex = 189;
+            this.button11.Text = "Feito";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Visible = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(232, 47);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(144, 50);
+            this.button12.TabIndex = 190;
+            this.button12.Text = "Cancelar";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Visible = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button20);
-            this.groupBox4.Controls.Add(this.button19);
+            this.groupBox4.Controls.Add(this.checkBox3);
             this.groupBox4.Controls.Add(this.dateTimePicker6);
             this.groupBox4.Controls.Add(this.label25);
+            this.groupBox4.Controls.Add(this.button21);
+            this.groupBox4.Controls.Add(this.button22);
             this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Controls.Add(this.label26);
             this.groupBox4.Controls.Add(this.textBox4);
@@ -808,50 +860,6 @@ namespace Biblestia
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(149, 26);
             this.textBox11.TabIndex = 200;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button12);
-            this.panel1.Location = new System.Drawing.Point(37, 305);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(376, 117);
-            this.panel1.TabIndex = 191;
-            this.panel1.Visible = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(227, 0);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(119, 21);
-            this.checkBox1.TabIndex = 191;
-            this.checkBox1.Text = "Remover data";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(0, 47);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(144, 50);
-            this.button11.TabIndex = 189;
-            this.button11.Text = "Feito";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Visible = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(232, 47);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(144, 50);
-            this.button12.TabIndex = 190;
-            this.button12.Text = "Cancelar";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Visible = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // listBox2
             // 
@@ -1063,46 +1071,97 @@ namespace Biblestia
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // button19
-            // 
-            this.button19.Location = new System.Drawing.Point(37, 322);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(168, 40);
-            this.button19.TabIndex = 208;
-            this.button19.Text = "Atividades do Leitor";
-            this.button19.UseVisualStyleBackColor = true;
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(37, 368);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(168, 40);
-            this.button20.TabIndex = 209;
-            this.button20.Text = "Requisições do Leitor";
-            this.button20.UseVisualStyleBackColor = true;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.button9);
+            this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.textBox10);
             this.panel2.Controls.Add(this.button7);
-            this.panel2.Location = new System.Drawing.Point(356, 505);
+            this.panel2.Controls.Add(this.textBox9);
+            this.panel2.Controls.Add(this.textBox8);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Location = new System.Drawing.Point(28, 505);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(451, 51);
+            this.panel2.Size = new System.Drawing.Size(779, 51);
             this.panel2.TabIndex = 193;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(264, 305);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(119, 21);
+            this.checkBox3.TabIndex = 191;
+            this.checkBox3.Text = "Remover data";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(41, 352);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(144, 50);
+            this.button21.TabIndex = 189;
+            this.button21.Text = "Atividades\r\ndo Leitor";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Visible = false;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(269, 352);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(144, 50);
+            this.button22.TabIndex = 190;
+            this.button22.Text = "Requisições\r\ndo Leitor";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button19);
+            this.panel4.Controls.Add(this.button20);
+            this.panel4.Controls.Add(this.button23);
+            this.panel4.Location = new System.Drawing.Point(28, 505);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(779, 51);
+            this.panel4.TabIndex = 194;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(676, 3);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(101, 35);
+            this.button19.TabIndex = 197;
+            this.button19.Text = "Remover";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(326, 3);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(108, 35);
+            this.button20.TabIndex = 196;
+            this.button20.Text = "Editar";
+            this.button20.UseVisualStyleBackColor = true;
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(440, 3);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(230, 35);
+            this.button23.TabIndex = 195;
+            this.button23.Text = "Novo Leitor";
+            this.button23.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 569);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.button6);
@@ -1112,9 +1171,11 @@ namespace Biblestia
             this.Controls.Add(this.bibliotecaName);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button3);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1123,13 +1184,15 @@ namespace Biblestia
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1218,8 +1281,13 @@ namespace Biblestia
         internal System.Windows.Forms.Label label23;
         internal System.Windows.Forms.Label label22;
         internal System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button23;
     }
 }

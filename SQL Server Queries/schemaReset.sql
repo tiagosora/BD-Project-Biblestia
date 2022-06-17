@@ -399,7 +399,8 @@ insert into Biblestia.Material values (40, 'Biblioteca Universitária de Aveiro'
 
 -- 8 Livros
 insert into Biblestia.Livro values (1, 'Biblioteca Universitária de Aveiro', 'Ordeal, The (Calvaire)', 'Tabina McCoy', null, null, 'Gradiva');
-insert into Biblestia.Livro values (3, 'Biblioteca Universitária de Aveiro', 'Boy A', 'Genna Ponting', 'Conto', 2016, 'Editorial Presença');
+insert into Biblestia.Livro values (2, 'Biblioteca Universitária de Aveiro', 'Boy A', 'Genna Ponting', 'Conto', 2016, 'Editorial Presença');
+insert into Biblestia.Livro values (3, 'Biblioteca Universitária de Aveiro', 'Boy A V2', 'Genna Ponting', 'Conto', 2016, 'Gradiva');
 insert into Biblestia.Livro values (4, 'Biblioteca Universitária de Aveiro', 'Ashura', 'Culley Tuft', 'Épico', 2012, 'Gradiva');
 insert into Biblestia.Livro values (5, 'Biblioteca Universitária de Aveiro', 'House Party 2', 'Leonard Keeney', null, 2011, 'Plátano Editora');
 insert into Biblestia.Livro values (6, 'Biblioteca Universitária de Aveiro', '41-Year-Old Who Knocked Up Sarah Marshall', 'Fania Ingleby', null, 2002, 'Planeta');

@@ -54,6 +54,12 @@ namespace Biblestia
             groupBox3.Visible = false;
             groupBox4.Visible = false;
         }
+
+        private void panelsVisibleFalse()
+        {
+            panel2.Visible = false;
+            panel4.Visible = false;
+        }
         private void updateListFuncionarios()
         {
             if (!verifySGBDConnection())
@@ -61,6 +67,8 @@ namespace Biblestia
                 return;
             }
             groupsVisibleFalse();
+            panelsVisibleFalse();
+            panel2.Visible = true;
             groupBox1.Visible = true;
             listBox1.Enabled = true;
             button8.Visible = true;
@@ -85,6 +93,17 @@ namespace Biblestia
                 listBox1.Items.Add(funcionario);
             }
             reader.Close();
+            SqlCommand cmd2 = new SqlCommand("select * from Biblestia.obterFuncionariosAtuais('" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader2 = cmd2.ExecuteReader();
+            reader2.Read();
+            String nFuncionariosAtuais = reader2["FuncionariosAtuais"].ToString();
+            double percentagemAtuais = int.Parse(nFuncionariosAtuais);
+            double total = listBox1.Items.Count;
+            double output = percentagemAtuais / total * 100;
+            textBox8.Text = listBox1.Items.Count.ToString();
+            textBox9.Text = nFuncionariosAtuais;
+            textBox10.Text = String.Format("{0:0.##}", output);
+            reader2.Close();
             cn.Close();
             listBox1.SelectedIndex = 0;
         }
@@ -443,6 +462,7 @@ namespace Biblestia
         private void button1_Click_1(object sender, EventArgs e)
         {
             groupsVisibleFalse();
+            
             updateListFuncionarios();
         }
 
@@ -679,31 +699,36 @@ namespace Biblestia
 
         private void button16_Click(object sender, EventArgs e)
         {
-            if (button16.BackColor.Name == "White")
+            string message = "De certeza que pretende remover esse cargo?\n";
+            string title = "Check Window";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
-                button16.BackColor = Color.Yellow;
-                button16.Text = "De certeza?";
-            } else
-            {
-                if (!verifySGBDConnection())
+                try
                 {
-                    return;
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    Cargo cargo = (Cargo)listBox2.SelectedItem;
+
+                    SqlCommand cmd = new SqlCommand("Biblestia.removerCargo", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", cargo.NomeBiblioteca));
+                    cmd.Parameters.Add(new SqlParameter("@idFuncionario", cargo.IdFuncionario));
+                    cmd.Parameters.Add(new SqlParameter("@nomeCargo", cargo.NomeCargo));
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+
+                    listBox2.Items.Remove(listBox2.SelectedItem);
+                    updateCargoList();
+                    listBox2.SelectedIndex = listBox2.Items.Count - 1;
                 }
-                button16.BackColor = Color.White;
-                button16.Text = "Remover Cargo";
-                Cargo cargo = (Cargo)listBox2.SelectedItem;
-
-                SqlCommand cmd = new SqlCommand("Biblestia.removerCargo", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", cargo.NomeBiblioteca));
-                cmd.Parameters.Add(new SqlParameter("@idFuncionario", cargo.IdFuncionario));
-                cmd.Parameters.Add(new SqlParameter("@nomeCargo", cargo.NomeCargo));
-                cmd.ExecuteNonQuery();
-                cn.Close();
-
-                listBox2.Items.Remove(listBox2.SelectedItem);
-                updateCargoList();
-                listBox2.SelectedIndex = listBox2.Items.Count - 1;
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -759,6 +784,60 @@ namespace Biblestia
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string message = "De certeza que pretende remover esse funcionário?\n";
+            string title = "Check Window";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    Funcionario funcionario = (Funcionario)listBox1.SelectedItem;
+
+                    SqlCommand cmd = new SqlCommand("Biblestia.removerFuncionario", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", funcionario.NomeBiblioteca));
+                    cmd.Parameters.Add(new SqlParameter("@idFuncionario", funcionario.IdFuncionario));
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+
+                    listBox1.Items.Remove(listBox1.SelectedItem);
+                    updateCargoList();
+                    listBox2.SelectedIndex = listBox2.Items.Count - 1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
