@@ -52,6 +52,7 @@ namespace Biblestia
         {
             groupBox1.Visible = false;
             groupBox3.Visible = false;
+            groupBox4.Visible = false;
         }
         private void updateListFuncionarios()
         {
