@@ -26,8 +26,8 @@ alter table Biblestia.Leitor drop constraint LeitorBiblioteca;
 alter table Biblestia.Cargo drop constraint CargoFuncionario;
 alter table Biblestia.Cargo drop constraint CargoBiblioteca;
 alter table Biblestia.Funcionario drop constraint FuncionarioBiblioteca;
-
----- Table Drop
+ 
+---- Table Drop 
 drop table Biblestia.Biblioteca;
 drop table Biblestia.Funcionario;
 drop table Biblestia.Cargo;
@@ -42,7 +42,7 @@ drop table Biblestia.Jogo;
 drop table Biblestia.CD;
 drop table Biblestia.Requisicao;
 drop table Biblestia.RequisicaoMaterial;
-
+  
 -- Table Creation
 create table Biblestia.Biblioteca (
 	nome			varchar(60),
@@ -169,24 +169,31 @@ create table Biblestia.RequisicaoMaterial(
 );
 
 -- Constraint Creation
-alter table Biblestia.Funcionario add constraint FuncionarioBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome) on delete cascade;
-alter table Biblestia.Cargo add constraint CargoBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome) on delete cascade;
+alter table Biblestia.Funcionario add constraint FuncionarioBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome);
+
+alter table Biblestia.Cargo add constraint CargoBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome);
 alter table Biblestia.Cargo add constraint CargoFuncionario foreign key (idFuncionario, nomeBiblioteca) references Biblestia.Funcionario(idFuncionario, nomeBiblioteca);
-alter table Biblestia.Leitor add constraint LeitorBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome) on delete cascade;
+
+alter table Biblestia.Leitor add constraint LeitorBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome);
+
 alter table Biblestia.Atividade add constraint AtividadeResponsavel foreign key (idFuncResponsavel, nomeBiblioteca) references Biblestia.Funcionario(idFuncionario, nomeBiblioteca);
-alter table Biblestia.Atividade add constraint AtividadeBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome) on delete cascade;
+alter table Biblestia.Atividade add constraint AtividadeBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome);
+
 alter table Biblestia.AtividadeLeitor add constraint AtividadeLeitorLeitor foreign key (idLeitor, nomeBiblioteca) references Biblestia.Leitor(idLeitor, nomeBiblioteca);
 alter table Biblestia.AtividadeLeitor add constraint AtividadeLeitorAtividade foreign key (nomeAtividade, nomeBiblioteca) references Biblestia.Atividade(nomeAtividade, nomeBiblioteca);
-alter table Biblestia.Material add constraint MaterialBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome) on delete cascade;
-alter table Biblestia.Livro add constraint LivroMaterial foreign key (idMaterial, nomeBiblioteca) references Biblestia.Material(id, nomeBiblioteca) on delete cascade;
-alter table Biblestia.Jornal add constraint JornalMaterial foreign key (idMaterial, nomeBiblioteca) references Biblestia.Material(id, nomeBiblioteca) on delete cascade;
-alter table Biblestia.Revista add constraint RevistaMaterial foreign key (idMaterial, nomeBiblioteca) references Biblestia.Material(id, nomeBiblioteca) on delete cascade;
-alter table Biblestia.Jogo add constraint JogoMaterial foreign key (idMaterial, nomeBiblioteca) references Biblestia.Material(id, nomeBiblioteca) on delete cascade;
-alter table Biblestia.CD add constraint CDMaterial foreign key (idMaterial, nomeBiblioteca) references Biblestia.Material(id, nomeBiblioteca) on delete cascade;
-alter table Biblestia.Requisicao add constraint RequisicaoBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome) on delete cascade;
+
+alter table Biblestia.Material add constraint MaterialBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome);
+alter table Biblestia.Livro add constraint LivroMaterial foreign key (idMaterial, nomeBiblioteca) references Biblestia.Material(id, nomeBiblioteca);
+alter table Biblestia.Jornal add constraint JornalMaterial foreign key (idMaterial, nomeBiblioteca) references Biblestia.Material(id, nomeBiblioteca);
+alter table Biblestia.Revista add constraint RevistaMaterial foreign key (idMaterial, nomeBiblioteca) references Biblestia.Material(id, nomeBiblioteca);
+alter table Biblestia.Jogo add constraint JogoMaterial foreign key (idMaterial, nomeBiblioteca) references Biblestia.Material(id, nomeBiblioteca);
+alter table Biblestia.CD add constraint CDMaterial foreign key (idMaterial, nomeBiblioteca) references Biblestia.Material(id, nomeBiblioteca);
+
+alter table Biblestia.Requisicao add constraint RequisicaoBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome);
 alter table Biblestia.Requisicao add constraint RequisicaoLeitor foreign key (idLeitor, nomeBiblioteca) references Biblestia.Leitor(idLeitor, nomeBiblioteca);
 alter table Biblestia.Requisicao add constraint RequisicaoResponsavel foreign key (idFuncResponsavel, nomeBiblioteca) references Biblestia.Funcionario(idFuncionario, nomeBiblioteca);
-alter table Biblestia.RequisicaoMaterial add constraint RequisicaoMaterialRequisicao foreign key (idRequisicao, nomeBiblioteca) references Biblestia.Requisicao(id, nomeBiblioteca) on delete cascade;
+
+alter table Biblestia.RequisicaoMaterial add constraint RequisicaoMaterialRequisicao foreign key (idRequisicao, nomeBiblioteca) references Biblestia.Requisicao(id, nomeBiblioteca);
 alter table Biblestia.RequisicaoMaterial add constraint RequisicaoMaterialMaterial foreign key (idMaterial, nomeBiblioteca) references Biblestia.Material(id, nomeBiblioteca);
 
 -- Default Values 

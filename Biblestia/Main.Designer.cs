@@ -80,8 +80,11 @@ namespace Biblestia
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.label25 = new System.Windows.Forms.Label();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -115,9 +118,6 @@ namespace Biblestia
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.button13 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
@@ -686,6 +686,16 @@ namespace Biblestia
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Leitores";
             // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(264, 305);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(119, 21);
+            this.checkBox3.TabIndex = 191;
+            this.checkBox3.Text = "Remover data";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
             // dateTimePicker6
             // 
             this.dateTimePicker6.CustomFormat = "";
@@ -706,6 +716,27 @@ namespace Biblestia
             this.label25.Size = new System.Drawing.Size(96, 20);
             this.label25.TabIndex = 195;
             this.label25.Text = "ID";
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(41, 352);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(144, 50);
+            this.button21.TabIndex = 189;
+            this.button21.Text = "Atividades\r\ndo Leitor";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Visible = false;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(269, 352);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(144, 50);
+            this.button22.TabIndex = 190;
+            this.button22.Text = "Requisições\r\ndo Leitor";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Visible = false;
             // 
             // label19
             // 
@@ -1087,37 +1118,6 @@ namespace Biblestia
             this.panel2.Size = new System.Drawing.Size(779, 51);
             this.panel2.TabIndex = 193;
             // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(264, 305);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(119, 21);
-            this.checkBox3.TabIndex = 191;
-            this.checkBox3.Text = "Remover data";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(41, 352);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(144, 50);
-            this.button21.TabIndex = 189;
-            this.button21.Text = "Atividades\r\ndo Leitor";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Visible = false;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(269, 352);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(144, 50);
-            this.button22.TabIndex = 190;
-            this.button22.Text = "Requisições\r\ndo Leitor";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Visible = false;
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.button19);
@@ -1171,11 +1171,11 @@ namespace Biblestia
             this.Controls.Add(this.bibliotecaName);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

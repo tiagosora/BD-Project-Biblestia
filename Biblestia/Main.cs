@@ -71,13 +71,13 @@ namespace Biblestia
             panel2.Visible = true;
             groupBox1.Visible = true;
             listBox1.Enabled = true;
+            listBox1.Items.Clear();
             button8.Visible = true;
             button7.Visible = true;
             button9.Visible = true;
             listType = "Funcionario";
             SqlCommand cmd = new SqlCommand("select * from Biblestia.obterFuncionários('" + biblioteca.Nome + "')", cn);
             SqlDataReader reader = cmd.ExecuteReader();
-            listBox1.Items.Clear();
             while (reader.Read())
             {
                 Funcionario funcionario = new Funcionario();
@@ -91,8 +91,18 @@ namespace Biblestia
                 funcionario.Telefone = reader["telefone"].ToString();
                 funcionario.DataNascimento = reader["dataNascimento"].ToString();
                 listBox1.Items.Add(funcionario);
+
             }
             reader.Close();
+            cn.Close();
+            if (listBox1.Items.Count > 0)
+            {
+                listBox1.SelectedIndex = 0;
+            }
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
             SqlCommand cmd2 = new SqlCommand("select * from Biblestia.obterFuncionariosAtuais('" + biblioteca.Nome + "')", cn);
             SqlDataReader reader2 = cmd2.ExecuteReader();
             reader2.Read();
@@ -105,7 +115,6 @@ namespace Biblestia
             textBox10.Text = String.Format("{0:0.##}", output);
             reader2.Close();
             cn.Close();
-            listBox1.SelectedIndex = 0;
         }
 
         private void updateListLeitores()
@@ -115,12 +124,12 @@ namespace Biblestia
                 return;
             }
             groupsVisibleFalse();
-            groupBox1.Visible = true;
+            groupBox4.Visible = true;
+            panelsVisibleFalse();
+            panel2.Visible = true;
             listBox1.Enabled = true;
-            button8.Visible = true;
-            button7.Visible = true;
-            button9.Visible = true;
-            listType = "Funcionario";
+            
+            listType = "Leitor";
             SqlCommand cmd = new SqlCommand("select * from Biblestia.obterFuncionários('" + biblioteca.Nome + "')", cn);
             SqlDataReader reader = cmd.ExecuteReader();
             listBox1.Items.Clear();
@@ -783,7 +792,7 @@ namespace Biblestia
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            updateListLeitores();
         }
 
         private void label27_Click(object sender, EventArgs e)
@@ -816,6 +825,8 @@ namespace Biblestia
             {
                 try
                 {
+                    // Aqui vamos remover o utilizador mas por alguma razao que desconheço
+                    // temos de remover lhe os cargos primeiro
                     if (!verifySGBDConnection())
                     {
                         return;
