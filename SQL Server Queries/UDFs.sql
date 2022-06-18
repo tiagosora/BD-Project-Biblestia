@@ -36,7 +36,16 @@ create function Biblestia.obterMateriais(@nomeBiblioteca varchar(60)) returns ta
 as
 	return	select * from Biblestia.Cargo
 			where nomeBiblioteca = @nomeBiblioteca;
-go  
+go
+
+-- Obter todos os funcionários de uma biblioteca
+drop function Biblestia.obterLeitores; 
+go 
+create function Biblestia.obterLeitores(@nomeBiblioteca varchar(60)) returns table
+as
+	return	select * from Biblestia.Leitor
+			where nomeBiblioteca = @nomeBiblioteca;
+go
 
 -- Obter as atividades de um dado leitor
 drop function Biblestia.obterAtividadesLeitor; 
