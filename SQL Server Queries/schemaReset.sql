@@ -13,7 +13,7 @@ alter table Biblestia.Requisicao drop constraint RequisicaoResponsavel;
 alter table Biblestia.Requisicao drop constraint RequisicaoLeitor;
 alter table Biblestia.Requisicao drop constraint RequisicaoBiblioteca;
 alter table Biblestia.CD drop constraint CDMaterial;
-alter table Biblestia.Jogo drop constraint JogoMaterial;
+alter table Biblestia.Jogo drop constraint JogoMaterial; 
 alter table Biblestia.Revista drop constraint RevistaMaterial;
 alter table Biblestia.Jornal drop constraint JornalMaterial;
 alter table Biblestia.Livro drop constraint LivroMaterial;
@@ -23,14 +23,13 @@ alter table Biblestia.AtividadeLeitor drop constraint AtividadeLeitorLeitor;
 alter table Biblestia.Atividade drop constraint AtividadeResponsavel;
 alter table Biblestia.Atividade drop constraint AtividadeBiblioteca;
 alter table Biblestia.Leitor drop constraint LeitorBiblioteca;
-alter table Biblestia.Cargo drop constraint CargoFuncionario;
-alter table Biblestia.Cargo drop constraint CargoBiblioteca;
+alter table Biblestia.Cargo drop constraint CargoFuncionario;  
 alter table Biblestia.Funcionario drop constraint FuncionarioBiblioteca;
  
 ---- Table Drop 
 drop table Biblestia.Biblioteca;
 drop table Biblestia.Funcionario;
-drop table Biblestia.Cargo;
+drop table Biblestia.Cargo;  
 drop table Biblestia.Leitor;
 drop table Biblestia.Atividade;
 drop table Biblestia.AtividadeLeitor; 
@@ -88,15 +87,15 @@ create table Biblestia.Atividade(
 	nomeBiblioteca		varchar(60),
 	nomeAtividade		varchar(60),
 	dataAtividade		date,
-	tematica			varchar(60),
+	tematica			varchar(60), 
 	duracaoMin			int,  
-	idFuncResponsavel	int,
+	idFuncResponsavel	int null,
 	primary key (nomeAtividade, nomeBiblioteca)
 );
 create table Biblestia.AtividadeLeitor(
 	nomeBiblioteca	varchar(60),
 	nomeAtividade	varchar(60),
-	idLeitor		int				not null,
+	idLeitor		int,
 	primary key (nomeBiblioteca, nomeAtividade, idLeitor)
 );
 create table Biblestia.Material(
@@ -154,8 +153,8 @@ create table Biblestia.CD(
 create table Biblestia.Requisicao(
 	id					int,
 	nomeBiblioteca		varchar(60),
-	idLeitor			int				not null,
-	idFuncResponsavel	int				not null,
+	idLeitor			int				null,
+	idFuncResponsavel	int				null,
 	dataInicio			date			not null,
 	dataLimite			date,
 	dataEntrega			date,
@@ -166,12 +165,11 @@ create table Biblestia.RequisicaoMaterial(
 	idMaterial		int,
 	nomeBiblioteca	varchar(60),
 	primary key(idRequisicao, idMaterial, nomeBiblioteca),
-);
+);  
 
 -- Constraint Creation
 alter table Biblestia.Funcionario add constraint FuncionarioBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome);
 
-alter table Biblestia.Cargo add constraint CargoBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome);
 alter table Biblestia.Cargo add constraint CargoFuncionario foreign key (idFuncionario, nomeBiblioteca) references Biblestia.Funcionario(idFuncionario, nomeBiblioteca);
 
 alter table Biblestia.Leitor add constraint LeitorBiblioteca foreign key (nomeBiblioteca) references Biblestia.Biblioteca(nome);
@@ -197,7 +195,7 @@ alter table Biblestia.RequisicaoMaterial add constraint RequisicaoMaterialRequis
 alter table Biblestia.RequisicaoMaterial add constraint RequisicaoMaterialMaterial foreign key (idMaterial, nomeBiblioteca) references Biblestia.Material(id, nomeBiblioteca);
 
 -- Default Values 
-
+ 
 -- 1 Biblioteca
 insert into Biblestia.Biblioteca values ('Biblioteca Universitária de Aveiro', 'Campus Universitário de, R. Santiago, 3810-193 Aveiro', 234370860 , 'bibliotecaua@ua.pt');
  
