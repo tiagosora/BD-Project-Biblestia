@@ -168,7 +168,7 @@ namespace Biblestia
             this.bibliotecaName.AutoSize = true;
             this.bibliotecaName.Location = new System.Drawing.Point(25, 24);
             this.bibliotecaName.Name = "bibliotecaName";
-            this.bibliotecaName.Size = new System.Drawing.Size(113, 17);
+            this.bibliotecaName.Size = new System.Drawing.Size(109, 16);
             this.bibliotecaName.TabIndex = 5;
             this.bibliotecaName.Text = "Estás logado em";
             // 
@@ -200,6 +200,7 @@ namespace Biblestia
             this.button5.TabIndex = 11;
             this.button5.Text = "Materiais";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -643,7 +644,7 @@ namespace Biblestia
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(227, 0);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(119, 21);
+            this.checkBox1.Size = new System.Drawing.Size(115, 20);
             this.checkBox1.TabIndex = 191;
             this.checkBox1.Text = "Remover data";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -704,7 +705,7 @@ namespace Biblestia
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(264, 305);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(119, 21);
+            this.checkBox3.Size = new System.Drawing.Size(115, 20);
             this.checkBox3.TabIndex = 191;
             this.checkBox3.Text = "Remover data";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -981,7 +982,7 @@ namespace Biblestia
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(273, 226);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(84, 21);
+            this.checkBox2.Size = new System.Drawing.Size(82, 20);
             this.checkBox2.TabIndex = 208;
             this.checkBox2.Text = "Sem Fim";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -1161,6 +1162,7 @@ namespace Biblestia
             this.button20.TabIndex = 196;
             this.button20.Text = "Editar";
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button23
             // 
@@ -1284,6 +1286,7 @@ namespace Biblestia
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bibliotecaName);
             this.Controls.Add(this.button3);
+<<<<<<< HEAD
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
@@ -1291,6 +1294,13 @@ namespace Biblestia
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
+=======
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox3);
+>>>>>>> a184d8aea1701ac367a7ccafac7f63e3d08d1427
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

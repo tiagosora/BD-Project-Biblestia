@@ -133,7 +133,7 @@ namespace Biblestia
             listBox1.Enabled = true;
             
             listType = "Leitor";
-            SqlCommand cmd = new SqlCommand("select * from Biblestia.obterFuncionários('" + biblioteca.Nome + "')", cn);
+            SqlCommand cmd = new SqlCommand("select * from Biblestia.obterLeitores('" + biblioteca.Nome + "')", cn);
             SqlDataReader reader = cmd.ExecuteReader();
             listBox1.Items.Clear();
             while (reader.Read())
@@ -226,11 +226,18 @@ namespace Biblestia
                         showFuncionario();
                         getCargosDoFuncionario();
                         break;
+                    case "Leitor":
+                        currentListIndex = listBox1.SelectedIndex;
+                        showLeitor();
+                        break;
+                    case "Requisicao":
 
                     default:
                         break;
                 }
             }
+
+            
             
         }
 
@@ -261,7 +268,35 @@ namespace Biblestia
             }
             cn.Close();
         }
-
+       public void showLeitor()
+        {
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            if (listBox1.Items.Count == 0 | currentListIndex < 0)
+                return;
+            Leitor leitor = new Leitor();
+            leitor = (Leitor)listBox1.Items[currentListIndex];
+            textBox13.Text = leitor.IdLeitor;
+            textBox12.Text = leitor.Nif;
+            textBox14.Text = leitor.NomeCompleto;
+            textBox7.Text = leitor.Email;
+            textBox5.Text = leitor.Morada;
+            textBox4.Text = leitor.Telefone;
+            dateTimePicker6.Text = leitor.DataNascimento;
+            if (leitor.DataNascimento == "")
+            {
+                dateTimePicker1.Format = DateTimePickerFormat.Custom;
+                dateTimePicker1.CustomFormat = " ";
+            }
+            else
+            {
+                dateTimePicker1.Format = DateTimePickerFormat.Short;
+                dateTimePicker1.Text = leitor.DataNascimento;
+            }
+            cn.Close();
+        }
         private void getCargosDoFuncionario()
         {
             if (!verifySGBDConnection())
@@ -358,6 +393,11 @@ namespace Biblestia
         }
 
         private void fid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lid_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -905,6 +945,16 @@ namespace Biblestia
         private void showRequisicoes()
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
