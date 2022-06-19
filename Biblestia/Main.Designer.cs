@@ -1567,6 +1567,7 @@ namespace Biblestia
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.label37);
             this.groupBox6.Controls.Add(this.listBox5);
             this.groupBox6.Controls.Add(this.button30);
             this.groupBox6.Controls.Add(this.label38);
@@ -1666,10 +1667,10 @@ namespace Biblestia
             // 
             this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label37.Font = new System.Drawing.Font("Verdana", 10F);
-            this.label37.Location = new System.Drawing.Point(649, 182);
+            this.label37.Location = new System.Drawing.Point(293, 133);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(151, 102);
+            this.label37.Size = new System.Drawing.Size(145, 102);
             this.label37.TabIndex = 199;
             this.label37.Text = "Gráfico dos Tipos de Material Nesta Requisição";
             // 
@@ -1678,7 +1679,6 @@ namespace Biblestia
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 569);
-            this.Controls.Add(this.label37);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox6);
