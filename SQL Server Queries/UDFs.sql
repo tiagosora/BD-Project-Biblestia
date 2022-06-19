@@ -129,3 +129,13 @@ as
 	return	select * from Biblestia.CD
 			where nomeBiblioteca = @nomeBiblioteca;
 go
+
+
+-- Obter todas as requisições de uma biblioteca;
+drop function Biblestia.obterRequisicoes
+go
+create function Biblestia.obterRequisicoes(@nomeBiblioteca varchar(60)) returns table
+as
+	return	select * from Biblestia.Requisicao
+			where nomeBiblioteca = @nomeBiblioteca;
+go 

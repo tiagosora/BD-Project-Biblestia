@@ -53,12 +53,15 @@ namespace Biblestia
             groupBox1.Visible = false;
             groupBox3.Visible = false;
             groupBox4.Visible = false;
+            groupBox5.Visible = false;
         }
 
         private void panelsVisibleFalse()
         {
             panel2.Visible = false;
             panel4.Visible = false;
+            panel3.Visible = false;
+            panel5.Visible = false;
         }
         private void updateListFuncionarios()
         {
@@ -223,6 +226,7 @@ namespace Biblestia
                         showFuncionario();
                         getCargosDoFuncionario();
                         break;
+
                     default:
                         break;
                 }
@@ -849,6 +853,58 @@ namespace Biblestia
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void dateTimePicker6_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            groupsVisibleFalse();
+            panelsVisibleFalse();
+            groupBox5.Visible = true;
+            panel5.Visible = true;
+            panel3.Visible = true;
+            updateAllRequisicoes();
+        }
+
+        private void updateAllRequisicoes()
+        {
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            SqlCommand cmd = new SqlCommand("select * from Biblestia.obterFuncionários('" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Requisicao requisicao = new Requisicao();
+                requisicao.Id = reader["id"].ToString();
+                requisicao.NomeBiblioteca = reader["nomeBiblioteca"].ToString();
+                requisicao.IdLeitor = reader["idLeitor"].ToString();
+                requisicao.IdFuncResponsavel = reader["idFuncResponsavel"].ToString();
+                requisicao.DataInicio = reader["dataInicio"].ToString();
+                requisicao.DataEntrega = reader["dataLimite"].ToString();
+                requisicao.DataLimite = reader["dataEntrega"].ToString();
+                if (requisicao.DataLimite == "")
+                {
+                    listBox3.Items.Add(requisicao);
+                }
+                listBox4.Items.Add(requisicao);
+            }
+            showRequisicoes();
+        }
+
+        private void showRequisicoes()
+        {
+
         }
     }
 }
