@@ -8,4 +8,3 @@ as
 			join Biblestia.Leitor on Requisicao.IdLeitor=Leitor.idLeitor;
 go 
 
-select * from RequisicaoDados;

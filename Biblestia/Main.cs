@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -1042,7 +1043,7 @@ namespace Biblestia
             listBox5.Items.Clear();
             for (int i = 0; i < currentRequisicao.Materials.Count; i++)
             {
-                Debug.Print((string)currentRequisicao.Materials[i]);
+                //Debug.Print((string)currentRequisicao.Materials[i]);
                 string idMaterial = (string)currentRequisicao.Materials[i];
                 if (!verifySGBDConnection())
                 {
@@ -1072,6 +1073,78 @@ namespace Biblestia
                 reader.Close();
                 cn.Close();
             }
+            //chart1.Titles.Add("Gráfico dos Tipos de Material Nesta Requisição");
+            obterDadosMateriasRequisicao(currentRequisicao);
+        }
+        private void obterDadosMateriasRequisicao(Requisicao requisicao)
+        {
+            chart1.Series["s1"].Points.Clear();
+            chart1.Series["s1"].IsValueShownAsLabel = true;
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            SqlCommand cmd = new SqlCommand("select * from Biblestia.obterLivrosRequisicao(" + requisicao.Id + ",'" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            if (reader["cont"].ToString() != "0")
+            {
+                chart1.Series["s1"].Points.AddXY("Livros", int.Parse(reader["cont"].ToString()));
+            }
+            reader.Close();
+            cn.Close();
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            SqlCommand cmd2 = new SqlCommand("select * from Biblestia.obterJornaisRequisicao(" + requisicao.Id + ",'" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader2 = cmd2.ExecuteReader();
+            reader2.Read();
+            if (reader2["cont"].ToString() != "0")
+            {
+                chart1.Series["s1"].Points.AddXY("Jornais", int.Parse(reader2["cont"].ToString()));
+            }
+            reader2.Close();
+            cn.Close();
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            SqlCommand cmd3 = new SqlCommand("select * from Biblestia.obterRevistasRequisicao(" + requisicao.Id + ",'" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader3 = cmd3.ExecuteReader();
+            reader3.Read();
+            if (reader3["cont"].ToString() != "0")
+            {
+                chart1.Series["s1"].Points.AddXY("Revistas", int.Parse(reader3["cont"].ToString()));
+            }
+            reader3.Close();
+            cn.Close();
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            SqlCommand cmd4 = new SqlCommand("select * from Biblestia.obterJogosRequisicao(" + requisicao.Id + ",'" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader4 = cmd4.ExecuteReader();
+            reader4.Read();
+            if (reader4["cont"].ToString() != "0")
+            {
+                chart1.Series["s1"].Points.AddXY("Jogos", int.Parse(reader4["cont"].ToString()));
+            }
+            reader4.Close();
+            cn.Close();
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            SqlCommand cmd5 = new SqlCommand("select * from Biblestia.obterCDsRequisicao(" + requisicao.Id + ",'" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader5 = cmd5.ExecuteReader();
+            reader5.Read();
+            if (reader5["cont"].ToString() != "0")
+            {
+                chart1.Series["s1"].Points.AddXY("CDs", int.Parse(reader5["cont"].ToString()));
+            }
+            reader5.Close();
+            cn.Close();
         }
 
         private void button30_Click(object sender, EventArgs e)
@@ -1080,6 +1153,22 @@ namespace Biblestia
             groupBox5.Visible = true;
             panel3.Enabled = true;
             panel5.Enabled = true;
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            Requisicao requisicao = currentRequisicao;
+
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

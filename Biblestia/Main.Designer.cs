@@ -126,6 +126,28 @@ namespace Biblestia
             this.button20 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
+            this.label34 = new System.Windows.Forms.Label();
+            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
+            this.button29 = new System.Windows.Forms.Button();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
+            this.label36 = new System.Windows.Forms.Label();
+            this.button27 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -135,37 +157,63 @@ namespace Biblestia
             this.button24 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
-            this.label29 = new System.Windows.Forms.Label();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.button29 = new System.Windows.Forms.Button();
-            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
-            this.label34 = new System.Windows.Forms.Label();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.label35 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label38 = new System.Windows.Forms.Label();
-            this.button30 = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
             this.listBox5 = new System.Windows.Forms.ListBox();
+            this.button30 = new System.Windows.Forms.Button();
+            this.label38 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label41 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.listBox6 = new System.Windows.Forms.ListBox();
+            this.button31 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.dateTimePicker11 = new System.Windows.Forms.DateTimePicker();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
+            this.label51 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.textBox37 = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.textBox38 = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -178,6 +226,11 @@ namespace Biblestia
             this.panel5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // button3
@@ -1241,6 +1294,240 @@ namespace Biblestia
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Requisições";
             // 
+            // label35
+            // 
+            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label35.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label35.Location = new System.Drawing.Point(255, 273);
+            this.label35.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(153, 20);
+            this.label35.TabIndex = 233;
+            this.label35.Text = "Atraso (Dias)";
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(191, 300);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(18, 17);
+            this.checkBox6.TabIndex = 232;
+            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.Visible = false;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(413, 233);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(18, 17);
+            this.checkBox5.TabIndex = 231;
+            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.Visible = false;
+            // 
+            // dateTimePicker9
+            // 
+            this.dateTimePicker9.CustomFormat = "";
+            this.dateTimePicker9.Enabled = false;
+            this.dateTimePicker9.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker9.Location = new System.Drawing.Point(35, 298);
+            this.dateTimePicker9.Name = "dateTimePicker9";
+            this.dateTimePicker9.Size = new System.Drawing.Size(150, 22);
+            this.dateTimePicker9.TabIndex = 230;
+            // 
+            // label34
+            // 
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label34.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label34.Location = new System.Drawing.Point(32, 273);
+            this.label34.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(153, 20);
+            this.label34.TabIndex = 229;
+            this.label34.Text = "Data de Entrega";
+            // 
+            // dateTimePicker8
+            // 
+            this.dateTimePicker8.CustomFormat = "";
+            this.dateTimePicker8.Enabled = false;
+            this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker8.Location = new System.Drawing.Point(35, 231);
+            this.dateTimePicker8.Name = "dateTimePicker8";
+            this.dateTimePicker8.Size = new System.Drawing.Size(150, 22);
+            this.dateTimePicker8.TabIndex = 228;
+            // 
+            // button29
+            // 
+            this.button29.Location = new System.Drawing.Point(257, 140);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(129, 50);
+            this.button29.TabIndex = 227;
+            this.button29.Text = "Aceder à Lista";
+            this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(191, 233);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(18, 17);
+            this.checkBox4.TabIndex = 210;
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.Visible = false;
+            // 
+            // label29
+            // 
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label29.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label29.Location = new System.Drawing.Point(10, 24);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(96, 20);
+            this.label29.TabIndex = 214;
+            this.label29.Text = "ID";
+            // 
+            // dateTimePicker7
+            // 
+            this.dateTimePicker7.CustomFormat = "";
+            this.dateTimePicker7.Enabled = false;
+            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker7.Location = new System.Drawing.Point(257, 231);
+            this.dateTimePicker7.Name = "dateTimePicker7";
+            this.dateTimePicker7.Size = new System.Drawing.Size(150, 22);
+            this.dateTimePicker7.TabIndex = 211;
+            this.dateTimePicker7.ValueChanged += new System.EventHandler(this.dateTimePicker7_ValueChanged);
+            // 
+            // label36
+            // 
+            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label36.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label36.Location = new System.Drawing.Point(57, 141);
+            this.label36.Margin = new System.Windows.Forms.Padding(4, 4, 4, 1);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(148, 20);
+            this.label36.TabIndex = 220;
+            this.label36.Text = "Nº de Materiais";
+            // 
+            // button27
+            // 
+            this.button27.Location = new System.Drawing.Point(35, 350);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(150, 50);
+            this.button27.TabIndex = 208;
+            this.button27.Text = "Requisições\r\ndeste Leitor";
+            this.button27.UseVisualStyleBackColor = true;
+            // 
+            // button28
+            // 
+            this.button28.Location = new System.Drawing.Point(258, 350);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(149, 50);
+            this.button28.TabIndex = 209;
+            this.button28.Text = "Dados Avançados\r\ndesta Requisição\r\n";
+            this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
+            // 
+            // textBox20
+            // 
+            this.textBox20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox20.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox20.Location = new System.Drawing.Point(56, 163);
+            this.textBox20.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.ReadOnly = true;
+            this.textBox20.Size = new System.Drawing.Size(129, 26);
+            this.textBox20.TabIndex = 221;
+            // 
+            // label30
+            // 
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label30.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label30.Location = new System.Drawing.Point(255, 206);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(167, 20);
+            this.label30.TabIndex = 226;
+            this.label30.Text = "Data Limite";
+            this.label30.Click += new System.EventHandler(this.label30_Click);
+            // 
+            // textBox19
+            // 
+            this.textBox19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox19.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox19.Location = new System.Drawing.Point(118, 47);
+            this.textBox19.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.ReadOnly = true;
+            this.textBox19.Size = new System.Drawing.Size(314, 26);
+            this.textBox19.TabIndex = 217;
+            // 
+            // label31
+            // 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label31.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label31.Location = new System.Drawing.Point(10, 81);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 1);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(96, 20);
+            this.label31.TabIndex = 212;
+            this.label31.Text = "Leitor";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox15.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox15.Location = new System.Drawing.Point(257, 294);
+            this.textBox15.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
+            this.textBox15.Size = new System.Drawing.Size(150, 26);
+            this.textBox15.TabIndex = 225;
+            // 
+            // label33
+            // 
+            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label33.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label33.Location = new System.Drawing.Point(119, 24);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(223, 20);
+            this.label33.TabIndex = 216;
+            this.label33.Text = "Funcionário Responsável";
+            // 
+            // textBox16
+            // 
+            this.textBox16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox16.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox16.Location = new System.Drawing.Point(9, 103);
+            this.textBox16.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.ReadOnly = true;
+            this.textBox16.Size = new System.Drawing.Size(423, 26);
+            this.textBox16.TabIndex = 213;
+            // 
+            // label32
+            // 
+            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label32.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label32.Location = new System.Drawing.Point(32, 206);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(153, 20);
+            this.label32.TabIndex = 224;
+            this.label32.Text = "Data de Requisição";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox17.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox17.Location = new System.Drawing.Point(9, 47);
+            this.textBox17.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.ReadOnly = true;
+            this.textBox17.Size = new System.Drawing.Size(92, 26);
+            this.textBox17.TabIndex = 215;
+            // 
             // listBox3
             // 
             this.listBox3.FormattingEnabled = true;
@@ -1332,239 +1619,6 @@ namespace Biblestia
             this.button26.Text = "Nova Requisição";
             this.button26.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(191, 233);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(18, 17);
-            this.checkBox4.TabIndex = 210;
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.Visible = false;
-            // 
-            // dateTimePicker7
-            // 
-            this.dateTimePicker7.CustomFormat = "";
-            this.dateTimePicker7.Enabled = false;
-            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker7.Location = new System.Drawing.Point(257, 231);
-            this.dateTimePicker7.Name = "dateTimePicker7";
-            this.dateTimePicker7.Size = new System.Drawing.Size(150, 22);
-            this.dateTimePicker7.TabIndex = 211;
-            this.dateTimePicker7.ValueChanged += new System.EventHandler(this.dateTimePicker7_ValueChanged);
-            // 
-            // label29
-            // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label29.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label29.Location = new System.Drawing.Point(10, 24);
-            this.label29.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(96, 20);
-            this.label29.TabIndex = 214;
-            this.label29.Text = "ID";
-            // 
-            // button27
-            // 
-            this.button27.Location = new System.Drawing.Point(35, 350);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(150, 50);
-            this.button27.TabIndex = 208;
-            this.button27.Text = "Requisições\r\ndeste Leitor";
-            this.button27.UseVisualStyleBackColor = true;
-            // 
-            // button28
-            // 
-            this.button28.Location = new System.Drawing.Point(258, 350);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(149, 50);
-            this.button28.TabIndex = 209;
-            this.button28.Text = "Dados Avançados\r\ndesta Requisição\r\n";
-            this.button28.UseVisualStyleBackColor = true;
-            this.button28.Click += new System.EventHandler(this.button28_Click);
-            // 
-            // label30
-            // 
-            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label30.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label30.Location = new System.Drawing.Point(255, 206);
-            this.label30.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(167, 20);
-            this.label30.TabIndex = 226;
-            this.label30.Text = "Data Limite";
-            this.label30.Click += new System.EventHandler(this.label30_Click);
-            // 
-            // label31
-            // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label31.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label31.Location = new System.Drawing.Point(10, 81);
-            this.label31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 1);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(96, 20);
-            this.label31.TabIndex = 212;
-            this.label31.Text = "Leitor";
-            // 
-            // textBox15
-            // 
-            this.textBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox15.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox15.Location = new System.Drawing.Point(257, 294);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(150, 26);
-            this.textBox15.TabIndex = 225;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox16.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox16.Location = new System.Drawing.Point(9, 103);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.ReadOnly = true;
-            this.textBox16.Size = new System.Drawing.Size(423, 26);
-            this.textBox16.TabIndex = 213;
-            // 
-            // label32
-            // 
-            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label32.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label32.Location = new System.Drawing.Point(32, 206);
-            this.label32.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(153, 20);
-            this.label32.TabIndex = 224;
-            this.label32.Text = "Data de Requisição";
-            // 
-            // textBox17
-            // 
-            this.textBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox17.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox17.Location = new System.Drawing.Point(9, 47);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(92, 26);
-            this.textBox17.TabIndex = 215;
-            // 
-            // label33
-            // 
-            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label33.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label33.Location = new System.Drawing.Point(119, 24);
-            this.label33.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(223, 20);
-            this.label33.TabIndex = 216;
-            this.label33.Text = "Funcionário Responsável";
-            // 
-            // textBox19
-            // 
-            this.textBox19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox19.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox19.Location = new System.Drawing.Point(118, 47);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.ReadOnly = true;
-            this.textBox19.Size = new System.Drawing.Size(314, 26);
-            this.textBox19.TabIndex = 217;
-            // 
-            // textBox20
-            // 
-            this.textBox20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox20.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox20.Location = new System.Drawing.Point(56, 163);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(129, 26);
-            this.textBox20.TabIndex = 221;
-            // 
-            // label36
-            // 
-            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label36.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label36.Location = new System.Drawing.Point(57, 141);
-            this.label36.Margin = new System.Windows.Forms.Padding(4, 4, 4, 1);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(148, 20);
-            this.label36.TabIndex = 220;
-            this.label36.Text = "Nº de Materiais";
-            // 
-            // button29
-            // 
-            this.button29.Location = new System.Drawing.Point(257, 140);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(129, 50);
-            this.button29.TabIndex = 227;
-            this.button29.Text = "Aceder à Lista";
-            this.button29.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker8
-            // 
-            this.dateTimePicker8.CustomFormat = "";
-            this.dateTimePicker8.Enabled = false;
-            this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker8.Location = new System.Drawing.Point(35, 231);
-            this.dateTimePicker8.Name = "dateTimePicker8";
-            this.dateTimePicker8.Size = new System.Drawing.Size(150, 22);
-            this.dateTimePicker8.TabIndex = 228;
-            // 
-            // dateTimePicker9
-            // 
-            this.dateTimePicker9.CustomFormat = "";
-            this.dateTimePicker9.Enabled = false;
-            this.dateTimePicker9.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker9.Location = new System.Drawing.Point(35, 298);
-            this.dateTimePicker9.Name = "dateTimePicker9";
-            this.dateTimePicker9.Size = new System.Drawing.Size(150, 22);
-            this.dateTimePicker9.TabIndex = 230;
-            // 
-            // label34
-            // 
-            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label34.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label34.Location = new System.Drawing.Point(32, 273);
-            this.label34.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(153, 20);
-            this.label34.TabIndex = 229;
-            this.label34.Text = "Data de Entrega";
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(413, 233);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(18, 17);
-            this.checkBox5.TabIndex = 231;
-            this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.Visible = false;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(191, 300);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(18, 17);
-            this.checkBox6.TabIndex = 232;
-            this.checkBox6.UseVisualStyleBackColor = true;
-            this.checkBox6.Visible = false;
-            // 
-            // label35
-            // 
-            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label35.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label35.Location = new System.Drawing.Point(255, 273);
-            this.label35.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(153, 20);
-            this.label35.TabIndex = 233;
-            this.label35.Text = "Atraso (Dias)";
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label37);
@@ -1583,6 +1637,47 @@ namespace Biblestia
             this.groupBox6.Text = "Requisição - Info Avançada";
             this.groupBox6.Visible = false;
             // 
+            // label37
+            // 
+            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label37.Font = new System.Drawing.Font("Verdana", 10F);
+            this.label37.Location = new System.Drawing.Point(293, 133);
+            this.label37.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(145, 102);
+            this.label37.TabIndex = 199;
+            this.label37.Text = "Gráfico dos Tipos de Material Nesta Requisição";
+            // 
+            // listBox5
+            // 
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.ItemHeight = 16;
+            this.listBox5.Location = new System.Drawing.Point(19, 264);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(409, 148);
+            this.listBox5.TabIndex = 199;
+            // 
+            // button30
+            // 
+            this.button30.Location = new System.Drawing.Point(362, 27);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(66, 35);
+            this.button30.TabIndex = 174;
+            this.button30.Text = "Voltar";
+            this.button30.UseVisualStyleBackColor = true;
+            this.button30.Click += new System.EventHandler(this.button30_Click);
+            // 
+            // label38
+            // 
+            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label38.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label38.Location = new System.Drawing.Point(16, 224);
+            this.label38.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(341, 20);
+            this.label38.TabIndex = 241;
+            this.label38.Text = "Antigas Requisições destes Materiais";
+            // 
             // chart1
             // 
             chartArea1.Name = "ChartArea1";
@@ -1600,35 +1695,16 @@ namespace Biblestia
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
-            // label38
+            // label41
             // 
-            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label38.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label38.Location = new System.Drawing.Point(16, 224);
-            this.label38.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(341, 20);
-            this.label38.TabIndex = 241;
-            this.label38.Text = "Antigas Requisições destes Materiais";
-            // 
-            // button30
-            // 
-            this.button30.Location = new System.Drawing.Point(362, 27);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(66, 35);
-            this.button30.TabIndex = 174;
-            this.button30.Text = "Voltar";
-            this.button30.UseVisualStyleBackColor = true;
-            this.button30.Click += new System.EventHandler(this.button30_Click);
-            // 
-            // listBox5
-            // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.ItemHeight = 16;
-            this.listBox5.Location = new System.Drawing.Point(19, 264);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(409, 148);
-            this.listBox5.TabIndex = 199;
+            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label41.Font = new System.Drawing.Font("Verdana", 7F);
+            this.label41.Location = new System.Drawing.Point(210, 245);
+            this.label41.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(205, 20);
+            this.label41.TabIndex = 244;
+            this.label41.Text = "Leitor que Requisitou";
             // 
             // label39
             // 
@@ -1652,33 +1728,571 @@ namespace Biblestia
             this.label40.TabIndex = 243;
             this.label40.Text = "Data";
             // 
-            // label41
+            // groupBox7
             // 
-            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label41.Font = new System.Drawing.Font("Verdana", 7F);
-            this.label41.Location = new System.Drawing.Point(210, 245);
-            this.label41.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(205, 20);
-            this.label41.TabIndex = 244;
-            this.label41.Text = "Leitor que Requisitou";
+            this.groupBox7.Controls.Add(this.panel9);
+            this.groupBox7.Controls.Add(this.button32);
+            this.groupBox7.Controls.Add(this.button31);
+            this.groupBox7.Controls.Add(this.listBox6);
+            this.groupBox7.Controls.Add(this.panel6);
+            this.groupBox7.Controls.Add(this.panel7);
+            this.groupBox7.Controls.Add(this.panel8);
+            this.groupBox7.Location = new System.Drawing.Point(356, 71);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(451, 428);
+            this.groupBox7.TabIndex = 235;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Lista de Materias Requisitados";
             // 
-            // label37
+            // listBox6
             // 
-            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label37.Font = new System.Drawing.Font("Verdana", 10F);
-            this.label37.Location = new System.Drawing.Point(293, 133);
-            this.label37.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(145, 102);
-            this.label37.TabIndex = 199;
-            this.label37.Text = "Gráfico dos Tipos de Material Nesta Requisição";
+            this.listBox6.FormattingEnabled = true;
+            this.listBox6.ItemHeight = 16;
+            this.listBox6.Location = new System.Drawing.Point(19, 50);
+            this.listBox6.Name = "listBox6";
+            this.listBox6.Size = new System.Drawing.Size(409, 100);
+            this.listBox6.TabIndex = 0;
+            // 
+            // button31
+            // 
+            this.button31.Location = new System.Drawing.Point(241, 347);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(148, 63);
+            this.button31.TabIndex = 174;
+            this.button31.Text = "Entregar Material";
+            this.button31.UseVisualStyleBackColor = true;
+            this.button31.Click += new System.EventHandler(this.button31_Click);
+            // 
+            // button32
+            // 
+            this.button32.Location = new System.Drawing.Point(49, 347);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(147, 63);
+            this.button32.TabIndex = 175;
+            this.button32.Text = "Adicionar Novo";
+            this.button32.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.button32_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.textBox30);
+            this.panel6.Controls.Add(this.textBox18);
+            this.panel6.Controls.Add(this.label42);
+            this.panel6.Controls.Add(this.label48);
+            this.panel6.Controls.Add(this.textBox25);
+            this.panel6.Controls.Add(this.label47);
+            this.panel6.Controls.Add(this.textBox24);
+            this.panel6.Controls.Add(this.label46);
+            this.panel6.Controls.Add(this.textBox23);
+            this.panel6.Controls.Add(this.label45);
+            this.panel6.Controls.Add(this.textBox22);
+            this.panel6.Controls.Add(this.label44);
+            this.panel6.Location = new System.Drawing.Point(11, 156);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(434, 174);
+            this.panel6.TabIndex = 222;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox22.Enabled = false;
+            this.textBox22.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox22.Location = new System.Drawing.Point(13, 25);
+            this.textBox22.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.ReadOnly = true;
+            this.textBox22.Size = new System.Drawing.Size(128, 26);
+            this.textBox22.TabIndex = 223;
+            this.textBox22.Text = "Livro";
+            // 
+            // label44
+            // 
+            this.label44.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label44.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label44.Location = new System.Drawing.Point(10, 4);
+            this.label44.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(141, 20);
+            this.label44.TabIndex = 222;
+            this.label44.Text = "Tipo de Material";
+            // 
+            // textBox23
+            // 
+            this.textBox23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox23.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox23.Location = new System.Drawing.Point(12, 79);
+            this.textBox23.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.ReadOnly = true;
+            this.textBox23.Size = new System.Drawing.Size(405, 26);
+            this.textBox23.TabIndex = 225;
+            // 
+            // label45
+            // 
+            this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label45.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label45.Location = new System.Drawing.Point(10, 58);
+            this.label45.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(96, 20);
+            this.label45.TabIndex = 224;
+            this.label45.Text = "Título";
+            // 
+            // textBox24
+            // 
+            this.textBox24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox24.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox24.Location = new System.Drawing.Point(149, 25);
+            this.textBox24.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.ReadOnly = true;
+            this.textBox24.Size = new System.Drawing.Size(128, 26);
+            this.textBox24.TabIndex = 227;
+            // 
+            // label46
+            // 
+            this.label46.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label46.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label46.Location = new System.Drawing.Point(147, 4);
+            this.label46.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(96, 20);
+            this.label46.TabIndex = 226;
+            this.label46.Text = "Género";
+            // 
+            // textBox25
+            // 
+            this.textBox25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox25.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox25.Location = new System.Drawing.Point(12, 135);
+            this.textBox25.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.ReadOnly = true;
+            this.textBox25.Size = new System.Drawing.Size(262, 26);
+            this.textBox25.TabIndex = 229;
+            // 
+            // label47
+            // 
+            this.label47.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label47.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label47.Location = new System.Drawing.Point(10, 114);
+            this.label47.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(96, 20);
+            this.label47.TabIndex = 228;
+            this.label47.Text = "Autor";
+            // 
+            // label48
+            // 
+            this.label48.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label48.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label48.Location = new System.Drawing.Point(290, 4);
+            this.label48.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(143, 20);
+            this.label48.TabIndex = 230;
+            this.label48.Text = "Ano Publicação";
+            // 
+            // textBox18
+            // 
+            this.textBox18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox18.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox18.Location = new System.Drawing.Point(292, 135);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.ReadOnly = true;
+            this.textBox18.Size = new System.Drawing.Size(128, 26);
+            this.textBox18.TabIndex = 233;
+            // 
+            // label42
+            // 
+            this.label42.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label42.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label42.Location = new System.Drawing.Point(290, 114);
+            this.label42.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(96, 20);
+            this.label42.TabIndex = 232;
+            this.label42.Text = "Editora";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.dateTimePicker11);
+            this.panel7.Controls.Add(this.textBox21);
+            this.panel7.Controls.Add(this.label43);
+            this.panel7.Controls.Add(this.label49);
+            this.panel7.Controls.Add(this.textBox28);
+            this.panel7.Controls.Add(this.label52);
+            this.panel7.Controls.Add(this.textBox29);
+            this.panel7.Controls.Add(this.label53);
+            this.panel7.Location = new System.Drawing.Point(11, 156);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(434, 174);
+            this.panel7.TabIndex = 235;
+            // 
+            // dateTimePicker11
+            // 
+            this.dateTimePicker11.CustomFormat = "";
+            this.dateTimePicker11.Enabled = false;
+            this.dateTimePicker11.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker11.Location = new System.Drawing.Point(292, 27);
+            this.dateTimePicker11.Name = "dateTimePicker11";
+            this.dateTimePicker11.Size = new System.Drawing.Size(127, 22);
+            this.dateTimePicker11.TabIndex = 234;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox21.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox21.Location = new System.Drawing.Point(151, 25);
+            this.textBox21.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.ReadOnly = true;
+            this.textBox21.Size = new System.Drawing.Size(128, 26);
+            this.textBox21.TabIndex = 233;
+            // 
+            // label43
+            // 
+            this.label43.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label43.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label43.Location = new System.Drawing.Point(149, 4);
+            this.label43.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(96, 20);
+            this.label43.TabIndex = 232;
+            this.label43.Text = "Editora";
+            // 
+            // label49
+            // 
+            this.label49.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label49.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label49.Location = new System.Drawing.Point(290, 4);
+            this.label49.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(143, 20);
+            this.label49.TabIndex = 230;
+            this.label49.Text = "Data Publicação";
+            // 
+            // textBox28
+            // 
+            this.textBox28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox28.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox28.Location = new System.Drawing.Point(12, 79);
+            this.textBox28.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.ReadOnly = true;
+            this.textBox28.Size = new System.Drawing.Size(405, 26);
+            this.textBox28.TabIndex = 225;
+            // 
+            // label52
+            // 
+            this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label52.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label52.Location = new System.Drawing.Point(10, 58);
+            this.label52.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(96, 20);
+            this.label52.TabIndex = 224;
+            this.label52.Text = "Nome";
+            // 
+            // textBox29
+            // 
+            this.textBox29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox29.Enabled = false;
+            this.textBox29.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox29.Location = new System.Drawing.Point(13, 25);
+            this.textBox29.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.ReadOnly = true;
+            this.textBox29.Size = new System.Drawing.Size(128, 26);
+            this.textBox29.TabIndex = 223;
+            this.textBox29.Text = "Jornal";
+            // 
+            // label53
+            // 
+            this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label53.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label53.Location = new System.Drawing.Point(10, 4);
+            this.label53.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(141, 20);
+            this.label53.TabIndex = 222;
+            this.label53.Text = "Tipo de Material";
+            // 
+            // textBox30
+            // 
+            this.textBox30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox30.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox30.Location = new System.Drawing.Point(293, 25);
+            this.textBox30.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox30.Name = "textBox30";
+            this.textBox30.ReadOnly = true;
+            this.textBox30.Size = new System.Drawing.Size(128, 26);
+            this.textBox30.TabIndex = 234;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.dateTimePicker10);
+            this.panel8.Controls.Add(this.label51);
+            this.panel8.Controls.Add(this.textBox27);
+            this.panel8.Controls.Add(this.label50);
+            this.panel8.Controls.Add(this.textBox32);
+            this.panel8.Controls.Add(this.label55);
+            this.panel8.Controls.Add(this.textBox33);
+            this.panel8.Controls.Add(this.label56);
+            this.panel8.Controls.Add(this.textBox34);
+            this.panel8.Controls.Add(this.label57);
+            this.panel8.Location = new System.Drawing.Point(11, 156);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(434, 174);
+            this.panel8.TabIndex = 235;
+            // 
+            // textBox27
+            // 
+            this.textBox27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox27.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox27.Location = new System.Drawing.Point(230, 135);
+            this.textBox27.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.ReadOnly = true;
+            this.textBox27.Size = new System.Drawing.Size(190, 26);
+            this.textBox27.TabIndex = 233;
+            // 
+            // label50
+            // 
+            this.label50.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label50.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label50.Location = new System.Drawing.Point(227, 114);
+            this.label50.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(96, 20);
+            this.label50.TabIndex = 232;
+            this.label50.Text = "Editora";
+            // 
+            // textBox32
+            // 
+            this.textBox32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox32.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox32.Location = new System.Drawing.Point(13, 135);
+            this.textBox32.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox32.Name = "textBox32";
+            this.textBox32.ReadOnly = true;
+            this.textBox32.Size = new System.Drawing.Size(172, 26);
+            this.textBox32.TabIndex = 227;
+            // 
+            // label55
+            // 
+            this.label55.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label55.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label55.Location = new System.Drawing.Point(11, 114);
+            this.label55.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(96, 20);
+            this.label55.TabIndex = 226;
+            this.label55.Text = "Categoria";
+            // 
+            // textBox33
+            // 
+            this.textBox33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox33.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox33.Location = new System.Drawing.Point(12, 79);
+            this.textBox33.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox33.Name = "textBox33";
+            this.textBox33.ReadOnly = true;
+            this.textBox33.Size = new System.Drawing.Size(405, 26);
+            this.textBox33.TabIndex = 225;
+            // 
+            // label56
+            // 
+            this.label56.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label56.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label56.Location = new System.Drawing.Point(10, 58);
+            this.label56.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(96, 20);
+            this.label56.TabIndex = 224;
+            this.label56.Text = "Nome";
+            // 
+            // textBox34
+            // 
+            this.textBox34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox34.Enabled = false;
+            this.textBox34.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox34.Location = new System.Drawing.Point(13, 25);
+            this.textBox34.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox34.Name = "textBox34";
+            this.textBox34.ReadOnly = true;
+            this.textBox34.Size = new System.Drawing.Size(128, 26);
+            this.textBox34.TabIndex = 223;
+            this.textBox34.Text = "Revista";
+            // 
+            // label57
+            // 
+            this.label57.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label57.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label57.Location = new System.Drawing.Point(10, 4);
+            this.label57.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(141, 20);
+            this.label57.TabIndex = 222;
+            this.label57.Text = "Tipo de Material";
+            // 
+            // dateTimePicker10
+            // 
+            this.dateTimePicker10.CustomFormat = "";
+            this.dateTimePicker10.Enabled = false;
+            this.dateTimePicker10.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker10.Location = new System.Drawing.Point(230, 27);
+            this.dateTimePicker10.Name = "dateTimePicker10";
+            this.dateTimePicker10.Size = new System.Drawing.Size(187, 22);
+            this.dateTimePicker10.TabIndex = 237;
+            // 
+            // label51
+            // 
+            this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label51.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label51.Location = new System.Drawing.Point(229, 4);
+            this.label51.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(143, 20);
+            this.label51.TabIndex = 236;
+            this.label51.Text = "Data Publicação";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.textBox26);
+            this.panel9.Controls.Add(this.textBox31);
+            this.panel9.Controls.Add(this.label54);
+            this.panel9.Controls.Add(this.label58);
+            this.panel9.Controls.Add(this.textBox36);
+            this.panel9.Controls.Add(this.label60);
+            this.panel9.Controls.Add(this.textBox37);
+            this.panel9.Controls.Add(this.label61);
+            this.panel9.Controls.Add(this.textBox38);
+            this.panel9.Controls.Add(this.label62);
+            this.panel9.Location = new System.Drawing.Point(11, 156);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(434, 174);
+            this.panel9.TabIndex = 235;
+            // 
+            // textBox26
+            // 
+            this.textBox26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox26.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox26.Location = new System.Drawing.Point(293, 25);
+            this.textBox26.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.ReadOnly = true;
+            this.textBox26.Size = new System.Drawing.Size(128, 26);
+            this.textBox26.TabIndex = 234;
+            // 
+            // textBox31
+            // 
+            this.textBox31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox31.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox31.Location = new System.Drawing.Point(230, 135);
+            this.textBox31.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.ReadOnly = true;
+            this.textBox31.Size = new System.Drawing.Size(190, 26);
+            this.textBox31.TabIndex = 233;
+            // 
+            // label54
+            // 
+            this.label54.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label54.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label54.Location = new System.Drawing.Point(227, 114);
+            this.label54.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(96, 20);
+            this.label54.TabIndex = 232;
+            this.label54.Text = "Produtora";
+            // 
+            // label58
+            // 
+            this.label58.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label58.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label58.Location = new System.Drawing.Point(290, 4);
+            this.label58.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(143, 20);
+            this.label58.TabIndex = 230;
+            this.label58.Text = "Ano Publicação";
+            // 
+            // textBox36
+            // 
+            this.textBox36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox36.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox36.Location = new System.Drawing.Point(13, 138);
+            this.textBox36.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox36.Name = "textBox36";
+            this.textBox36.ReadOnly = true;
+            this.textBox36.Size = new System.Drawing.Size(172, 26);
+            this.textBox36.TabIndex = 227;
+            // 
+            // label60
+            // 
+            this.label60.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label60.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label60.Location = new System.Drawing.Point(11, 117);
+            this.label60.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(96, 20);
+            this.label60.TabIndex = 226;
+            this.label60.Text = "Categoria";
+            // 
+            // textBox37
+            // 
+            this.textBox37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox37.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox37.Location = new System.Drawing.Point(12, 79);
+            this.textBox37.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox37.Name = "textBox37";
+            this.textBox37.ReadOnly = true;
+            this.textBox37.Size = new System.Drawing.Size(405, 26);
+            this.textBox37.TabIndex = 225;
+            // 
+            // label61
+            // 
+            this.label61.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label61.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label61.Location = new System.Drawing.Point(10, 58);
+            this.label61.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(96, 20);
+            this.label61.TabIndex = 224;
+            this.label61.Text = "Título";
+            // 
+            // textBox38
+            // 
+            this.textBox38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox38.Enabled = false;
+            this.textBox38.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox38.Location = new System.Drawing.Point(13, 25);
+            this.textBox38.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox38.Name = "textBox38";
+            this.textBox38.ReadOnly = true;
+            this.textBox38.Size = new System.Drawing.Size(128, 26);
+            this.textBox38.TabIndex = 223;
+            this.textBox38.Text = "Jogo";
+            // 
+            // label62
+            // 
+            this.label62.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label62.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label62.Location = new System.Drawing.Point(10, 4);
+            this.label62.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(141, 20);
+            this.label62.TabIndex = 222;
+            this.label62.Text = "Tipo de Material";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 569);
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox6);
@@ -1692,11 +2306,11 @@ namespace Biblestia
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox6);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1720,6 +2334,15 @@ namespace Biblestia
             this.panel5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1857,5 +2480,53 @@ namespace Biblestia
         internal System.Windows.Forms.Label label40;
         internal System.Windows.Forms.Label label41;
         internal System.Windows.Forms.Label label37;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button button31;
+        private System.Windows.Forms.ListBox listBox6;
+        private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.Panel panel6;
+        internal System.Windows.Forms.TextBox textBox22;
+        internal System.Windows.Forms.Label label44;
+        internal System.Windows.Forms.TextBox textBox18;
+        internal System.Windows.Forms.Label label42;
+        internal System.Windows.Forms.Label label48;
+        internal System.Windows.Forms.TextBox textBox25;
+        internal System.Windows.Forms.Label label47;
+        internal System.Windows.Forms.TextBox textBox24;
+        internal System.Windows.Forms.Label label46;
+        internal System.Windows.Forms.TextBox textBox23;
+        internal System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker11;
+        internal System.Windows.Forms.TextBox textBox21;
+        internal System.Windows.Forms.Label label43;
+        internal System.Windows.Forms.Label label49;
+        internal System.Windows.Forms.TextBox textBox28;
+        internal System.Windows.Forms.Label label52;
+        internal System.Windows.Forms.TextBox textBox29;
+        internal System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.DateTimePicker dateTimePicker10;
+        internal System.Windows.Forms.Label label51;
+        internal System.Windows.Forms.TextBox textBox27;
+        internal System.Windows.Forms.Label label50;
+        internal System.Windows.Forms.TextBox textBox32;
+        internal System.Windows.Forms.Label label55;
+        internal System.Windows.Forms.TextBox textBox33;
+        internal System.Windows.Forms.Label label56;
+        internal System.Windows.Forms.TextBox textBox34;
+        internal System.Windows.Forms.Label label57;
+        internal System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.Panel panel9;
+        internal System.Windows.Forms.TextBox textBox26;
+        internal System.Windows.Forms.TextBox textBox31;
+        internal System.Windows.Forms.Label label54;
+        internal System.Windows.Forms.Label label58;
+        internal System.Windows.Forms.TextBox textBox36;
+        internal System.Windows.Forms.Label label60;
+        internal System.Windows.Forms.TextBox textBox37;
+        internal System.Windows.Forms.Label label61;
+        internal System.Windows.Forms.TextBox textBox38;
+        internal System.Windows.Forms.Label label62;
     }
 }
