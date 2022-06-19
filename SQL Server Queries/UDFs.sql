@@ -130,12 +130,25 @@ as
 			where nomeBiblioteca = @nomeBiblioteca;
 go
 
-
 -- Obter todas as requisições de uma biblioteca;
 drop function Biblestia.obterRequisicoes
 go
 create function Biblestia.obterRequisicoes(@nomeBiblioteca varchar(60)) returns table
 as
-	return	select * from Biblestia.Requisicao
+	return	select * from RequisicaoDados
 			where nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- Obter requisições de um dado Material
+drop function Biblestia.obterRequisicoesMaterial
+go
+create function Biblestia.obterRequisicoesMaterial(@idMaterial int, @nomeBiblioteca varchar(60)) returns table
+as
+	return	select * from RequisicaoDados
+			where idMaterial = @idMaterial and nomeBiblioteca = @nomeBiblioteca;
 go 
+
+select * from Biblestia.obterRequisicoesMaterial(4, 'Biblioteca Universitária de Aveiro');
+select * from Biblestia.obterRequisicoesMaterial(7, 'Biblioteca Universitária de Aveiro');
+select * from Biblestia.obterRequisicoesMaterial(11, 'Biblioteca Universitária de Aveiro');
+select * from Biblestia.obterRequisicoesMaterial(15, 'Biblioteca Universitária de Aveiro');

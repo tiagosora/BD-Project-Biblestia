@@ -593,7 +593,7 @@ insert into Biblestia.RequisicaoMaterial values (18, 39, 'Biblioteca Universitá
 insert into Biblestia.RequisicaoMaterial values (19, 17, 'Biblioteca Universitária de Aveiro');
 insert into Biblestia.RequisicaoMaterial values (19, 26, 'Biblioteca Universitária de Aveiro');
 insert into Biblestia.RequisicaoMaterial values (20, 33, 'Biblioteca Universitária de Aveiro');
-insert into Biblestia.RequisicaoMaterial values (21, 7, 'Biblioteca Universitária de Aveiro');
+insert into Biblestia.RequisicaoMaterial values (21, 17, 'Biblioteca Universitária de Aveiro');
 insert into Biblestia.RequisicaoMaterial values (22, 33, 'Biblioteca Universitária de Aveiro');
 insert into Biblestia.RequisicaoMaterial values (23, 26, 'Biblioteca Universitária de Aveiro');
 insert into Biblestia.RequisicaoMaterial values (24, 1, 'Biblioteca Universitária de Aveiro');

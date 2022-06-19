@@ -20,6 +20,7 @@ namespace Biblestia
         private int currentListIndex;
         private int listBox2currentIndex;
         private String currentAction = "null";
+        private Requisicao currentRequisicao;
 
         public Main()
         {
@@ -54,6 +55,7 @@ namespace Biblestia
             groupBox3.Visible = false;
             groupBox4.Visible = false;
             groupBox5.Visible = false;
+            groupBox6.Visible = false;
         }
 
         private void panelsVisibleFalse()
@@ -230,15 +232,10 @@ namespace Biblestia
                         currentListIndex = listBox1.SelectedIndex;
                         showLeitor();
                         break;
-                    case "Requisicao":
-
                     default:
                         break;
                 }
             }
-
-            
-            
         }
 
         public void showFuncionario()
@@ -869,8 +866,6 @@ namespace Biblestia
             {
                 try
                 {
-                    // Aqui vamos remover o utilizador mas por alguma razao que desconheço
-                    // temos de remover lhe os cargos primeiro
                     if (!verifySGBDConnection())
                     {
                         return;
@@ -921,30 +916,45 @@ namespace Biblestia
             {
                 return;
             }
-            SqlCommand cmd = new SqlCommand("select * from Biblestia.obterFuncionários('" + biblioteca.Nome + "')", cn);
+            string previews = "";
+            SqlCommand cmd = new SqlCommand("select * from Biblestia.obterRequisicoes('" + biblioteca.Nome + "')", cn);
             SqlDataReader reader = cmd.ExecuteReader();
+            Requisicao requisicao = new Requisicao();
             while (reader.Read())
             {
-                Requisicao requisicao = new Requisicao();
-                requisicao.Id = reader["id"].ToString();
-                requisicao.NomeBiblioteca = reader["nomeBiblioteca"].ToString();
-                requisicao.IdLeitor = reader["idLeitor"].ToString();
-                requisicao.IdFuncResponsavel = reader["idFuncResponsavel"].ToString();
-                requisicao.DataInicio = reader["dataInicio"].ToString();
-                requisicao.DataEntrega = reader["dataLimite"].ToString();
-                requisicao.DataLimite = reader["dataEntrega"].ToString();
-                if (requisicao.DataLimite == "")
+                if (reader["id"].ToString() != previews)
                 {
-                    listBox3.Items.Add(requisicao);
+                    requisicao = new Requisicao();
+                    requisicao.Id = reader["id"].ToString();
+                    requisicao.NomeBiblioteca = reader["nomeBiblioteca"].ToString();
+                    requisicao.IdLeitor = reader["idLeitor"].ToString();
+                    requisicao.NomeCompletoLeitor = reader["nomeCompletoLeitor"].ToString();
+                    requisicao.IdFuncResponsavel = reader["idFuncResponsavel"].ToString();
+                    requisicao.NomeCompletoFuncResponsavel = reader["nomeCompletoFuncResponsavel"].ToString();
+                    requisicao.DataInicio = reader["dataInicio"].ToString();
+                    requisicao.DataLimite = reader["dataLimite"].ToString();
+                    requisicao.DataEntrega = reader["dataEntrega"].ToString();
+                    requisicao.addMaterial(reader["idMaterial"].ToString());
+                    if (requisicao.DataEntrega == "")
+                    {
+                        listBox3.Items.Add(requisicao);
+                    }
+                    listBox4.Items.Add(requisicao);
+                    previews = reader["id"].ToString();
+                } else
+                {
+                    requisicao.addMaterial(reader["idMaterial"].ToString());
                 }
-                listBox4.Items.Add(requisicao);
             }
-            showRequisicoes();
-        }
-
-        private void showRequisicoes()
-        {
-
+            reader.Close();
+            cn.Close();
+            if (listBox4.Items.Count > 0)
+            {
+                listBox4.SelectedIndex = 0;
+            } else if (listBox3.Items.Count > 0)
+            {
+                listBox3.SelectedIndex = 0;
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -955,6 +965,121 @@ namespace Biblestia
         private void button20_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox4.SelectedIndex > -1)
+            {
+                listBox3.ClearSelected();
+                label35.Visible = false;
+                textBox15.Visible = false;
+                currentRequisicao = (Requisicao)listBox4.SelectedItem;
+                Requisicao requisicao = (Requisicao)listBox4.SelectedItem;
+                textBox17.Text = requisicao.Id;
+                textBox19.Text = requisicao.NomeCompletoFuncResponsavel;
+                textBox16.Text = requisicao.NomeCompletoLeitor;
+                textBox20.Text = requisicao.Materials.Count.ToString();
+                dateTimePicker8.Format = DateTimePickerFormat.Custom;
+                dateTimePicker8.CustomFormat = "yyyy-MM-dd";
+                dateTimePicker8.Text = requisicao.DataInicio;
+                dateTimePicker7.Format = DateTimePickerFormat.Custom;
+                dateTimePicker7.CustomFormat = "yyyy-MM-dd";
+                dateTimePicker7.Text = requisicao.DataLimite;
+                dateTimePicker9.Format = DateTimePickerFormat.Custom;
+                dateTimePicker9.CustomFormat = "yyyy-MM-dd";
+                dateTimePicker9.Text = requisicao.DataEntrega;
+            }
+        }
+
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox3.SelectedIndex > -1)
+            {
+                listBox4.ClearSelected();
+                currentRequisicao = (Requisicao)listBox3.SelectedItem;
+                Requisicao requisicao = (Requisicao)listBox3.SelectedItem;
+                textBox17.Text = requisicao.Id;
+                textBox19.Text = requisicao.NomeCompletoFuncResponsavel;
+                textBox16.Text = requisicao.NomeCompletoLeitor;
+                textBox20.Text = requisicao.Materials.Count.ToString();
+                dateTimePicker8.Format = DateTimePickerFormat.Custom;
+                dateTimePicker8.CustomFormat = "yyyy-MM-dd";
+                dateTimePicker8.Text = requisicao.DataInicio;
+                dateTimePicker7.Format = DateTimePickerFormat.Custom;
+                dateTimePicker7.CustomFormat = "yyyy-MM-dd";
+                dateTimePicker7.Text = requisicao.DataLimite;
+                dateTimePicker9.Format = DateTimePickerFormat.Custom;
+                dateTimePicker9.CustomFormat = " ";
+                label35.Visible = true;
+                textBox15.Visible = true;
+                TimeSpan atraso = DateTime.UtcNow - dateTimePicker7.Value;
+                textBox15.Text = atraso.Days.ToString();
+            }
+        }
+
+        private void label30_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker7_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label37_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            groupsVisibleFalse();
+            groupBox6.Visible = true;
+            panel3.Enabled = false;
+            panel5.Enabled = false;
+            listBox5.Items.Clear();
+            for (int i = 0; i < currentRequisicao.Materials.Count; i++)
+            {
+                Debug.Print((string)currentRequisicao.Materials[i]);
+                string idMaterial = (string)currentRequisicao.Materials[i];
+                if (!verifySGBDConnection())
+                {
+                    return;
+                }
+                SqlCommand cmd = new SqlCommand("select * from Biblestia.obterRequisicoesMaterial(" + idMaterial + ",'" + biblioteca.Nome + "') order by dataInicio", cn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader["id"].ToString() != currentRequisicao.Id && reader["nomeBiblioteca"].ToString() == currentRequisicao.NomeBiblioteca)
+                    {
+                        Requisicao requisicao = new Requisicao();
+                        requisicao.Id = reader["id"].ToString();
+                        requisicao.NomeBiblioteca = reader["nomeBiblioteca"].ToString();
+                        requisicao.IdLeitor = reader["idLeitor"].ToString();
+                        requisicao.NomeCompletoLeitor = reader["nomeCompletoLeitor"].ToString();
+                        requisicao.IdFuncResponsavel = reader["idFuncResponsavel"].ToString();
+                        requisicao.NomeCompletoFuncResponsavel = reader["nomeCompletoFuncResponsavel"].ToString();
+                        requisicao.DataInicio = reader["dataInicio"].ToString();
+                        requisicao.DataLimite = reader["dataLimite"].ToString();
+                        requisicao.DataEntrega = reader["dataEntrega"].ToString();
+                        requisicao.addMaterial(reader["idMaterial"].ToString());
+                        String a = idMaterial + "\t        " + DateTime.Parse(requisicao.DataInicio).ToString("yyyy-MM-dd") + "\t" + requisicao.NomeCompletoLeitor;
+                        listBox5.Items.Add(a);
+                    }
+                }
+                reader.Close();
+                cn.Close();
+            }
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            groupsVisibleFalse();
+            groupBox5.Visible = true;
+            panel3.Enabled = true;
+            panel5.Enabled = true;
         }
     }
 }
