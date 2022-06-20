@@ -921,7 +921,36 @@ namespace Biblestia
 
         private void button19_Click(object sender, EventArgs e)
         {
-            
+            string message = "De certeza que pretende remover esse leitor?\n";
+            string title = "Check Window";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    Leitor leitor = (Leitor)listBox1.SelectedItem;
+
+                    SqlCommand cmd = new SqlCommand("Biblestia.removerLeitor", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", leitor.NomeBiblioteca));
+                    cmd.Parameters.Add(new SqlParameter("@idLeitor", leitor.IdLeitor));
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+
+                    listBox1.Items.Remove(listBox1.SelectedItem);
+                    updateCargoList();
+                    listBox2.SelectedIndex = listBox2.Items.Count - 1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -1040,18 +1069,17 @@ namespace Biblestia
             button20.Enabled = false;
             button19.Enabled = false;
             button23.Enabled = false;
-            fnif.ReadOnly = false;
-            fssn.ReadOnly = false;
-            fnome.ReadOnly = false;
-            femail.ReadOnly = false;
-            fmorada.ReadOnly = false;
-            ftelefone.ReadOnly = false;
+            textBox12.ReadOnly = false;
+            textBox14.ReadOnly = false;
+            textBox7.ReadOnly = false;
+            textBox5.ReadOnly = false;
+            textBox4.ReadOnly = false;
             dateTimePicker6.Enabled = true;
             dateTimePicker6.Format = DateTimePickerFormat.Short;
             groupBox2.Visible = false;
             panel4.Visible = true;
-            button11.Visible = true;
-            button12.Visible = true;
+            button32.Visible = true;
+            button31.Visible = true;
             listBox1.Enabled = false;
 
             currentAction = "updatingLeitor";
@@ -1278,6 +1306,37 @@ namespace Biblestia
 
         private void button23_Click(object sender, EventArgs e)
         {
+            textBox13.Clear();
+            textBox12.Clear();
+            textBox14.Clear();
+            textBox7.Clear();
+            textBox5.Clear();
+            textBox4.Clear();
+
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button8.Enabled = false;
+            button7.Enabled = false;
+            button9.Enabled = false;
+            listBox1.ClearSelected();
+            textBox13.Text = "-------------";
+            textBox12.ReadOnly = false;
+            textBox14.ReadOnly = false;
+            textBox7.ReadOnly = false;
+            textBox5.ReadOnly = false;
+            textBox4.ReadOnly = false;
+            dateTimePicker6.Enabled = true;
+            dateTimePicker6.Format = DateTimePickerFormat.Short;
+            groupBox4.Visible = false;
+            panel4.Visible = true;
+            button32.Visible = true;
+            button31.Visible = true;
+            listBox1.Enabled = false;
+
+            currentAction = "addingLeitor";
 
         }
     }
