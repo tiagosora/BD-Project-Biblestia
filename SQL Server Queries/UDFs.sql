@@ -192,4 +192,13 @@ as
 	return	select count(*) as cont 
 			from RequisicaoMaterial join CD on RequisicaoMaterial.idMaterial = CD.idMaterial
 			where idRequisicao=@id and RequisicaoMaterial.nomeBiblioteca=@nomeBiblioteca;
+go 
+
+-- Obter os dados de um dado Material
+drop function Biblestia.obterDadosMaterial
+go
+create function Biblestia.obterDadosMaterial(@idMaterial int, @nomeBiblioteca varchar(60)) returns table
+as
+	return	select * from Biblestia.Material
+			where id =  @idMaterial and nomeBiblioteca = @nomeBiblioteca;
 go

@@ -8,8 +8,8 @@ create proc Biblestia.adicionarFuncionario (@nif int, @nomeCompleto varchar(60),
 as 
 	declare @idFuncionario as int
 
-	select @idFuncionario = max(idFuncionario) from Biblestia.Funcionario
-	where nomeBiblioteca = @nomeBiblioteca;
+	select @idFuncionario = max(idFuncionario) from Biblestia.Funcionario where nomeBiblioteca = @nomeBiblioteca;
+	select @idFuncionario = @idFuncionario + 1
 
 	insert into Biblestia.Funcionario values (@nif, @nomeCompleto, @idFuncionario, @nomeBiblioteca, @ssn, @email,@morada, @telefone, @dataNascimento)
 go
@@ -60,6 +60,14 @@ as
 	update Biblestia.Cargo set nomeBiblioteca = @nomeBiblioteca, idFuncionario = @idFuncionario, nomeCargo = @nomeCargo, dataInicio = @dataInicio, dataFim = @dataFim where @nomeBiblioteca=nomeBiblioteca and @idFuncionario=idFuncionario and @nomeCargo=nomeCargo;
 go
 
+-- Remover um leitor
+drop proc Biblestia.removerLeitor;
+go
+create proc Biblestia.removerLeitor (@nomeBiblioteca varchar(60), @idLeitor int)
+as
+	delete from Biblestia.Leitor where nomeBiblioteca = @nomeBiblioteca and idLeitor = @idLeitor;
+go
+ 
 -- Adicionar um novo cargo a um funcionario
 drop proc Biblestia.adicionarCargo;
 go 
@@ -76,13 +84,44 @@ as
 	delete from Biblestia.Cargo where @nomeBiblioteca=nomeBiblioteca and @idFuncionario=idFuncionario and @nomeCargo=nomeCargo
 go
 
+---- Saber o tipo de um dadod material
+--drop proc Biblestia.saberTipo;
+--go 
+--create proc Biblestia.saberTipo (@idMaterial int, @nomeBiblioteca varchar(60)) 
+--as
+--	declare @return varchar(60);
+--	declare @i int; set @i = @idMaterial;
+--	declare @b varchar(60); set @b = @nomeBiblioteca;
+
+--	if @i in (select idMaterial from Biblestia.Livro where nomeBiblioteca=@b)
+--	begin
+--		set @return = 'Livro';
+--	end
+--	if @i in (select idMaterial from Biblestia.Jornal where nomeBiblioteca=@b)
+--	begin
+--		set @return = 'Jornal';
+--	end
+--	if @i in (select idMaterial from Biblestia.Revista where nomeBiblioteca=@b)
+--	begin
+--		set @return = 'Revista';
+--	end
+--	if @i in (select idMaterial from Biblestia.Jogo where nomeBiblioteca=@b)
+--	begin
+--		set @return = 'Jogo';
+--	end
+--	if @i in (select idMaterial from Biblestia.CD where nomeBiblioteca=@b)
+--	begin
+--		set @return = 'CD';
+--	end
+--go
+
 -- Saber o tipo de um dadod material
 drop proc Biblestia.saberTipo;
 go 
 create proc Biblestia.saberTipo (@idMaterial int, @nomeBiblioteca varchar(60), @return varchar(60) output) 
 as
 	declare @i int; set @i = @idMaterial;
-	declare @b int; set @b = @nomeBiblioteca;
+	declare @b varchar(60); set @b = @nomeBiblioteca;
 
 	if @i in (select idMaterial from Biblestia.Livro where nomeBiblioteca=@b)
 	begin

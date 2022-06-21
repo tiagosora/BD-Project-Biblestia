@@ -77,6 +77,7 @@ namespace Biblestia
             panelsVisibleFalse();
             panel2.Visible = true;
             groupBox1.Visible = true;
+            listBox1.Visible = true;
             listBox1.Enabled = true;
             listBox1.Items.Clear();
             button8.Visible = true;
@@ -134,6 +135,7 @@ namespace Biblestia
             groupBox4.Visible = true;
             panelsVisibleFalse();
             panel4.Visible = true;
+            listBox1.Visible = true;
             listBox1.Enabled = true;
             button20.Visible = true;
             button23.Visible = true;
@@ -209,9 +211,7 @@ namespace Biblestia
             button3.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = false;
-            button8.Enabled = false;
-            button7.Enabled = false;
-            button9.Enabled = false;
+            panel2.Enabled = false;
             fnif.ReadOnly = false;
             fssn.ReadOnly = false;
             fnome.ReadOnly = false;
@@ -454,7 +454,6 @@ namespace Biblestia
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@nif", funcionario.Nif));
                 cmd.Parameters.Add(new SqlParameter("@nomeCompleto", funcionario.NomeCompleto));
-                cmd.Parameters.Add(new SqlParameter("@idFuncionario", funcionario.IdFuncionario));
                 cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", biblioteca.Nome));
                 cmd.Parameters.Add(new SqlParameter("@ssn", funcionario.Ssn));
                 cmd.Parameters.Add(new SqlParameter("@email", funcionario.Email));
@@ -472,9 +471,12 @@ namespace Biblestia
         }
         private void saidaEdicao()
         {
-            button8.Enabled = true;
-            button7.Enabled = true;
-            button9.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+            panel2.Enabled = true;
             fnif.ReadOnly = true;
             fssn.ReadOnly = true;
             fnome.ReadOnly = true;
@@ -496,7 +498,7 @@ namespace Biblestia
             }
             else if (currentAction == "addingFuncionario")
             {
-                listBox1.SelectedIndex = listBox1.Items.Count - 1;
+                listBox1.SelectedIndex = 0;
             }
         }
 
@@ -523,8 +525,6 @@ namespace Biblestia
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            groupsVisibleFalse();
-            
             updateListFuncionarios();
         }
 
@@ -809,9 +809,7 @@ namespace Biblestia
             button3.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = false;
-            button8.Enabled = false;
-            button7.Enabled = false;
-            button9.Enabled = false;
+            panel2.Enabled = false;
             listBox1.ClearSelected();
             fid.Text = "-------------";
             fnif.ReadOnly = false;
@@ -860,63 +858,7 @@ namespace Biblestia
 
         private void button21_Click(object sender, EventArgs e)
         {
-            if (!verifySGBDConnection())
-            {
-                return;
-            }
-            Leitor leitor = new Leitor();
-            leitor.Nif = textBox12.Text;
-            leitor.NomeCompleto = textBox14.Text;
-            leitor.IdLeitor = textBox13.Text;
-            leitor.NomeBiblioteca = biblioteca.Nome;
-            //funcionario.Ssn = fssn.Text;
-            leitor.Email = textBox7.Text;
-            leitor.Morada = textBox5.Text;
-            leitor.Telefone = textBox4.Text;
-            leitor.DataNascimento = dateTimePicker6.Text;
-            if (checkBox1.Checked)
-            {
-                leitor.DataNascimento = "";
-            }
-            if (currentAction == "updatingLeitor")
-            {
-                SqlCommand cmd = new SqlCommand("Biblestia.editarLeitor", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@nif", leitor.Nif));
-                cmd.Parameters.Add(new SqlParameter("@nomeCompleto", leitor.NomeCompleto));
-                cmd.Parameters.Add(new SqlParameter("@idLeitor", leitor.IdLeitor));
-                cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", biblioteca.Nome));
-                //cmd.Parameters.Add(new SqlParameter("@ssn", funcionario.Ssn));
-                cmd.Parameters.Add(new SqlParameter("@email", leitor.Email));
-                cmd.Parameters.Add(new SqlParameter("@morada", leitor.Morada));
-                cmd.Parameters.Add(new SqlParameter("@telefone", leitor.Telefone));
-                if (!checkBox1.Checked)
-                {
-                    cmd.Parameters.Add(new SqlParameter("@dataNascimento", dateTimePicker1.Value.ToString("yyyy-MM-dd")));
-                }
-                cmd.ExecuteNonQuery();
-            } else if (currentAction == "addingLeitor")
-            {
-                SqlCommand cmd = new SqlCommand("Biblestia.adicionarLeitor", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(new SqlParameter("@nif", leitor.Nif));
-                cmd.Parameters.Add(new SqlParameter("@nomeCompleto", leitor.NomeCompleto));
-                cmd.Parameters.Add(new SqlParameter("@idLeitor", leitor.IdLeitor));
-                cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", biblioteca.Nome));
-                //cmd.Parameters.Add(new SqlParameter("@ssn", funcionario.Ssn));
-                cmd.Parameters.Add(new SqlParameter("@email", leitor.Email));
-                cmd.Parameters.Add(new SqlParameter("@morada", leitor.Morada));
-                cmd.Parameters.Add(new SqlParameter("@telefone", leitor.Telefone));
-                if (!checkBox1.Checked)
-                {
-                    cmd.Parameters.Add(new SqlParameter("@dataNascimento", dateTimePicker1.Value.ToString("yyyy-MM-dd")));
-                }
-                cmd.ExecuteNonQuery();
-            }
-            cn.Close();
-            listBox1.SelectedItem = leitor;
-            saidaEdicao();
-
+            
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -943,8 +885,7 @@ namespace Biblestia
                     cn.Close();
 
                     listBox1.Items.Remove(listBox1.SelectedItem);
-                    updateCargoList();
-                    listBox2.SelectedIndex = listBox2.Items.Count - 1;
+                    listBox1.SelectedIndex = 0;
                 }
                 catch (Exception ex)
                 {
@@ -978,7 +919,7 @@ namespace Biblestia
 
                     listBox1.Items.Remove(listBox1.SelectedItem);
                     updateCargoList();
-                    listBox2.SelectedIndex = listBox2.Items.Count - 1;
+                    listBox1.SelectedIndex = 0;
                 }
                 catch (Exception ex)
                 {
@@ -999,11 +940,6 @@ namespace Biblestia
 
         private void button3_Click(object sender, EventArgs e)
         {
-            groupsVisibleFalse();
-            panelsVisibleFalse();
-            groupBox5.Visible = true;
-            panel5.Visible = true;
-            panel3.Visible = true;
             updateAllRequisicoes();
         }
 
@@ -1013,6 +949,12 @@ namespace Biblestia
             {
                 return;
             }
+            groupsVisibleFalse();
+            panelsVisibleFalse();
+            groupBox5.Visible = true;
+            panel5.Visible = true;
+            listBox1.Visible = false;
+            panel3.Visible = true;
             string previews = "";
             SqlCommand cmd = new SqlCommand("select * from Biblestia.obterRequisicoes('" + biblioteca.Nome + "')", cn);
             SqlDataReader reader = cmd.ExecuteReader();
@@ -1076,10 +1018,8 @@ namespace Biblestia
             textBox4.ReadOnly = false;
             dateTimePicker6.Enabled = true;
             dateTimePicker6.Format = DateTimePickerFormat.Short;
-            groupBox2.Visible = false;
-            panel4.Visible = true;
-            button32.Visible = true;
-            button31.Visible = true;
+            panel4.Enabled = false;
+            panel10.Visible = true;
             listBox1.Enabled = false;
 
             currentAction = "updatingLeitor";
@@ -1275,8 +1215,29 @@ namespace Biblestia
 
         private void button29_Click(object sender, EventArgs e)
         {
+            
             Requisicao requisicao = currentRequisicao;
-
+            groupsVisibleFalse();
+            groupBox7.Visible = true;
+            foreach(string materialId in requisicao.Materials) {
+                if (!verifySGBDConnection())
+                {
+                    return;
+                }
+                SqlCommand cmd = new SqlCommand("select * from Biblestia.obterDadosMaterial(" + materialId + ",'" + biblioteca.Nome + "')", cn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Material material = new Material();
+                    material.Id = reader["id"].ToString();
+                    material.NomeBiblioteca = reader["nomeBiblioteca"].ToString();
+                    material.SeccaoExposicao = reader["seccaoExposicao"].ToString();
+                    material.Estado = reader["estado"].ToString();
+                    listBox6.Items.Add(material);
+                }
+                reader.Close();
+                cn.Close();
+            }
         }
 
         private void button32_Click(object sender, EventArgs e)
@@ -1318,11 +1279,11 @@ namespace Biblestia
             button3.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = false;
-            button8.Enabled = false;
-            button7.Enabled = false;
-            button9.Enabled = false;
+            button20.Enabled = false;
+            button23.Enabled = false;
+            button19.Enabled = false;
             listBox1.ClearSelected();
-            textBox13.Text = "-------------";
+            textBox13.Text = "--------------------";
             textBox12.ReadOnly = false;
             textBox14.ReadOnly = false;
             textBox7.ReadOnly = false;
@@ -1330,14 +1291,145 @@ namespace Biblestia
             textBox4.ReadOnly = false;
             dateTimePicker6.Enabled = true;
             dateTimePicker6.Format = DateTimePickerFormat.Short;
-            groupBox4.Visible = false;
-            panel4.Visible = true;
-            button32.Visible = true;
-            button31.Visible = true;
+            panel4.Enabled = false;
+            panel10.Visible = true;
             listBox1.Enabled = false;
 
             currentAction = "addingLeitor";
 
+        }
+
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox7.Checked)
+            {
+                dateTimePicker6.Enabled = false;
+            }
+            else
+            {
+                dateTimePicker6.Enabled = true;
+            }
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            Leitor leitor = new Leitor();
+            leitor.Nif = textBox12.Text;
+            leitor.NomeCompleto = textBox14.Text;
+            leitor.IdLeitor = textBox13.Text;
+            leitor.NomeBiblioteca = biblioteca.Nome;
+            leitor.Email = textBox7.Text;
+            leitor.Morada = textBox5.Text;
+            leitor.Telefone = textBox4.Text;
+            leitor.DataNascimento = dateTimePicker6.Text;
+            if (checkBox7.Checked)
+            {
+                leitor.DataNascimento = "";
+            }
+            if (currentAction == "updatingLeitor")
+            {
+                SqlCommand cmd = new SqlCommand("Biblestia.editarLeitor", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@nif", leitor.Nif));
+                cmd.Parameters.Add(new SqlParameter("@nomeCompleto", leitor.NomeCompleto));
+                cmd.Parameters.Add(new SqlParameter("@idLeitor", leitor.IdLeitor));
+                cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", biblioteca.Nome));
+                cmd.Parameters.Add(new SqlParameter("@email", leitor.Email));
+                cmd.Parameters.Add(new SqlParameter("@morada", leitor.Morada));
+                cmd.Parameters.Add(new SqlParameter("@telefone", leitor.Telefone));
+                if (!checkBox7.Checked)
+                {
+                    cmd.Parameters.Add(new SqlParameter("@dataNascimento", dateTimePicker6.Value.ToString("yyyy-MM-dd")));
+                }
+                cmd.ExecuteNonQuery();
+            }
+            else if (currentAction == "addingLeitor")
+            {
+                SqlCommand cmd = new SqlCommand("Biblestia.adicionarLeitor", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@nif", leitor.Nif));
+                cmd.Parameters.Add(new SqlParameter("@nomeCompleto", leitor.NomeCompleto));
+                cmd.Parameters.Add(new SqlParameter("@idLeitor", leitor.IdLeitor));
+                cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", biblioteca.Nome));
+                cmd.Parameters.Add(new SqlParameter("@email", leitor.Email));
+                cmd.Parameters.Add(new SqlParameter("@morada", leitor.Morada));
+                cmd.Parameters.Add(new SqlParameter("@telefone", leitor.Telefone));
+                if (!checkBox7.Checked)
+                {
+                    cmd.Parameters.Add(new SqlParameter("@dataNascimento", dateTimePicker6.Value.ToString("yyyy-MM-dd")));
+                }
+                cmd.ExecuteNonQuery();
+            }
+            cn.Close();
+            listBox1.SelectedItem = leitor;
+            saidaEdicaoLeitor();
+        }
+
+        private void saidaEdicaoLeitor()
+        {
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+            button20.Enabled = true;
+            button19.Enabled = true;
+            button23.Enabled = true;
+            textBox12.ReadOnly = true;
+            textBox14.ReadOnly = true;
+            textBox7.ReadOnly = true;
+            textBox5.ReadOnly = true;
+            textBox4.ReadOnly = true;
+            dateTimePicker6.Enabled = false;
+            panel10.Visible = false;
+            panel4.Enabled = true;
+            listBox1.Enabled = true;
+            int saveIndex = currentListIndex;
+            updateListLeitores();
+            if (currentAction == "updatingLeitor")
+            {
+                listBox1.SelectedIndex = saveIndex;
+
+            }
+            else if (currentAction == "addingLeitor")
+            {
+                listBox1.SelectedIndex = 0;
+            }
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            saidaEdicaoLeitor();
+        }
+
+        private void listBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox6.Items.Count > 0 && listBox6.SelectedIndex > -1)
+            {
+
+                if (!verifySGBDConnection())
+                {
+                    return;
+                }
+                Material material = (Material)listBox6.SelectedItem;
+                SqlCommand cmd = new SqlCommand("Biblestia.saberTipo", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idMaterial", material.Id);
+                cmd.Parameters.AddWithValue("@nomeBiblioteca", biblioteca.Nome);
+                cmd.Parameters.Add("@return", SqlDbType.VarChar, 60);
+                cmd.Parameters["@return"].Direction = ParameterDirection.Output;
+                cmd.ExecuteNonQuery();
+                string o = Convert.ToString(cmd.Parameters["@return"].Value);
+                cn.Close();
+
+                Debug.Print(o);
+                   // ja é identificavel o tipo de material agora falta fazer a parte de switch para alternar entre
+                   // os panels e depois fazer as chamadas para cada material e atribuiçao de valores
+            }
         }
     }
 }
