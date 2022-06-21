@@ -57,13 +57,15 @@ as
 go
 
 -- Obter todas as atividades de uma biblioteca
-drop function Biblestia.obterAtvidades; 
+drop function Biblestia.obterAtividades; 
 go
-create function Biblestia.obterAtvidades(@nomeBiblioteca varchar(60)) returns table
+create function Biblestia.obterAtividades(@nomeBiblioteca varchar(60)) returns table
 as
 	return	select * from Biblestia.Atividade
 			where nomeBiblioteca = @nomeBiblioteca;
 go
+
+select * from Biblestia.obterAtividades('Biblioteca Universitária de Aveiro')
 
 -- Obter todas as atividades em que um dado funcionário foi responsável
 drop function Biblestia.obterAtvidadesResponsavel; 
@@ -202,3 +204,57 @@ as
 	return	select * from Biblestia.Material
 			where id =  @idMaterial and nomeBiblioteca = @nomeBiblioteca;
 go
+drop function Biblestia.obterDadosLivro
+go
+create function Biblestia.obterDadosLivro(@idMaterial int, @nomeBiblioteca varchar(60)) returns table
+as
+	return	select * from Biblestia.Livro
+			where idMaterial =  @idMaterial and nomeBiblioteca = @nomeBiblioteca;
+go
+drop function Biblestia.obterDadosJornal
+go
+create function Biblestia.obterDadosJornal(@idMaterial int, @nomeBiblioteca varchar(60)) returns table
+as
+	return	select * from Biblestia.Jornal
+			where idMaterial =  @idMaterial and nomeBiblioteca = @nomeBiblioteca;
+go
+drop function Biblestia.obterDadosRevista
+go
+create function Biblestia.obterDadosRevista(@idMaterial int, @nomeBiblioteca varchar(60)) returns table
+as
+	return	select * from Biblestia.Revista
+			where idMaterial =  @idMaterial and nomeBiblioteca = @nomeBiblioteca;
+go
+drop function Biblestia.obterDadosJogo
+go
+create function Biblestia.obterDadosJogo(@idMaterial int, @nomeBiblioteca varchar(60)) returns table
+as
+	return	select * from Biblestia.Jogo
+			where idMaterial =  @idMaterial and nomeBiblioteca = @nomeBiblioteca;
+go
+drop function Biblestia.obterDadosCD
+go
+create function Biblestia.obterDadosCD(@idMaterial int, @nomeBiblioteca varchar(60)) returns table
+as
+	return	select * from Biblestia.CD
+			where idMaterial =  @idMaterial and nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- Obter dados e de um leitor
+drop function Biblestia.obterDadosLeitor
+go
+create function Biblestia.obterDadosLeitor(@idLeitor int, @nomeBiblioteca varchar(60)) returns table
+as
+	return	select * from Biblestia.Leitor
+			where idLeitor = @idLeitor and nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- Obter todas as requisições de um dado leitor
+drop function Biblestia.obterRequisicoesLeitor
+go
+create function Biblestia.obterRequisicoesLeitor(@idLeitor int, @nomeBiblioteca varchar(60)) returns table
+as
+	return	select Requisicao.*, Leitor.nomeCompleto as nomeCompletoLeitor
+			from (Biblestia.Requisicao join Biblestia.Leitor on Requisicao.IdLeitor=Leitor.idLeitor)
+			where Requisicao.idLeitor = @idLeitor and Requisicao.nomeBiblioteca = @nomeBiblioteca;
+go  

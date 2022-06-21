@@ -4,5 +4,5 @@ go
 drop index indexDataAtividade on Biblestia.Atividade;
 go
 create nonclustered index indexDataAtividade
-on Biblestia.Atividade(dataAtividade asc)
+on Biblestia.Atividade(nomeAtividade asc)
 go
