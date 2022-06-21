@@ -1426,7 +1426,6 @@ namespace Biblestia
                 string o = Convert.ToString(cmd.Parameters["@return"].Value);
                 cn.Close();
 
-                Debug.Print(o);
                    // ja é identificavel o tipo de material agora falta fazer a parte de switch para alternar entre
                    // os panels e depois fazer as chamadas para cada material e atribuiçao de valores
             }
