@@ -1786,6 +1786,7 @@ namespace Biblestia
             panel16.Visible = false;
             panel17.Visible = false;
             tipoMaterial = returnValue;
+            Debug.Print(returnValue);
             switch (returnValue)
             {
                 case "Livro":
@@ -1857,8 +1858,6 @@ namespace Biblestia
                     cn.Close();
                     break;
                 case "CD":
-                    break;
-                default:
                     panel13.Visible = true;
                     if (!verifySGBDConnection())
                     {
@@ -1873,6 +1872,8 @@ namespace Biblestia
                     textBox46.Text = reader7["marcaProdutora"].ToString();
                     reader7.Close();
                     cn.Close();
+                    break;
+                default:
                     break;
             }
         }

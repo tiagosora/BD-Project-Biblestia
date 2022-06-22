@@ -2702,11 +2702,11 @@ namespace Biblestia
             this.groupBox9.Controls.Add(this.label96);
             this.groupBox9.Controls.Add(this.textBox68);
             this.groupBox9.Controls.Add(this.label95);
-            this.groupBox9.Controls.Add(this.panel13);
             this.groupBox9.Controls.Add(this.panel14);
             this.groupBox9.Controls.Add(this.panel15);
             this.groupBox9.Controls.Add(this.panel16);
             this.groupBox9.Controls.Add(this.panel17);
+            this.groupBox9.Controls.Add(this.panel13);
             this.groupBox9.Location = new System.Drawing.Point(356, 71);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(451, 428);
@@ -3688,7 +3688,6 @@ namespace Biblestia
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox5);
@@ -3697,6 +3696,7 @@ namespace Biblestia
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox10);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

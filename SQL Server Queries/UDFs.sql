@@ -65,8 +65,6 @@ as
 			where nomeBiblioteca = @nomeBiblioteca;
 go
 
-select * from Biblestia.obterAtividades('Biblioteca Universitária de Aveiro')
-
 -- Obter todas as atividades em que um dado funcionário foi responsável
 drop function Biblestia.obterAtvidadesResponsavel; 
 go
@@ -258,3 +256,15 @@ as
 			from (Biblestia.Requisicao join Biblestia.Leitor on Requisicao.IdLeitor=Leitor.idLeitor)
 			where Requisicao.idLeitor = @idLeitor and Requisicao.nomeBiblioteca = @nomeBiblioteca;
 go  
+
+-- Obter o leitor que requisita um dado material
+drop function Biblestia.obterRequisitor
+go
+create function Biblestia.obterRequisitor(@idMaterial int, @nomeBiblioteca varchar(60)) returns table
+as
+	return	select	Leitor.idLeitor, Leitor.nomeCompleto
+			from	((Biblestia.RequisicaoMaterial join Biblestia.Requisicao on RequisicaoMaterial.idRequisicao = Requisicao.id)
+					join Biblestia.Leitor on Requisicao.idLeitor = Leitor.idLeitor)
+			where	Requisicao.dataEntrega is null and RequisicaoMaterial.idMaterial = @idMaterial and Requisicao.nomeBiblioteca = @nomeBiblioteca;
+go
+
