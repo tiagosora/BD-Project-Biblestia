@@ -16,7 +16,7 @@ namespace Biblestia
         
         public override string ToString()
         {
-            return _id + "\t" + _seccaoExposicao + "\t" + _estado;
+            return _id + "\t" + _seccaoExposicao + "\t\t" + _estado;
         }
     }
 }

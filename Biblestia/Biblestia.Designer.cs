@@ -81,7 +81,7 @@ namespace Biblestia
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(351, 543);
+            this.label3.Location = new System.Drawing.Point(346, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(321, 17);
             this.label3.TabIndex = 4;
@@ -113,6 +113,7 @@ namespace Biblestia
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::Biblestia.Properties.Resources.plural_mundo_de_livros;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1033, 569);
             this.Controls.Add(this.addbiblioteca);
