@@ -336,6 +336,25 @@ namespace Biblestia
             this.textBox79 = new System.Windows.Forms.TextBox();
             this.label106 = new System.Windows.Forms.Label();
             this.label104 = new System.Windows.Forms.Label();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.button42 = new System.Windows.Forms.Button();
+            this.button43 = new System.Windows.Forms.Button();
+            this.button44 = new System.Windows.Forms.Button();
+            this.textBox80 = new System.Windows.Forms.TextBox();
+            this.label107 = new System.Windows.Forms.Label();
+            this.textBox81 = new System.Windows.Forms.TextBox();
+            this.label108 = new System.Windows.Forms.Label();
+            this.textBox82 = new System.Windows.Forms.TextBox();
+            this.label109 = new System.Windows.Forms.Label();
+            this.dateTimePicker20 = new System.Windows.Forms.DateTimePicker();
+            this.label110 = new System.Windows.Forms.Label();
+            this.textBox83 = new System.Windows.Forms.TextBox();
+            this.label111 = new System.Windows.Forms.Label();
+            this.textBox84 = new System.Windows.Forms.TextBox();
+            this.label112 = new System.Windows.Forms.Label();
+            this.button45 = new System.Windows.Forms.Button();
+            this.button46 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -366,6 +385,8 @@ namespace Biblestia
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            this.groupBox12.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.SuspendLayout();
             // 
             // button3
@@ -486,6 +507,7 @@ namespace Biblestia
             this.button2.TabIndex = 175;
             this.button2.Text = "Atividades";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label12
             // 
@@ -1787,7 +1809,7 @@ namespace Biblestia
             // 
             this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label37.Font = new System.Drawing.Font("Verdana", 10F);
-            this.label37.Location = new System.Drawing.Point(293, 133);
+            this.label37.Location = new System.Drawing.Point(293, 126);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(145, 91);
@@ -2779,7 +2801,7 @@ namespace Biblestia
             this.panel13.Controls.Add(this.label73);
             this.panel13.Controls.Add(this.textBox49);
             this.panel13.Controls.Add(this.label74);
-            this.panel13.Location = new System.Drawing.Point(8, 127);
+            this.panel13.Location = new System.Drawing.Point(8, 135);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(434, 174);
             this.panel13.TabIndex = 241;
@@ -2909,7 +2931,7 @@ namespace Biblestia
             this.panel14.Controls.Add(this.label78);
             this.panel14.Controls.Add(this.textBox54);
             this.panel14.Controls.Add(this.label79);
-            this.panel14.Location = new System.Drawing.Point(8, 127);
+            this.panel14.Location = new System.Drawing.Point(8, 135);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(434, 174);
             this.panel14.TabIndex = 238;
@@ -3041,7 +3063,7 @@ namespace Biblestia
             this.panel15.Controls.Add(this.label84);
             this.panel15.Controls.Add(this.textBox60);
             this.panel15.Controls.Add(this.label85);
-            this.panel15.Location = new System.Drawing.Point(8, 127);
+            this.panel15.Location = new System.Drawing.Point(8, 135);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(434, 174);
             this.panel15.TabIndex = 237;
@@ -3191,7 +3213,7 @@ namespace Biblestia
             this.panel16.Controls.Add(this.label88);
             this.panel16.Controls.Add(this.textBox63);
             this.panel16.Controls.Add(this.label89);
-            this.panel16.Location = new System.Drawing.Point(8, 127);
+            this.panel16.Location = new System.Drawing.Point(8, 135);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(434, 174);
             this.panel16.TabIndex = 239;
@@ -3298,7 +3320,7 @@ namespace Biblestia
             this.panel17.Controls.Add(this.label93);
             this.panel17.Controls.Add(this.textBox67);
             this.panel17.Controls.Add(this.label94);
-            this.panel17.Location = new System.Drawing.Point(8, 127);
+            this.panel17.Location = new System.Drawing.Point(8, 135);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(434, 174);
             this.panel17.TabIndex = 240;
@@ -3687,6 +3709,7 @@ namespace Biblestia
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.textBox76);
             this.groupBox11.Controls.Add(this.label104);
             this.groupBox11.Controls.Add(this.label106);
             this.groupBox11.Controls.Add(this.textBox79);
@@ -3695,7 +3718,6 @@ namespace Biblestia
             this.groupBox11.Controls.Add(this.button41);
             this.groupBox11.Controls.Add(this.textBox77);
             this.groupBox11.Controls.Add(this.chart2);
-            this.groupBox11.Controls.Add(this.textBox76);
             this.groupBox11.Controls.Add(this.label103);
             this.groupBox11.Location = new System.Drawing.Point(356, 71);
             this.groupBox11.Name = "groupBox11";
@@ -3708,11 +3730,11 @@ namespace Biblestia
             // 
             this.textBox76.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox76.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.textBox76.Location = new System.Drawing.Point(173, 72);
+            this.textBox76.Location = new System.Drawing.Point(195, 72);
             this.textBox76.Margin = new System.Windows.Forms.Padding(4);
             this.textBox76.Name = "textBox76";
             this.textBox76.ReadOnly = true;
-            this.textBox76.Size = new System.Drawing.Size(78, 26);
+            this.textBox76.Size = new System.Drawing.Size(56, 26);
             this.textBox76.TabIndex = 248;
             // 
             // label103
@@ -3722,7 +3744,7 @@ namespace Biblestia
             this.label103.Location = new System.Drawing.Point(19, 76);
             this.label103.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(152, 20);
+            this.label103.Size = new System.Drawing.Size(177, 20);
             this.label103.TabIndex = 247;
             this.label103.Text = "Número de Livros";
             // 
@@ -3762,6 +3784,7 @@ namespace Biblestia
             this.button41.TabIndex = 241;
             this.button41.Text = "Voltar";
             this.button41.UseVisualStyleBackColor = true;
+            this.button41.Click += new System.EventHandler(this.button41_Click);
             // 
             // label105
             // 
@@ -3770,7 +3793,7 @@ namespace Biblestia
             this.label105.Location = new System.Drawing.Point(19, 108);
             this.label105.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(205, 39);
+            this.label105.Size = new System.Drawing.Size(202, 39);
             this.label105.TabIndex = 252;
             this.label105.Text = "Percentagem de Livros\r\nem Requisições";
             // 
@@ -3803,7 +3826,7 @@ namespace Biblestia
             this.label106.Location = new System.Drawing.Point(19, 33);
             this.label106.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(100, 20);
+            this.label106.Size = new System.Drawing.Size(87, 20);
             this.label106.TabIndex = 255;
             this.label106.Text = "Material";
             // 
@@ -3814,16 +3837,226 @@ namespace Biblestia
             this.label104.Location = new System.Drawing.Point(19, 164);
             this.label104.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
             this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(193, 24);
+            this.label104.Size = new System.Drawing.Size(212, 24);
             this.label104.TabIndex = 256;
             this.label104.Text = "Género Mais Lido";
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.button46);
+            this.groupBox12.Controls.Add(this.button45);
+            this.groupBox12.Controls.Add(this.textBox84);
+            this.groupBox12.Controls.Add(this.label112);
+            this.groupBox12.Controls.Add(this.textBox83);
+            this.groupBox12.Controls.Add(this.label111);
+            this.groupBox12.Controls.Add(this.label110);
+            this.groupBox12.Controls.Add(this.dateTimePicker20);
+            this.groupBox12.Controls.Add(this.textBox82);
+            this.groupBox12.Controls.Add(this.label109);
+            this.groupBox12.Controls.Add(this.textBox80);
+            this.groupBox12.Controls.Add(this.label107);
+            this.groupBox12.Controls.Add(this.textBox81);
+            this.groupBox12.Controls.Add(this.label108);
+            this.groupBox12.Location = new System.Drawing.Point(356, 71);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(451, 428);
+            this.groupBox12.TabIndex = 241;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Atividades";
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.button42);
+            this.panel18.Controls.Add(this.button43);
+            this.panel18.Controls.Add(this.button44);
+            this.panel18.Location = new System.Drawing.Point(28, 505);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(779, 51);
+            this.panel18.TabIndex = 242;
+            // 
+            // button42
+            // 
+            this.button42.Location = new System.Drawing.Point(676, 3);
+            this.button42.Name = "button42";
+            this.button42.Size = new System.Drawing.Size(101, 35);
+            this.button42.TabIndex = 245;
+            this.button42.Text = "Remover";
+            this.button42.UseVisualStyleBackColor = true;
+            // 
+            // button43
+            // 
+            this.button43.Location = new System.Drawing.Point(326, 3);
+            this.button43.Name = "button43";
+            this.button43.Size = new System.Drawing.Size(108, 35);
+            this.button43.TabIndex = 244;
+            this.button43.Text = "Editar";
+            this.button43.UseVisualStyleBackColor = true;
+            // 
+            // button44
+            // 
+            this.button44.Location = new System.Drawing.Point(440, 3);
+            this.button44.Name = "button44";
+            this.button44.Size = new System.Drawing.Size(230, 35);
+            this.button44.TabIndex = 243;
+            this.button44.Text = "Nova Atividade";
+            this.button44.UseVisualStyleBackColor = true;
+            // 
+            // textBox80
+            // 
+            this.textBox80.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox80.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox80.Location = new System.Drawing.Point(41, 112);
+            this.textBox80.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox80.Name = "textBox80";
+            this.textBox80.ReadOnly = true;
+            this.textBox80.Size = new System.Drawing.Size(228, 26);
+            this.textBox80.TabIndex = 254;
+            // 
+            // label107
+            // 
+            this.label107.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label107.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label107.Location = new System.Drawing.Point(38, 90);
+            this.label107.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(167, 20);
+            this.label107.TabIndex = 253;
+            this.label107.Text = "Temática";
+            // 
+            // textBox81
+            // 
+            this.textBox81.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox81.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox81.Location = new System.Drawing.Point(40, 53);
+            this.textBox81.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox81.Name = "textBox81";
+            this.textBox81.ReadOnly = true;
+            this.textBox81.Size = new System.Drawing.Size(378, 26);
+            this.textBox81.TabIndex = 252;
+            // 
+            // label108
+            // 
+            this.label108.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label108.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label108.Location = new System.Drawing.Point(38, 31);
+            this.label108.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(141, 20);
+            this.label108.TabIndex = 251;
+            this.label108.Text = "Nome";
+            // 
+            // textBox82
+            // 
+            this.textBox82.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox82.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox82.Location = new System.Drawing.Point(289, 112);
+            this.textBox82.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox82.Name = "textBox82";
+            this.textBox82.ReadOnly = true;
+            this.textBox82.Size = new System.Drawing.Size(126, 26);
+            this.textBox82.TabIndex = 256;
+            // 
+            // label109
+            // 
+            this.label109.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label109.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label109.Location = new System.Drawing.Point(286, 90);
+            this.label109.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(132, 20);
+            this.label109.TabIndex = 255;
+            this.label109.Text = "ID Responsável";
+            // 
+            // dateTimePicker20
+            // 
+            this.dateTimePicker20.CustomFormat = "";
+            this.dateTimePicker20.Enabled = false;
+            this.dateTimePicker20.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker20.Location = new System.Drawing.Point(40, 179);
+            this.dateTimePicker20.Name = "dateTimePicker20";
+            this.dateTimePicker20.Size = new System.Drawing.Size(150, 22);
+            this.dateTimePicker20.TabIndex = 257;
+            // 
+            // label110
+            // 
+            this.label110.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label110.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label110.Location = new System.Drawing.Point(38, 152);
+            this.label110.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(167, 20);
+            this.label110.TabIndex = 258;
+            this.label110.Text = "Data da Atividade";
+            // 
+            // textBox83
+            // 
+            this.textBox83.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox83.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox83.Location = new System.Drawing.Point(289, 179);
+            this.textBox83.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox83.Name = "textBox83";
+            this.textBox83.ReadOnly = true;
+            this.textBox83.Size = new System.Drawing.Size(126, 26);
+            this.textBox83.TabIndex = 260;
+            // 
+            // label111
+            // 
+            this.label111.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label111.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label111.Location = new System.Drawing.Point(286, 152);
+            this.label111.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(132, 20);
+            this.label111.TabIndex = 259;
+            this.label111.Text = "Duração";
+            // 
+            // textBox84
+            // 
+            this.textBox84.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox84.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBox84.Location = new System.Drawing.Point(313, 220);
+            this.textBox84.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox84.Name = "textBox84";
+            this.textBox84.ReadOnly = true;
+            this.textBox84.Size = new System.Drawing.Size(103, 26);
+            this.textBox84.TabIndex = 262;
+            // 
+            // label112
+            // 
+            this.label112.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label112.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label112.Location = new System.Drawing.Point(37, 224);
+            this.label112.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(268, 20);
+            this.label112.TabIndex = 261;
+            this.label112.Text = "Número de Leitores participantes";
+            // 
+            // button45
+            // 
+            this.button45.Location = new System.Drawing.Point(40, 311);
+            this.button45.Name = "button45";
+            this.button45.Size = new System.Drawing.Size(169, 62);
+            this.button45.TabIndex = 246;
+            this.button45.Text = "Lista de Participantes desta Atividade\r\n";
+            this.button45.UseVisualStyleBackColor = true;
+            // 
+            // button46
+            // 
+            this.button46.Location = new System.Drawing.Point(287, 312);
+            this.button46.Name = "button46";
+            this.button46.Size = new System.Drawing.Size(129, 62);
+            this.button46.TabIndex = 263;
+            this.button46.Text = "Aceder ao Leitor Mais Ativo";
+            this.button46.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 569);
-            this.Controls.Add(this.groupBox11);
+            this.Controls.Add(this.panel18);
+            this.Controls.Add(this.groupBox12);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox6);
@@ -3847,6 +4080,7 @@ namespace Biblestia
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox10);
+            this.Controls.Add(this.groupBox11);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -3903,6 +4137,9 @@ namespace Biblestia
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.panel18.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4207,5 +4444,24 @@ namespace Biblestia
         internal System.Windows.Forms.TextBox textBox79;
         internal System.Windows.Forms.TextBox textBox78;
         internal System.Windows.Forms.Label label105;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Button button42;
+        private System.Windows.Forms.Button button43;
+        private System.Windows.Forms.Button button44;
+        internal System.Windows.Forms.TextBox textBox80;
+        internal System.Windows.Forms.Label label107;
+        internal System.Windows.Forms.TextBox textBox81;
+        internal System.Windows.Forms.Label label108;
+        internal System.Windows.Forms.TextBox textBox82;
+        internal System.Windows.Forms.Label label109;
+        internal System.Windows.Forms.TextBox textBox83;
+        internal System.Windows.Forms.Label label111;
+        internal System.Windows.Forms.Label label110;
+        private System.Windows.Forms.DateTimePicker dateTimePicker20;
+        internal System.Windows.Forms.TextBox textBox84;
+        internal System.Windows.Forms.Label label112;
+        private System.Windows.Forms.Button button45;
+        private System.Windows.Forms.Button button46;
     }
 }

@@ -85,37 +85,6 @@ as
 go
 
 ---- Saber o tipo de um dadod material
---drop proc Biblestia.saberTipo;
---go 
---create proc Biblestia.saberTipo (@idMaterial int, @nomeBiblioteca varchar(60)) 
---as
---	declare @return varchar(60);
---	declare @i int; set @i = @idMaterial;
---	declare @b varchar(60); set @b = @nomeBiblioteca;
-
---	if @i in (select idMaterial from Biblestia.Livro where nomeBiblioteca=@b)
---	begin
---		set @return = 'Livro';
---	end
---	if @i in (select idMaterial from Biblestia.Jornal where nomeBiblioteca=@b)
---	begin
---		set @return = 'Jornal';
---	end
---	if @i in (select idMaterial from Biblestia.Revista where nomeBiblioteca=@b)
---	begin
---		set @return = 'Revista';
---	end
---	if @i in (select idMaterial from Biblestia.Jogo where nomeBiblioteca=@b)
---	begin
---		set @return = 'Jogo';
---	end
---	if @i in (select idMaterial from Biblestia.CD where nomeBiblioteca=@b)
---	begin
---		set @return = 'CD';
---	end
---go
-
--- Saber o tipo de um dadod material
 drop proc Biblestia.saberTipo;
 go 
 create proc Biblestia.saberTipo (@idMaterial int, @nomeBiblioteca varchar(60), @return varchar(60) output) 

@@ -63,6 +63,8 @@ namespace Biblestia
             groupBox8.Visible = false;
             groupBox9.Visible = false;
             groupBox10.Visible = false;
+            groupBox11.Visible = false;
+            groupBox12.Visible = false;
         }
 
         private void panelsVisibleFalse()
@@ -72,6 +74,7 @@ namespace Biblestia
             panel3.Visible = false;
             panel5.Visible = false;
             panel12.Visible = false;
+            panel18.Visible = false;
         }
         private void updateListFuncionarios()
         {
@@ -250,11 +253,17 @@ namespace Biblestia
                         currentListIndex = listBox1.SelectedIndex;
                         showMaterial();
                         break;
+                    case "Atividade":
+                        currentListIndex = listBox1.SelectedIndex;
+                        showAtividade();
+                        break;
                     default:
                         break;
                 }
             }
         }
+
+       
 
         public void showFuncionario()
         {
@@ -1749,6 +1758,7 @@ namespace Biblestia
             Material material = (Material)listBox1.SelectedItem;
             textBox68.Text = material.Id;
             textBox69.Text = material.Estado;
+            textBox70.Text = material.SeccaoExposicao;
             if (material.Estado == "Requisitado")
             {
                 label98.Visible = true;
@@ -1962,15 +1972,14 @@ namespace Biblestia
         }
         private void button38_Click(object sender, EventArgs e)
         {
-            // datagetting
             if (!verifySGBDConnection())
             {
                 return;
             }
             groupsVisibleFalse();
             groupBox11.Visible = true;
+            panel12.Enabled = false;
             listBox1.Enabled = false;
-            panel5.Enabled = false;
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
@@ -1985,11 +1994,7 @@ namespace Biblestia
             string nJogos;
             string nCDs;
             string nRequisiçoes;
-            string nLivrosReq;
-            string nJornaisReq;
-            string nRevistasReq;
-            string nJogosReq;
-            string nCDsReq;
+
             if (!verifySGBDConnection())
             {
                 return;
@@ -2060,7 +2065,6 @@ namespace Biblestia
             reader6.Close();
             cn.Close();
 
-
             switch (tipoMaterial)
             {
                 case "Livro":
@@ -2073,29 +2077,198 @@ namespace Biblestia
                     SqlCommand cmd7 = new SqlCommand("select * from Biblestia.nLivrosReq('" + biblioteca.Nome + "')", cn);
                     SqlDataReader reader7 = cmd7.ExecuteReader();
                     reader7.Read();
-                    nLivrosReq = reader7["cont"].ToString();
+                    string nLivrosReq = reader7["cont"].ToString();
                     reader7.Close();
                     cn.Close();
-                    label105.Text = "Percentagem de Livros\nsem Requisições";
-                    textBox77.Text = (int.Parse(nLivrosReq)\int.Parse(nRequisiçoes)*100).ToString();
+                    label105.Text = "Perc. de Livros em Requisições";
+                    double count = ((double.Parse(nLivrosReq) / double.Parse(nRequisiçoes)) *100);
+                    textBox77.Text = String.Format("{0:0.##} %", count);
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    SqlCommand cmd8 = new SqlCommand("select * from Biblestia.obterContGeneros('" + biblioteca.Nome + "') order by cont desc", cn);
+                    SqlDataReader reader8 = cmd8.ExecuteReader();
+                    reader8.Read();
+                    label104.Text = "Género Mais Lido";
+                    textBox78.Text = reader8["genero"].ToString();
+                    reader8.Close();
+                    cn.Close();
                     break;
                 case "Jornal":
                     // editora com mais titulos
+                    label103.Text = "Número de Jornais";
+                    textBox76.Text = nJornais;
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    SqlCommand cmd9 = new SqlCommand("select * from Biblestia.nJornalReq('" + biblioteca.Nome + "')", cn);
+                    SqlDataReader reader9 = cmd9.ExecuteReader();
+                    reader9.Read();
+                    string nJornaisReq = reader9["cont"].ToString();
+                    reader9.Close();
+                    cn.Close();
+                    label105.Text = "Perc. de Jornais em Requisições";
+                    double count2 = ((double.Parse(nJornaisReq) / double.Parse(nRequisiçoes)) * 100);
+                    textBox77.Text = String.Format("{0:0.##} %", count2);
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    SqlCommand cmd10 = new SqlCommand("select * from Biblestia.obterContEditora('" + biblioteca.Nome + "') order by cont desc", cn);
+                    SqlDataReader reader10 = cmd10.ExecuteReader();
+                    reader10.Read();
+                    label104.Text = "Editor com Mais Títulos";
+                    textBox78.Text = reader10["nomeEditora"].ToString();
+                    reader10.Close();
+                    cn.Close();
                     break;
                 case "Revista":
                     // categoria mais lida
+                    label103.Text = "Número de Revistas";
+                    textBox76.Text = nRevistas;
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    SqlCommand cmd11 = new SqlCommand("select * from Biblestia.nRevistaReq('" + biblioteca.Nome + "')", cn);
+                    SqlDataReader reader11 = cmd11.ExecuteReader();
+                    reader11.Read();
+                    string nRevistaReq = reader11["cont"].ToString();
+                    reader11.Close();
+                    cn.Close();
+                    label105.Text = "Perc. de Revistas em Requisições";
+                    double count3 = ((double.Parse(nRevistaReq) / double.Parse(nRequisiçoes)) * 100);
+                    textBox77.Text = String.Format("{0:0.##} %", count3);
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    SqlCommand cmd12 = new SqlCommand("select * from Biblestia.obterContCategoria('" + biblioteca.Nome + "') order by cont desc", cn);
+                    SqlDataReader reader12 = cmd12.ExecuteReader();
+                    reader12.Read();
+                    label104.Text = "Categoria Mais Lido";
+                    textBox78.Text = reader12["categoria"].ToString();
+                    reader12.Close();
+                    cn.Close();
                     break;
                 case "Jogo":
                     // categoria com mais jogos
+                    label103.Text = "Número de Jogos";
+                    textBox76.Text = nJogos;
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    SqlCommand cmd13 = new SqlCommand("select * from Biblestia.nJogoReq('" + biblioteca.Nome + "')", cn);
+                    SqlDataReader reader13 = cmd13.ExecuteReader();
+                    reader13.Read();
+                    string nJogosReq = reader13["cont"].ToString();
+                    reader13.Close();
+                    cn.Close();
+                    label105.Text = "Perc. de Jogos em Requisições";
+                    double count4 = ((double.Parse(nJogosReq) / double.Parse(nRequisiçoes)) * 100);
+                    textBox77.Text = String.Format("{0:0.##} %", count4);
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    SqlCommand cmd14 = new SqlCommand("select * from Biblestia.obterContCategoriaJogos('" + biblioteca.Nome + "') order by cont desc", cn);
+                    SqlDataReader reader14 = cmd14.ExecuteReader();
+                    reader14.Read();
+                    label104.Text = "Categoria Com Mais Jogos";
+                    textBox78.Text = reader14["categoria"].ToString();
+                    reader14.Close();
+                    cn.Close();
                     break;
                 case "CD":
                     // tipo com mais CDs
+                    label103.Text = "Número de CDs";
+                    textBox76.Text = nCDs;
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    SqlCommand cmd15 = new SqlCommand("select * from Biblestia.nCDsReq('" + biblioteca.Nome + "')", cn);
+                    SqlDataReader reader15 = cmd15.ExecuteReader();
+                    reader15.Read();
+                    string nCDsReq = reader15["cont"].ToString();
+                    reader15.Close();
+                    cn.Close();
+                    label105.Text = "Perc. de CDs em Requisições";
+                    double count5 = ((double.Parse(nCDsReq) / double.Parse(nRequisiçoes)) * 100);
+                    textBox77.Text = String.Format("{0:0.##} %", count5);
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    SqlCommand cmd16 = new SqlCommand("select * from Biblestia.obterContTipoCds('" + biblioteca.Nome + "') order by cont desc", cn);
+                    SqlDataReader reader16 = cmd16.ExecuteReader();
+                    reader16.Read();
+                    label104.Text = "Tipo Com Mais CDs";
+                    textBox78.Text = reader16["categoria"].ToString();
+                    reader16.Close();
+                    cn.Close();
                     break;
                 default:
                     break;
             }
         }
-    }
 
+        private void button41_Click(object sender, EventArgs e)
+        {
+            groupsVisibleFalse();
+            groupBox9.Visible = true;
+            panel12.Enabled = true;
+            listBox1.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+
+            groupsVisibleFalse();
+            panelsVisibleFalse();
+            groupBox12.Visible = true;
+            listBox1.Visible = true;
+            listBox1.Enabled = true;
+            panel18.Visible = true;
+
+            listType = "Atividade";
+            SqlCommand cmd = new SqlCommand("select * from Biblestia.obterAtividades('" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            listBox1.Items.Clear();
+            while (reader.Read())
+            {
+                Atividade atividade = new Atividade();
+                atividade.NomeAtividade = reader["nomeAtividade"].ToString();
+                atividade.NomeBiblioteca = reader["nomeBiblioteca"].ToString();
+                atividade.DataAtividade = reader["dataAtividade"].ToString();
+                atividade.Tematica = reader["tematica"].ToString();
+                atividade.DuracaoMin = reader["duracaoMin"].ToString();
+                atividade.IdFuncResponsavel = reader["idFuncResponsavel"].ToString();
+                listBox1.Items.Add(atividade);
+            }
+            reader.Close();
+            cn.Close();
+            if (listBox1.Items.Count > 0)
+            {
+                listBox1.SelectedIndex = 0;
+            }
+        }
+        private void showAtividade()
+        {
+            throw new NotImplementedException();
+
+
+    }
 }
-                                                                                     
