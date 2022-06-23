@@ -2262,10 +2262,6 @@ namespace Biblestia
             cn.Close();
             
         }
-    }
-=======
->>>>>>> 11904958faf03c061793006093c8700603dbeeff
-
         private void button41_Click(object sender, EventArgs e)
         {
             groupsVisibleFalse();
@@ -2319,6 +2315,6 @@ namespace Biblestia
         {
             throw new NotImplementedException();
 
-
+        }
     }
 }
