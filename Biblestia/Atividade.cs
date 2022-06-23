@@ -9,17 +9,17 @@ namespace Biblestia
 {
     class Atividade
     {
-        private String _nomeAtividade, _nomeBiblioteca, _dataAtividade, _tematica, _duracao, _nifFuncResponsavel;
+        private String _nomeAtividade, _nomeBiblioteca, _dataAtividade, _tematica, _duracaoMin, _idFuncResponsavel;
         public String NomeAtividade { get => _nomeAtividade; set => _nomeAtividade = value; }
         public String NomeBiblioteca { get => _nomeBiblioteca; set => _nomeBiblioteca = value; }
         public String DataAtividade { get => _dataAtividade; set => _dataAtividade = value; }
         public String Tematica { get => _tematica; set => _tematica = value; }
-        public String Duracao { get => _duracao; set => _duracao = value; }
-        public String NifFuncResponsavel { get => _nifFuncResponsavel; set => _nifFuncResponsavel = value; }
+        public String DuracaoMin { get => _duracaoMin; set => _duracaoMin = value; }
+        public String IdFuncResponsavel { get => _idFuncResponsavel; set => _idFuncResponsavel = value; }
 
         public override string ToString()
         {
-            return _nomeAtividade;
+            return _dataAtividade + "\t" + _nomeAtividade;
         }
     }
 }

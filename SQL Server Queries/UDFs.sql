@@ -390,10 +390,10 @@ as
 	return	select genero, count(*) as cont
 			from Biblestia.Livro
 			where Livro.nomeBiblioteca = @nomeBiblioteca and genero is not null
-			group by genero
+			group by genero;
 go
 
--- Obter a categoria revista
+-- Obter a categoria revista 
 drop function Biblestia.obterContCategoria;
 go
 create function Biblestia.obterContCategoria(@nomeBiblioteca varchar(60)) returns table
@@ -401,7 +401,7 @@ as
 	return	select categoria, count(*) as cont
 			from Biblestia.Revista
 			where Revista.nomeBiblioteca = @nomeBiblioteca and categoria is not null
-			group by categoria
+			group by categoria;
 go
 
 -- Obter a categoria com mais jogos
@@ -412,7 +412,7 @@ as
 	return	select categoria, count(*) as cont
 			from Biblestia.Jogo
 			where Jogo.nomeBiblioteca = @nomeBiblioteca and categoria is not null
-			group by categoria
+			group by categoria;
 go
 
 -- Obter tipo com mais CDS
@@ -426,7 +426,7 @@ as
 			group by categoria;
 go
 
--- Obter maior editora
+-- Obter maior editora // JORNAL
 drop function Biblestia.obterContEditora;
 go
 create function Biblestia.obterContEditora(@nomeBiblioteca varchar(60)) returns table
@@ -434,7 +434,17 @@ as
 	return	select nomeEditora, count(*) as cont
 			from Biblestia.Jornal
 			where Jornal.nomeBiblioteca = @nomeBiblioteca and nomeEditora is not null
-			group by nomeEditora
+			group by nomeEditora;
 go
 
+-- Obter o número de atividades de cada leitor (order by idLeitor desc)
+drop function Biblestia.nAtividadesLeitor
+go
+create function Biblestia.nAtividadesLeitor(@nomeBiblioteca varchar(60)) returns table 
+as 
+	return select idLeitor, count(*) as cont 
+		from Biblestia.AtividadeLeitor
+		where nomeBiblioteca = @nomeBiblioteca
+		group by idLeitor; 
+go 
 
