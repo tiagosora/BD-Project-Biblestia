@@ -2095,6 +2095,52 @@ namespace Biblestia
                     break;
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            updateAllAtividades();
+
+        }
+
+        private void updateAllAtividades()
+        {
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            groupsVisibleFalse();
+            panelsVisibleFalse();
+            groupBox5.Visible = true;
+            panel5.Visible = true;
+            listBox1.Visible = false;
+            panel3.Visible = true;
+            string previews = "";
+            SqlCommand cmd = new SqlCommand("select * from Biblestia.obterAtividades('" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            Atividade atividade = new Atividade();
+            while (reader.Read())
+            {
+                if (reader["id"].ToString() != previews)
+                {
+                    atividade = new Atividade();
+                    atividade.NomeAtividade = reader["nomeAtividade"].ToString();   
+                    atividade.NomeBiblioteca = reader["nomeBiblioteca"].ToString();
+                    atividade.Duracao = reader["duracao"].ToString();
+                    atividade.Tematica = reader["tematica"].ToString();
+                    atividade.NifFuncResponsavel = reader["nifFuncResponsavel"].ToString();
+                    atividade.DataAtividade = reader["dataAtividade"].ToString();
+                    if (atividade.DataAtividade == "")
+                    {
+                        listBox3.Items.Add(atividade);
+                    }
+                    listBox4.Items.Add(atividade);
+                    
+                }
+            }
+            reader.Close();
+            cn.Close();
+            
+        }
     }
 
 }
