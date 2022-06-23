@@ -1,16 +1,16 @@
 use p6g7;
 go
 
--- Obter todos os funcion·rios de uma biblioteca
-drop function Biblestia.obterFuncion·rios; 
+-- Obter todos os funcion√°rios de uma biblioteca
+drop function Biblestia.obterFuncion√°rios; 
 go 
-create function Biblestia.obterFuncion·rios(@nomeBiblioteca varchar(60)) returns table
+create function Biblestia.obterFuncion√°rios(@nomeBiblioteca varchar(60)) returns table
 as
 	return	select * from Biblestia.Funcionario
 			where nomeBiblioteca = @nomeBiblioteca;
 go
 
--- Obter os funcion·rios atuais de um biblioteca
+-- Obter os funcion√°rios atuais de um biblioteca
 drop function Biblestia.obterFuncionariosAtuais;
 go
 create function Biblestia.obterFuncionariosAtuais(@nomeBiblioteca varchar(60)) returns table
@@ -38,7 +38,7 @@ as
 			where nomeBiblioteca = @nomeBiblioteca;
 go
 
--- Obter todos os funcion·rios de uma biblioteca
+-- Obter todos os funcion√°rios de uma biblioteca
 drop function Biblestia.obterLeitores; 
 go 
 create function Biblestia.obterLeitores(@nomeBiblioteca varchar(60)) returns table
@@ -65,7 +65,7 @@ as
 			where nomeBiblioteca = @nomeBiblioteca;
 go
 
--- Obter todas as atividades em que um dado funcion·rio foi respons·vel
+-- Obter todas as atividades em que um dado funcion√°rio foi respons√°vel
 drop function Biblestia.obterAtvidadesResponsavel; 
 go
 create function Biblestia.obterAtvidadesResponsavel(@idFuncionario int, @nomeBiblioteca varchar(60)) returns table
@@ -74,7 +74,7 @@ as
 			where idFuncResponsavel = @idFuncionario and nomeBiblioteca = @nomeBiblioteca;
 go
 
--- Obter o n˙mero de todos os tipos de materiais de um biblioteca
+-- Obter o n√∫mero de todos os tipos de materiais de um biblioteca
 drop function Biblestia.obterDadosMateriais; 
 go 
 create function Biblestia.obterDadosMateriais(@nomeBiblioteca varchar(60)) returns table
@@ -130,7 +130,7 @@ as
 			where nomeBiblioteca = @nomeBiblioteca;
 go
 
--- Obter todas as requisiÁıes de uma biblioteca;
+-- Obter todas as requisi√ß√µes de uma biblioteca;
 drop function Biblestia.obterRequisicoes
 go
 create function Biblestia.obterRequisicoes(@nomeBiblioteca varchar(60)) returns table
@@ -139,7 +139,7 @@ as
 			where nomeBiblioteca = @nomeBiblioteca;
 go
 
--- Obter requisiÁıes de um dado Material
+-- Obter requisi√ß√µes de um dado Material
 drop function Biblestia.obterRequisicoesMaterial
 go
 create function Biblestia.obterRequisicoesMaterial(@idMaterial int, @nomeBiblioteca varchar(60)) returns table 
@@ -148,7 +148,7 @@ as
 			where idMaterial = @idMaterial and nomeBiblioteca = @nomeBiblioteca;
 go 
 
--- Obter o n˙mero de livros de uma requisiÁ„o
+-- Obter o n√∫mero de livros de uma requisi√ß√£o
 drop function Biblestia.obterLivrosRequisicao;
 go
 create function Biblestia.obterLivrosRequisicao(@id int, @nomeBiblioteca varchar(60)) returns table
@@ -157,7 +157,7 @@ as
 			from RequisicaoMaterial join Livro on RequisicaoMaterial.idMaterial = Livro.idMaterial
 			where idRequisicao=@id and RequisicaoMaterial.nomeBiblioteca=@nomeBiblioteca;
 go
--- Obter o n˙mero de jornais de uma requisiÁ„o
+-- Obter o n√∫mero de jornais de uma requisi√ß√£o
 drop function Biblestia.obterJornaisRequisicao;
 go
 create function Biblestia.obterJornaisRequisicao(@id int, @nomeBiblioteca varchar(60)) returns table
@@ -166,7 +166,7 @@ as
 			from RequisicaoMaterial join Jornal on RequisicaoMaterial.idMaterial = Jornal.idMaterial
 			where idRequisicao=@id and RequisicaoMaterial.nomeBiblioteca=@nomeBiblioteca;
 go 
--- Obter o n˙mero de revistas de uma requisiÁ„o
+-- Obter o n√∫mero de revistas de uma requisi√ß√£o
 drop function Biblestia.obterRevistasRequisicao;
 go
 create function Biblestia.obterRevistasRequisicao(@id int, @nomeBiblioteca varchar(60)) returns table
@@ -175,7 +175,7 @@ as
 			from RequisicaoMaterial join Revista on RequisicaoMaterial.idMaterial = Revista.idMaterial
 			where idRequisicao=@id and RequisicaoMaterial.nomeBiblioteca=@nomeBiblioteca;
 go
--- Obter o n˙mero de jogos de uma requisiÁ„o
+-- Obter o n√∫mero de jogos de uma requisi√ß√£o
 drop function Biblestia.obterJogosRequisicao;
 go
 create function Biblestia.obterJogosRequisicao(@id int, @nomeBiblioteca varchar(60)) returns table
@@ -184,7 +184,7 @@ as
 			from RequisicaoMaterial join Jogo on RequisicaoMaterial.idMaterial = Jogo.idMaterial
 			where idRequisicao=@id and RequisicaoMaterial.nomeBiblioteca=@nomeBiblioteca;
 go
--- Obter o n˙mero de cds de uma requisiÁ„o
+-- Obter o n√∫mero de cds de uma requisi√ß√£o
 drop function Biblestia.obterCDsRequisicao;
 go
 create function Biblestia.obterCDsRequisicao(@id int, @nomeBiblioteca varchar(60)) returns table
@@ -247,7 +247,7 @@ as
 			where idLeitor = @idLeitor and nomeBiblioteca = @nomeBiblioteca;
 go
 
--- Obter todas as requisiÁıes de um dado leitor
+-- Obter todas as requisi√ß√µes de um dado leitor
 drop function Biblestia.obterRequisicoesLeitor
 go
 create function Biblestia.obterRequisicoesLeitor(@idLeitor int, @nomeBiblioteca varchar(60)) returns table
@@ -262,9 +262,189 @@ drop function Biblestia.obterRequisitor
 go
 create function Biblestia.obterRequisitor(@idMaterial int, @nomeBiblioteca varchar(60)) returns table
 as
-	return	select	Leitor.idLeitor, Leitor.nomeCompleto
+	return	select	Leitor.idLeitor, Leitor.nomeCompleto as nomeCompleto
 			from	((Biblestia.RequisicaoMaterial join Biblestia.Requisicao on RequisicaoMaterial.idRequisicao = Requisicao.id)
 					join Biblestia.Leitor on Requisicao.idLeitor = Leitor.idLeitor)
 			where	Requisicao.dataEntrega is null and RequisicaoMaterial.idMaterial = @idMaterial and Requisicao.nomeBiblioteca = @nomeBiblioteca;
 go
+
+-- obter o numero total de livros de uma biblioteca
+drop function Biblestia.obterNumeroTotalLivros;
+go
+create function Biblestia.obterNumeroTotalLivros(@nomeBiblioteca varchar(60)) returns table
+as 
+	return select count(*) as cont 
+			from ((Biblestia.Livro join Biblestia.Material on Livro.idMaterial = Material.id)) 
+				where Material.nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- obter o numero total de jornais de uma biblioteca
+drop function Biblestia.obterNumeroTotalJornais;
+go
+create function Biblestia.obterNumeroTotalJornais(@nomeBiblioteca varchar(60)) returns table
+as 
+	return select count(*) as cont 
+			from ((Biblestia.Jornal join Biblestia.Material on Jornal.idMaterial = Material.id)) 
+				where Material.nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- obter o numero total de revistas de uma biblioteca
+drop function Biblestia.obterNumeroTotalRevistas;
+go
+create function Biblestia.obterNumeroTotalRevistas(@nomeBiblioteca varchar(60)) returns table
+as 
+	return select count(*) as cont 
+			from ((Biblestia.Revista join Biblestia.Material on Revista.idMaterial = Material.id)) 
+				where Material.nomeBiblioteca = @nomeBiblioteca;
+go
+-- obter o numero total de jogos de uma biblioteca
+drop function Biblestia.obterNumeroTotalJogos;
+go
+create function Biblestia.obterNumeroTotalJogos(@nomeBiblioteca varchar(60)) returns table
+as  
+	return select count(*) as cont 
+			from ((Biblestia.Jogo join Biblestia.Material on Jogo.idMaterial = Material.id)) 
+				where Material.nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- obter o numero total de Cd de uma biblioteca
+drop function Biblestia.obterNumeroTotalCDs;
+go
+create function Biblestia.obterNumeroTotalCDs(@nomeBiblioteca varchar(60)) returns table
+as 
+	return select count(*) as cont 
+			from ((Biblestia.CD join Biblestia.Material on CD.idMaterial = Material.id)) 
+				where Material.nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- Obter o n√∫mero de requisi√ß√µes
+drop function Biblestia.nReq;
+go
+create function Biblestia.nReq(@nomeBiblioteca varchar(60)) returns table
+as
+	return	select count(*) as cont
+			from Biblestia.RequisicaoMaterial
+			where RequisicaoMaterial.nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- Obter o n√∫mero de livros em requisi√ß√µes
+drop function Biblestia.nLivrosReq;
+go
+create function Biblestia.nLivrosReq(@nomeBiblioteca varchar(60)) returns table
+as
+	return	select count(*) as cont
+			from	((Biblestia.RequisicaoMaterial join Biblestia.Material on RequisicaoMaterial.idMaterial=Material.id)
+					join Biblestia.Livro on Material.id=Livro.idMaterial)
+			where Material.nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- Obter o n√∫mero de jornais em requisi√ß√µes
+drop function Biblestia.nJornalReq;
+go
+create function Biblestia.nJornalReq(@nomeBiblioteca varchar(60)) returns table
+as
+	return	select count(*) as cont
+			from	((Biblestia.RequisicaoMaterial join Biblestia.Material on RequisicaoMaterial.idMaterial=Material.id)
+					join Biblestia.Jornal on Material.id=Jornal.idMaterial)
+			where Material.nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- Obter o n√∫mero de revistas em requisi√ß√µes
+drop function Biblestia.nRevistaReq;
+go
+create function Biblestia.nRevistaReq(@nomeBiblioteca varchar(60)) returns table
+as
+	return	select count(*) as cont
+			from	((Biblestia.RequisicaoMaterial join Biblestia.Material on RequisicaoMaterial.idMaterial=Material.id)
+					join Biblestia.Revista on Material.id=Revista.idMaterial)
+			where Material.nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- Obter o n√∫mero de jogos em requisi√ß√µes
+drop function Biblestia.nJogoReq;
+go
+create function Biblestia.nJogoReq(@nomeBiblioteca varchar(60)) returns table
+as
+	return	select count(*) as cont
+			from	((Biblestia.RequisicaoMaterial join Biblestia.Material on RequisicaoMaterial.idMaterial=Material.id)
+					join Biblestia.Jogo on Material.id=Jogo.idMaterial)
+			where Material.nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- Obter o n√∫mero de cds em requisi√ß√µes
+drop function Biblestia.nCDsReq;
+go
+create function Biblestia.nCDsReq(@nomeBiblioteca varchar(60)) returns table
+as
+	return	select count(*) as cont
+			from	((Biblestia.RequisicaoMaterial join Biblestia.Material on RequisicaoMaterial.idMaterial=Material.id)
+					join Biblestia.CD on Material.id=CD.idMaterial)
+			where Material.nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- Obter os generos dos livros
+drop function Biblestia.obterContGeneros;
+go
+create function Biblestia.obterContGeneros(@nomeBiblioteca varchar(60)) returns table
+as
+	return	select genero, count(*) as cont
+			from Biblestia.Livro
+			where Livro.nomeBiblioteca = @nomeBiblioteca and genero is not null
+			group by genero;
+go
+
+-- Obter a categoria revista 
+drop function Biblestia.obterContCategoria;
+go
+create function Biblestia.obterContCategoria(@nomeBiblioteca varchar(60)) returns table
+as 
+	return	select categoria, count(*) as cont
+			from Biblestia.Revista
+			where Revista.nomeBiblioteca = @nomeBiblioteca and categoria is not null
+			group by categoria;
+go
+
+-- Obter a categoria com mais jogos
+drop function Biblestia.obterContCategoriaJogos;
+go
+create function Biblestia.obterContCategoriaJogos(@nomeBiblioteca varchar(60)) returns table
+as
+	return	select categoria, count(*) as cont
+			from Biblestia.Jogo
+			where Jogo.nomeBiblioteca = @nomeBiblioteca and categoria is not null
+			group by categoria;
+go
+
+-- Obter tipo com mais CDS
+drop function Biblestia.obterContTipoCds;
+go
+create function Biblestia.obterContTipoCds(@nomeBiblioteca varchar(60)) returns table
+as
+	return	select categoria, count(*) as cont
+			from Biblestia.CD
+			where CD.nomeBiblioteca = @nomeBiblioteca and categoria is not null
+			group by categoria;
+go
+
+-- Obter maior editora // JORNAL
+drop function Biblestia.obterContEditora;
+go
+create function Biblestia.obterContEditora(@nomeBiblioteca varchar(60)) returns table
+as
+	return	select nomeEditora, count(*) as cont
+			from Biblestia.Jornal
+			where Jornal.nomeBiblioteca = @nomeBiblioteca and nomeEditora is not null
+			group by nomeEditora;
+go
+
+-- Obter o n√∫mero de atividades de cada leitor (order by idLeitor desc)
+drop function Biblestia.nAtividadesLeitor
+go
+create function Biblestia.nAtividadesLeitor(@nomeBiblioteca varchar(60)) returns table 
+as 
+	return select idLeitor, count(*) as cont 
+		from Biblestia.AtividadeLeitor
+		where nomeBiblioteca = @nomeBiblioteca
+		group by idLeitor; 
+go 
 

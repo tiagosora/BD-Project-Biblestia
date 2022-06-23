@@ -431,15 +431,15 @@ insert into Biblestia.AtividadeLeitor values ('Biblioteca Universitária de Avei
 insert into Biblestia.AtividadeLeitor values ('Biblioteca Universitária de Aveiro', 'Os Maias - O Filme', 31); 
 
 -- 40 Materiais
-insert into Biblestia.Material values (1, 'Biblioteca Universitária de Aveiro', '11X-45', 'Disponível');
+insert into Biblestia.Material values (1, 'Biblioteca Universitária de Aveiro', '11X-45', 'Requisitado');
 insert into Biblestia.Material values (2, 'Biblioteca Universitária de Aveiro', '79M-78', 'Disponível');
 insert into Biblestia.Material values (3, 'Biblioteca Universitária de Aveiro', '47R-90', 'Disponível');
 insert into Biblestia.Material values (4, 'Biblioteca Universitária de Aveiro', '16T-93', 'Requisitado');
 insert into Biblestia.Material values (5, 'Biblioteca Universitária de Aveiro', '39E-81', 'Disponível');
 insert into Biblestia.Material values (6, 'Biblioteca Universitária de Aveiro', null, 'Disponível');
 insert into Biblestia.Material values (7, 'Biblioteca Universitária de Aveiro', '57D-76', 'Requisitado');
-insert into Biblestia.Material values (8, 'Biblioteca Universitária de Aveiro', '94I-79', 'Disponível');
-insert into Biblestia.Material values (9, 'Biblioteca Universitária de Aveiro', '23M-50', 'Disponível');
+insert into Biblestia.Material values (8, 'Biblioteca Universitária de Aveiro', '94I-79', 'Requisitado');
+insert into Biblestia.Material values (9, 'Biblioteca Universitária de Aveiro', '23M-50', 'Requisitado');
 insert into Biblestia.Material values (10, 'Biblioteca Universitária de Aveiro', '45E-11', 'Requisitado');
 insert into Biblestia.Material values (11, 'Biblioteca Universitária de Aveiro', '54Q-85', 'Requisitado');
 insert into Biblestia.Material values (12, 'Biblioteca Universitária de Aveiro', '61C-06', 'Requisitado'); 
