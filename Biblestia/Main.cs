@@ -1150,7 +1150,6 @@ namespace Biblestia
                 reader.Close();
                 cn.Close();
             }
-            //chart1.Titles.Add("Gráfico dos Tipos de Material Nesta Requisição");
             obterDadosMateriasRequisicao(currentRequisicao);
         }
         private void obterDadosMateriasRequisicao(Requisicao requisicao)
@@ -1786,7 +1785,6 @@ namespace Biblestia
             panel16.Visible = false;
             panel17.Visible = false;
             tipoMaterial = returnValue;
-            Debug.Print(returnValue);
             switch (returnValue)
             {
                 case "Livro":
@@ -1878,11 +1876,7 @@ namespace Biblestia
             }
         }
 
-        private void button38_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void button39_Click(object sender, EventArgs e)
         {
             if (!verifySGBDConnection())
@@ -1952,6 +1946,8 @@ namespace Biblestia
             }
         }
 
+        
+
         private void button40_Click(object sender, EventArgs e)
         {
             groupsVisibleFalse();
@@ -1964,6 +1960,142 @@ namespace Biblestia
             button4.Enabled = true;
             button5.Enabled = true;
         }
+        private void button38_Click(object sender, EventArgs e)
+        {
+            // datagetting
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            groupsVisibleFalse();
+            groupBox11.Visible = true;
+            listBox1.Enabled = false;
+            panel5.Enabled = false;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+
+            Material material = (Material)listBox1.SelectedItem;
+            textBox79.Text = tipoMaterial;
+            string nLivros;
+            string nJornais;
+            string nRevistas;
+            string nJogos;
+            string nCDs;
+            string nRequisiçoes;
+            string nLivrosReq;
+            string nJornaisReq;
+            string nRevistasReq;
+            string nJogosReq;
+            string nCDsReq;
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            SqlCommand cmd = new SqlCommand("select * from Biblestia.obterNumeroTotalLivros('" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            nLivros = reader["cont"].ToString();
+            reader.Close();
+            cn.Close();
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            SqlCommand cmd2 = new SqlCommand("select * from Biblestia.obterNumeroTotalJornais('" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader2 = cmd2.ExecuteReader();
+            reader2.Read();
+            nJornais = reader2["cont"].ToString();
+            reader2.Close();
+            cn.Close();
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            SqlCommand cmd3 = new SqlCommand("select * from Biblestia.obterNumeroTotalLivros('" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader3 = cmd3.ExecuteReader();
+            reader3.Read();
+            nRevistas = reader3["cont"].ToString();
+            reader3.Close();
+            cn.Close();
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            SqlCommand cmd4 = new SqlCommand("select * from Biblestia.obterNumeroTotalLivros('" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader4 = cmd4.ExecuteReader();
+            reader4.Read();
+            nJogos = reader4["cont"].ToString();
+            reader4.Close();
+            cn.Close();
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            SqlCommand cmd5 = new SqlCommand("select * from Biblestia.obterNumeroTotalCDs('" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader5 = cmd5.ExecuteReader();
+            reader5.Read();
+            nCDs = reader5["cont"].ToString();
+            reader5.Close();
+            cn.Close();
+
+            chart2.Series["s2"].Points.Clear();
+            chart2.Series["s2"].IsValueShownAsLabel = true;
+            chart2.Series["s2"].Points.AddXY("Livros", int.Parse(nLivros));
+            chart2.Series["s2"].Points.AddXY("Jornais", int.Parse(nJornais));
+            chart2.Series["s2"].Points.AddXY("Revistas", int.Parse(nRevistas));
+            chart2.Series["s2"].Points.AddXY("Jogos", int.Parse(nJogos));
+            chart2.Series["s2"].Points.AddXY("CDs", int.Parse(nCDs));
+
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            SqlCommand cmd6 = new SqlCommand("select * from Biblestia.nReq('" + biblioteca.Nome + "')", cn);
+            SqlDataReader reader6 = cmd6.ExecuteReader();
+            reader6.Read();
+            nRequisiçoes = reader6["cont"].ToString();
+            reader6.Close();
+            cn.Close();
+
+
+            switch (tipoMaterial)
+            {
+                case "Livro":
+                    label103.Text = "Número de Livros";
+                    textBox76.Text = nLivros;
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    SqlCommand cmd7 = new SqlCommand("select * from Biblestia.nLivrosReq('" + biblioteca.Nome + "')", cn);
+                    SqlDataReader reader7 = cmd7.ExecuteReader();
+                    reader7.Read();
+                    nLivrosReq = reader7["cont"].ToString();
+                    reader7.Close();
+                    cn.Close();
+                    label105.Text = "Percentagem de Livros\nsem Requisições";
+                    textBox77.Text = (int.Parse(nLivrosReq)\int.Parse(nRequisiçoes)*100).ToString();
+                    break;
+                case "Jornal":
+                    // editora com mais titulos
+                    break;
+                case "Revista":
+                    // categoria mais lida
+                    break;
+                case "Jogo":
+                    // categoria com mais jogos
+                    break;
+                case "CD":
+                    // tipo com mais CDs
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
 }
+                                                                                     
