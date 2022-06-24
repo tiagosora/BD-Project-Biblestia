@@ -254,8 +254,8 @@ namespace Biblestia
                         showMaterial();
                         break;
                     case "Atividade":
-                        //currentListIndex = listBox1.SelectedIndex;
-                        //showAtividade();
+                        currentListIndex = listBox1.SelectedIndex;
+                        showAtividade();
                         break;
                     default:
                         break;
@@ -318,6 +318,34 @@ namespace Biblestia
             {
                 dateTimePicker6.Format = DateTimePickerFormat.Short;
                 dateTimePicker6.Text = leitor.DataNascimento;
+            }
+            cn.Close();
+        }
+
+        public void showAtividade()
+        {
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            if (listBox1.Items.Count == 0 | currentListIndex < 0)
+                return;
+            Atividade atividade = new Atividade();
+            atividade = (Atividade)listBox1.Items[currentListIndex];
+            textBox81.Text = atividade.NomeAtividade;
+            textBox80.Text = atividade.Tematica;
+            textBox82.Text = atividade.IdFuncResponsavel;
+            textBox83.Text = atividade.DuracaoMin;
+            dateTimePicker20.Text = atividade.DataAtividade;
+            if (atividade.DataAtividade == "")
+            {
+                dateTimePicker20.Format = DateTimePickerFormat.Custom;
+                dateTimePicker20.CustomFormat = " ";
+            }
+            else
+            {
+                dateTimePicker20.Format = DateTimePickerFormat.Short;
+                dateTimePicker20.Text = atividade.DataAtividade;
             }
             cn.Close();
         }
@@ -2228,38 +2256,40 @@ namespace Biblestia
             {
                 return;
             }
+
             groupsVisibleFalse();
             panelsVisibleFalse();
-            groupBox5.Visible = true;
-            panel5.Visible = true;
-            listBox1.Visible = false;
-            panel3.Visible = true;
-            string previews = "";
+            groupBox12.Visible = true;
+            listBox1.Visible = true;
+            listBox1.Enabled = true;
+            panel18.Visible = true;
+            button43.Visible = true;
+            button44.Visible = true;
+            button42.Visible = true;
+
+            listType = "Atividade";
             SqlCommand cmd = new SqlCommand("select * from Biblestia.obterAtividades('" + biblioteca.Nome + "')", cn);
             SqlDataReader reader = cmd.ExecuteReader();
-            Atividade atividade = new Atividade();
+            listBox1.Items.Clear();
             while (reader.Read())
             {
-                if (reader["id"].ToString() != previews)
-                {
-                    atividade = new Atividade();
-                    atividade.NomeAtividade = reader["nomeAtividade"].ToString();   
-                    atividade.NomeBiblioteca = reader["nomeBiblioteca"].ToString();
-                    atividade.DuracaoMin = reader["duracao"].ToString();
-                    atividade.Tematica = reader["tematica"].ToString();
-                    atividade.IdFuncResponsavel = reader["nifFuncResponsavel"].ToString();
-                    atividade.DataAtividade = reader["dataAtividade"].ToString();
-                    if (atividade.DataAtividade == "")
-                    {
-                        listBox3.Items.Add(atividade);
-                    }
-                    listBox4.Items.Add(atividade);
-                    
-                }
+                Atividade atividade = new Atividade();
+                atividade.NomeAtividade = reader["nomeAtividade"].ToString();
+                atividade.NomeBiblioteca = reader["nomeBiblioteca"].ToString();
+                atividade.DataAtividade = reader["dataAtividade"].ToString();
+                atividade.Tematica = reader["tematica"].ToString();
+                atividade.DuracaoMin = reader["duracaoMin"].ToString();
+                atividade.IdFuncResponsavel = reader["idFuncResponsavel"].ToString();
+                listBox1.Items.Add(atividade);
             }
             reader.Close();
             cn.Close();
-            
+            if (listBox1.Items.Count > 0)
+            {
+                listBox1.SelectedIndex = 0;
+            }
+
+
         }
         private void button41_Click(object sender, EventArgs e)
         {
@@ -2274,46 +2304,97 @@ namespace Biblestia
             button5.Enabled = true;
         }
 
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    if (!verifySGBDConnection())
-        //    {
-        //        return;
-        //    }
 
-        //    groupsVisibleFalse();
-        //    panelsVisibleFalse();
-        //    groupBox12.Visible = true;
-        //    listBox1.Visible = true;
-        //    listBox1.Enabled = true;
-        //    panel18.Visible = true;
+        private void button43_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button43.Enabled = false;
+            button44.Enabled = false;
+            button42.Enabled = false;
+            textBox81.ReadOnly = false;
+            textBox80.ReadOnly = false;
+            textBox82.ReadOnly = false;
+            textBox83.ReadOnly = false;
+            textBox84.ReadOnly = false;
+            dateTimePicker20.Enabled = true;
+            dateTimePicker20.Format = DateTimePickerFormat.Short;
+            panel18.Enabled = false;
+            panel10.Visible = true;
+            listBox1.Enabled = false;
 
-        //    listType = "Atividade";
-        //    SqlCommand cmd = new SqlCommand("select * from Biblestia.obterAtividades('" + biblioteca.Nome + "')", cn);
-        //    SqlDataReader reader = cmd.ExecuteReader();
-        //    listBox1.Items.Clear();
-        //    while (reader.Read())
-        //    {
-        //        Atividade atividade = new Atividade();
-        //        atividade.NomeAtividade = reader["nomeAtividade"].ToString();
-        //        atividade.NomeBiblioteca = reader["nomeBiblioteca"].ToString();
-        //        atividade.DataAtividade = reader["dataAtividade"].ToString();
-        //        atividade.Tematica = reader["tematica"].ToString();
-        //        atividade.DuracaoMin = reader["duracaoMin"].ToString();
-        //        atividade.IdFuncResponsavel = reader["idFuncResponsavel"].ToString();
-        //        listBox1.Items.Add(atividade);
-        //    }
-        //    reader.Close();
-        //    cn.Close();
-        //    if (listBox1.Items.Count > 0)
-        //    {
-        //        listBox1.SelectedIndex = 0;
-        //    }
-        //}
-        //private void showAtividade()
-        //{
-        //    throw new NotImplementedException();
+            currentAction = "updatingAtividade";
 
-        //}
+        }
+
+        private void button44_Click(object sender, EventArgs e)
+        {
+            textBox81.Clear();
+            textBox80.Clear();
+            textBox82.Clear();
+            textBox83.Clear();
+            textBox84.Clear();
+            
+
+            button1.Enabled = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            panel18.Enabled = false;
+            listBox1.ClearSelected();
+            textBox81.ReadOnly = false;
+            textBox80.ReadOnly = false;
+            textBox82.ReadOnly = false;
+            textBox83.ReadOnly = false;
+            textBox84.ReadOnly = false;
+            dateTimePicker20.Enabled = true;
+            dateTimePicker20.Format = DateTimePickerFormat.Short;
+            groupBox2.Visible = false;
+            panel1.Visible = true;
+            button45.Visible = true;
+            button46.Visible = true;
+            listBox1.Enabled = false;
+
+            currentAction = "addingAtividade";
+
+        }
+
+        private void button42_Click(object sender, EventArgs e)
+        {
+            string message = "De certeza que pretende remover esta atividade?\n";
+            string title = "Check Window";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    if (!verifySGBDConnection())
+                    {
+                        return;
+                    }
+                    Atividade atividade = (Atividade)listBox1.SelectedItem;
+
+                    SqlCommand cmd = new SqlCommand("Biblestia.removerAtividade", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", atividade.NomeBiblioteca));
+                    cmd.Parameters.Add(new SqlParameter("@nomeAtividade", atividade.NomeAtividade));
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+
+                    listBox1.Items.Remove(listBox1.SelectedItem);
+                    updateCargoList();
+                    listBox1.SelectedIndex = 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }
