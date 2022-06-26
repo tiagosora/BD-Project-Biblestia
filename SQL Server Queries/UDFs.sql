@@ -130,6 +130,7 @@ as
 			where nomeBiblioteca = @nomeBiblioteca;
 go
 
+
 -- Obter todas as requisições de uma biblioteca;
 drop function Biblestia.obterRequisicoes
 go

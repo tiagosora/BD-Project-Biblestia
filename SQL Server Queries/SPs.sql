@@ -67,6 +67,40 @@ create proc Biblestia.removerLeitor (@nomeBiblioteca varchar(60), @idLeitor int)
 as
 	delete from Biblestia.Leitor where nomeBiblioteca = @nomeBiblioteca and idLeitor = @idLeitor;
 go
+
+-- Remover atividade
+
+drop proc Biblestia.removerAtividade;
+go 
+create proc Biblestia.removerAtividade (@nomeBiblioteca varchar(60), @nomeAtividade varchar(60))
+as
+	delete from Biblestia.Atividade where nomeBiblioteca = @nomeBiblioteca and nomeAtividade = @nomeAtividade;
+go
+
+-- Editar atividade
+
+drop proc Biblestia.editarAtividade;
+go
+create proc Biblestia.editarAtiviade (@nomeBiblioteca varchar(60), @nomeAtividade varchar(60),@dataAtividade date, @tematica varchar(60), @duracaoMin int, @idFuncResponsavel int)
+as
+	update Biblestia.Atividade set nomeBiblioteca = @nomeBiblioteca, nomeAtividade = @nomeAtividade, dataAtividade = @dataAtividade, tematica = @tematica,  duracaoMin = @duracaoMin, idFuncResponsavel = @idFuncResponsavel where @nomeBiblioteca=nomeBiblioteca and @nomeAtividade = nomeAtividade;
+go
+
+-- Adicionar atividade
+
+drop proc Biblestia.adicionarAtividade;
+go      
+create proc Biblestia.adicionarAtividade (@nomeBiblioteca varchar(60),@dataAtividade date, @tematica varchar(60), @duracaoMin int, @idFuncResponsavel int)
+as
+	declare @nomeAtividade as varchar(60)
+
+	select @nomeAtividade = max(nomeAtividade) from Biblestia.Atividade
+	where nomeBiblioteca = @nomeBiblioteca;
+
+	insert into Biblestia.Atividade values (@nomeBiblioteca, @nomeAtividade, @dataAtividade, @tematica, @duracaoMin, @idFuncResponsavel)
+go
+
+
  
 -- Adicionar um novo cargo a um funcionario
 drop proc Biblestia.adicionarCargo;
