@@ -2329,7 +2329,6 @@ namespace Biblestia
             currentAction = "updatingAtividade";
 
         }
-
         private void button44_Click(object sender, EventArgs e)
         {
             textBox81.Clear();
@@ -2337,8 +2336,6 @@ namespace Biblestia
             textBox82.Clear();
             textBox83.Clear();
             textBox84.Clear();
-            
-
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
@@ -2358,9 +2355,7 @@ namespace Biblestia
             button45.Visible = true;
             button46.Visible = true;
             listBox1.Enabled = false;
-
             currentAction = "addingAtividade";
-
         }
 
         private void button42_Click(object sender, EventArgs e)
