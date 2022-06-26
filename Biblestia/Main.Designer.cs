@@ -31,12 +31,12 @@ namespace Biblestia
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea19 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend19 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea20 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend20 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button3 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.bibliotecaName = new System.Windows.Forms.Label();
@@ -246,7 +246,6 @@ namespace Biblestia
             this.textBox71 = new System.Windows.Forms.TextBox();
             this.label98 = new System.Windows.Forms.Label();
             this.textBox70 = new System.Windows.Forms.TextBox();
-            this.label97 = new System.Windows.Forms.Label();
             this.textBox69 = new System.Windows.Forms.TextBox();
             this.label96 = new System.Windows.Forms.Label();
             this.textBox68 = new System.Windows.Forms.TextBox();
@@ -306,6 +305,7 @@ namespace Biblestia
             this.label73 = new System.Windows.Forms.Label();
             this.textBox49 = new System.Windows.Forms.TextBox();
             this.label74 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.button31 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
@@ -354,6 +354,10 @@ namespace Biblestia
             this.button42 = new System.Windows.Forms.Button();
             this.button43 = new System.Windows.Forms.Button();
             this.button44 = new System.Windows.Forms.Button();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.button47 = new System.Windows.Forms.Button();
+            this.button48 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -386,6 +390,7 @@ namespace Biblestia
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.groupBox12.SuspendLayout();
             this.panel18.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // button3
@@ -413,7 +418,7 @@ namespace Biblestia
             this.bibliotecaName.AutoSize = true;
             this.bibliotecaName.Location = new System.Drawing.Point(25, 24);
             this.bibliotecaName.Name = "bibliotecaName";
-            this.bibliotecaName.Size = new System.Drawing.Size(109, 16);
+            this.bibliotecaName.Size = new System.Drawing.Size(113, 17);
             this.bibliotecaName.TabIndex = 5;
             this.bibliotecaName.Text = "Estás logado em";
             // 
@@ -506,6 +511,7 @@ namespace Biblestia
             this.button2.TabIndex = 175;
             this.button2.Text = "Atividades";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // label12
             // 
@@ -890,7 +896,7 @@ namespace Biblestia
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(227, 0);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(115, 20);
+            this.checkBox1.Size = new System.Drawing.Size(119, 21);
             this.checkBox1.TabIndex = 191;
             this.checkBox1.Text = "Remover data";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -960,7 +966,7 @@ namespace Biblestia
             this.checkBox7.AutoSize = true;
             this.checkBox7.Location = new System.Drawing.Point(227, 0);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(115, 20);
+            this.checkBox7.Size = new System.Drawing.Size(119, 21);
             this.checkBox7.TabIndex = 191;
             this.checkBox7.Text = "Remover data";
             this.checkBox7.UseVisualStyleBackColor = true;
@@ -1236,7 +1242,7 @@ namespace Biblestia
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(273, 226);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(82, 20);
+            this.checkBox2.Size = new System.Drawing.Size(84, 21);
             this.checkBox2.TabIndex = 208;
             this.checkBox2.Text = "Sem Fim";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -1846,17 +1852,17 @@ namespace Biblestia
             // 
             // chart1
             // 
-            chartArea19.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea19);
-            legend19.Name = "Legend1";
-            this.chart1.Legends.Add(legend19);
+            chartArea7.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chart1.Legends.Add(legend7);
             this.chart1.Location = new System.Drawing.Point(19, 27);
             this.chart1.Name = "chart1";
-            series19.ChartArea = "ChartArea1";
-            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series19.Legend = "Legend1";
-            series19.Name = "s1";
-            this.chart1.Series.Add(series19);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series7.Legend = "Legend1";
+            series7.Name = "s1";
+            this.chart1.Series.Add(series7);
             this.chart1.Size = new System.Drawing.Size(268, 186);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -2805,17 +2811,6 @@ namespace Biblestia
             this.textBox70.Size = new System.Drawing.Size(235, 26);
             this.textBox70.TabIndex = 250;
             // 
-            // label97
-            // 
-            this.label97.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label97.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label97.Location = new System.Drawing.Point(192, 25);
-            this.label97.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(233, 20);
-            this.label97.TabIndex = 249;
-            this.label97.Text = "Sessão de Exposição";
-            // 
             // textBox69
             // 
             this.textBox69.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -3508,6 +3503,17 @@ namespace Biblestia
             this.label74.TabIndex = 235;
             this.label74.Text = "Tipo de Material";
             // 
+            // label97
+            // 
+            this.label97.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label97.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label97.Location = new System.Drawing.Point(192, 25);
+            this.label97.Margin = new System.Windows.Forms.Padding(4, 1, 4, 4);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(233, 20);
+            this.label97.TabIndex = 249;
+            this.label97.Text = "Sessão de Exposição";
+            // 
             // panel12
             // 
             this.panel12.Controls.Add(this.button31);
@@ -3802,17 +3808,17 @@ namespace Biblestia
             // 
             // chart2
             // 
-            chartArea20.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea20);
-            legend20.Name = "Legend1";
-            this.chart2.Legends.Add(legend20);
+            chartArea8.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chart2.Legends.Add(legend8);
             this.chart2.Location = new System.Drawing.Point(21, 216);
             this.chart2.Name = "chart2";
-            series20.ChartArea = "ChartArea1";
-            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series20.Legend = "Legend1";
-            series20.Name = "s2";
-            this.chart2.Series.Add(series20);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series8.Legend = "Legend1";
+            series8.Name = "s2";
+            this.chart2.Series.Add(series8);
             this.chart2.Size = new System.Drawing.Size(411, 196);
             this.chart2.TabIndex = 249;
             this.chart2.Text = "chart2";
@@ -3841,6 +3847,7 @@ namespace Biblestia
             // 
             // groupBox12
             // 
+            this.groupBox12.Controls.Add(this.panel19);
             this.groupBox12.Controls.Add(this.button46);
             this.groupBox12.Controls.Add(this.button45);
             this.groupBox12.Controls.Add(this.textBox84);
@@ -4051,6 +4058,46 @@ namespace Biblestia
             this.button44.UseVisualStyleBackColor = true;
             this.button44.Click += new System.EventHandler(this.button44_Click);
             // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.checkBox3);
+            this.panel19.Controls.Add(this.button47);
+            this.panel19.Controls.Add(this.button48);
+            this.panel19.Location = new System.Drawing.Point(40, 207);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(376, 201);
+            this.panel19.TabIndex = 264;
+            this.panel19.Visible = false;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(2, -1);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(119, 21);
+            this.checkBox3.TabIndex = 191;
+            this.checkBox3.Text = "Remover data";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // button47
+            // 
+            this.button47.Location = new System.Drawing.Point(0, 103);
+            this.button47.Name = "button47";
+            this.button47.Size = new System.Drawing.Size(144, 64);
+            this.button47.TabIndex = 189;
+            this.button47.Text = "Feito";
+            this.button47.UseVisualStyleBackColor = true;
+            this.button47.Click += new System.EventHandler(this.button47_Click);
+            // 
+            // button48
+            // 
+            this.button48.Location = new System.Drawing.Point(232, 105);
+            this.button48.Name = "button48";
+            this.button48.Size = new System.Drawing.Size(144, 62);
+            this.button48.TabIndex = 190;
+            this.button48.Text = "Cancelar";
+            this.button48.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -4140,6 +4187,8 @@ namespace Biblestia
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.panel18.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4463,5 +4512,9 @@ namespace Biblestia
         internal System.Windows.Forms.Label label112;
         private System.Windows.Forms.Button button45;
         private System.Windows.Forms.Button button46;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Button button47;
+        private System.Windows.Forms.Button button48;
     }
 }

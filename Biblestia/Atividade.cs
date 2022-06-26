@@ -19,7 +19,8 @@ namespace Biblestia
 
         public override string ToString()
         {
-            return _dataAtividade + "\t" + _nomeAtividade;
+            DateTime data = DateTime.Parse(_dataAtividade);
+            return _nomeAtividade + "\t" + data.ToString("yyyy-MM-dd");
         }
     }
 }

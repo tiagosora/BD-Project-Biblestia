@@ -1,10 +1,7 @@
 use p6g7;
-
 go
 -- This query takes for completed a previous creation of the schema Biblestia (create schema Biblestia).
 -- Executing this query will restart the tables and the values.
-
--- create schema Biblestia
 
 -- Constraint Drop
 alter table Biblestia.RequisicaoMaterial drop constraint RequisicaoMaterialMaterial;

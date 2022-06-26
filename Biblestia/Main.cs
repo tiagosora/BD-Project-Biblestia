@@ -2244,12 +2244,6 @@ namespace Biblestia
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            updateAllAtividades();
-
-        }
-
         private void updateAllAtividades()
         {
             if (!verifySGBDConnection())
@@ -2263,11 +2257,9 @@ namespace Biblestia
             listBox1.Visible = true;
             listBox1.Enabled = true;
             panel18.Visible = true;
-            button43.Visible = true;
-            button44.Visible = true;
-            button42.Visible = true;
-
+            panel18.Enabled = true;
             listType = "Atividade";
+
             SqlCommand cmd = new SqlCommand("select * from Biblestia.obterAtividades('" + biblioteca.Nome + "')", cn);
             SqlDataReader reader = cmd.ExecuteReader();
             listBox1.Items.Clear();
@@ -2312,9 +2304,7 @@ namespace Biblestia
             button3.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = false;
-            button43.Enabled = false;
-            button44.Enabled = false;
-            button42.Enabled = false;
+            panel18.Enabled = false;
             textBox81.ReadOnly = false;
             textBox80.ReadOnly = false;
             textBox82.ReadOnly = false;
@@ -2322,12 +2312,9 @@ namespace Biblestia
             textBox84.ReadOnly = false;
             dateTimePicker20.Enabled = true;
             dateTimePicker20.Format = DateTimePickerFormat.Short;
-            panel18.Enabled = false;
-            panel10.Visible = true;
+            panel19.Visible = true;
             listBox1.Enabled = false;
-
             currentAction = "updatingAtividade";
-
         }
         private void button44_Click(object sender, EventArgs e)
         {
@@ -2335,7 +2322,6 @@ namespace Biblestia
             textBox80.Clear();
             textBox82.Clear();
             textBox83.Clear();
-            textBox84.Clear();
             button1.Enabled = false;
             button2.Enabled = false;
             button3.Enabled = false;
@@ -2350,10 +2336,7 @@ namespace Biblestia
             textBox84.ReadOnly = false;
             dateTimePicker20.Enabled = true;
             dateTimePicker20.Format = DateTimePickerFormat.Short;
-            groupBox2.Visible = false;
-            panel1.Visible = true;
-            button45.Visible = true;
-            button46.Visible = true;
+            panel19.Visible = true;
             listBox1.Enabled = false;
             currentAction = "addingAtividade";
         }
@@ -2382,13 +2365,105 @@ namespace Biblestia
                     cn.Close();
 
                     listBox1.Items.Remove(listBox1.SelectedItem);
-                    updateCargoList();
                     listBox1.SelectedIndex = 0;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            updateAllAtividades();
+        }
+
+        private void button47_Click(object sender, EventArgs e)
+        {
+            if (!verifySGBDConnection())
+            {
+                return;
+            }
+            Atividade atividade = new Atividade();
+            atividade.NomeAtividade = textBox81.Text;
+            atividade.NomeBiblioteca = biblioteca.Nome;
+            atividade.Tematica = textBox80.Text;
+            atividade.DuracaoMin = textBox83.Text;
+            atividade.DataAtividade = dateTimePicker20.Text;
+            atividade.IdFuncResponsavel = textBox82.Text;
+            try
+            {
+                if (checkBox2.Checked)
+                {
+                    atividade.DataAtividade = "";
+                }
+                if (currentAction == "UpdatingCargo")
+                {
+                    SqlCommand cmd = new SqlCommand("Biblestia.editarCargo", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", cargo.NomeBiblioteca));
+                    cmd.Parameters.Add(new SqlParameter("@idFuncionario", cargo.IdFuncionario));
+                    cmd.Parameters.Add(new SqlParameter("@nomeCargo", cargo.NomeCargo));
+                    cmd.Parameters.Add(new SqlParameter("@dataInicio", cargo.DataInicio));
+                    if (!checkBox2.Checked)
+                    {
+                        cmd.Parameters.Add(new SqlParameter("@dataFim", dateTimePicker5.Value.ToString("yyyy-MM-dd")));
+                    }
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+                    listBox2.SelectedItem = cargo;
+                }
+                else if (currentAction == "AddingCargo")
+                {
+                    SqlCommand cmd = new SqlCommand("Biblestia.adicionarCargo", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@nomeBiblioteca", cargo.NomeBiblioteca));
+                    cmd.Parameters.Add(new SqlParameter("@idFuncionario", cargo.IdFuncionario));
+                    cmd.Parameters.Add(new SqlParameter("@nomeCargo", cargo.NomeCargo));
+                    cmd.Parameters.Add(new SqlParameter("@dataInicio", cargo.DataInicio));
+                    if (!checkBox2.Checked)
+                    {
+                        cmd.Parameters.Add(new SqlParameter("@dataFim", dateTimePicker5.Value.ToString("yyyy-MM-dd")));
+                    }
+                    cmd.ExecuteNonQuery();
+                    listBox2.Items.Add(cargo);
+                    cn.Close();
+                }
+
+                if (currentAction == "addingAtividade")
+                {
+                    listBox2.SelectedIndex = listBox2currentIndex;
+                }
+                else if (currentAction == "addingAtividade")
+                {
+                    listBox2.SelectedIndex = listBox2.Items.Count - 1;
+                }
+
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = true;
+                button5.Enabled = true;
+                panel18.Enabled = true;
+                textBox81.ReadOnly = true;
+                textBox80.ReadOnly = true;
+                textBox82.ReadOnly = true;
+                textBox83.ReadOnly = true;
+                textBox84.ReadOnly = true;
+                dateTimePicker20.Enabled = false;
+                dateTimePicker20.Format = DateTimePickerFormat.Short;
+                panel19.Visible = false;
+                listBox1.Enabled = true;
+
+            }
+            catch
+            {
+                cn.Close();
+                string message = "As datas inseridas não fazem sentido!\n";
+                string title = "Alert Window";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
             }
         }
     }
