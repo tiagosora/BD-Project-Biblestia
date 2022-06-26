@@ -262,7 +262,22 @@ as
 		end
 	end
 go
- 
+create trigger checkDatesRequisicao on Biblestia.Requisicao for insert, update
+as
+	begin
+		if (
+			(update(dataLimite) or update(dataInicio) or update(dataEntrega))
+			and (exists(select 1 from inserted where dataInicio>dataLimite) or exists(select 1 from inserted where dataInicio>dataEntrega) or exists(select 1 from inserted where dataLimite>dataEntrega))
+			)
+		begin
+			raiserror('As datas inseridas não fazem sentido',16,1); 
+			rollback;
+		end
+	end
+go
+
+
+
 
 -- Default Values 
   
