@@ -62,8 +62,6 @@ as
 		delete from Biblestia.Material where id in (select id from deleted) and nomeBiblioteca in (select nomeBiblioteca from deleted)
 	end
 go
-
-
 create trigger checkDatesFuncionario on Biblestia.Cargo for insert, update
 as
 	begin

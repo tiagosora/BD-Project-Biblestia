@@ -94,16 +94,20 @@ namespace Biblestia
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Por agr fica so com esta biblioteca se tiversmo tempo fazemos para adicionar
             if (password.Equals("123"))
             {
-                Debug.Print("Entrei");
-                this.Visible = false;
-                Biblioteca b = (Biblioteca)selecao.SelectedItem;
-                // Main mainWindow = new Main(b.Nome);
-                // Por agora
-                Main mainWindow = new Main("Biblioteca Universitária de Aveiro");
-                mainWindow.Show();
+                try
+                {
+                    Debug.Print("Entrei");
+                    this.Visible = false;
+                    Biblioteca biblioteca = (Biblioteca)selecao.SelectedItem;
+                    Main mainWindow = new Main(biblioteca.Nome);
+                    mainWindow.Show();
+                }
+                catch
+                {
+
+                }
             }
         }
 

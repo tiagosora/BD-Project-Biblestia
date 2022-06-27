@@ -69,7 +69,6 @@ as
 go
 
 -- Remover atividade
-
 drop proc Biblestia.removerAtividade;
 go 
 create proc Biblestia.removerAtividade (@nomeBiblioteca varchar(60), @nomeAtividade varchar(60))
@@ -78,18 +77,16 @@ as
 go
 
 -- Editar atividade
-
 drop proc Biblestia.editarAtividade;
 go
-create proc Biblestia.editarAtiviade (@nomeBiblioteca varchar(60), @nomeAtividade varchar(60),@dataAtividade date, @tematica varchar(60), @duracaoMin int, @idFuncResponsavel int)
+create proc Biblestia.editarAtividade (@nomeBiblioteca varchar(60), @nomeAtividade varchar(60),@dataAtividade date, @tematica varchar(60), @duracaoMin int, @idFuncResponsavel int)
 as
 	update Biblestia.Atividade set nomeBiblioteca = @nomeBiblioteca, nomeAtividade = @nomeAtividade, dataAtividade = @dataAtividade, tematica = @tematica,  duracaoMin = @duracaoMin, idFuncResponsavel = @idFuncResponsavel where @nomeBiblioteca=nomeBiblioteca and @nomeAtividade = nomeAtividade;
 go
 
 -- Adicionar atividade
-
 drop proc Biblestia.adicionarAtividade;
-go      
+go
 create proc Biblestia.adicionarAtividade (@nomeBiblioteca varchar(60),@dataAtividade date, @tematica varchar(60), @duracaoMin int, @idFuncResponsavel int)
 as
 	declare @nomeAtividade as varchar(60)
@@ -99,12 +96,10 @@ as
 
 	insert into Biblestia.Atividade values (@nomeBiblioteca, @nomeAtividade, @dataAtividade, @tematica, @duracaoMin, @idFuncResponsavel)
 go
-
-
  
 -- Adicionar um novo cargo a um funcionario
 drop proc Biblestia.adicionarCargo;
-go 
+go
 create proc Biblestia.adicionarCargo (@nomeBiblioteca varchar(60), @idFuncionario int, @nomeCargo varchar(60), @dataInicio date, @dataFim date = null)
 as
 	insert into Biblestia.Cargo values (@nomeBiblioteca, @idFuncionario, @nomeCargo, @dataInicio,  @dataFim)
@@ -112,13 +107,13 @@ go
 
 -- Remover um novo cargo a um funcionario
 drop proc Biblestia.removerCargo;
-go 
+go
 create proc Biblestia.removerCargo (@nomeBiblioteca varchar(60), @idFuncionario int, @nomeCargo varchar(60))
 as
 	delete from Biblestia.Cargo where @nomeBiblioteca=nomeBiblioteca and @idFuncionario=idFuncionario and @nomeCargo=nomeCargo
 go
 
----- Saber o tipo de um dadod material
+---- Saber o tipo de um dados material
 drop proc Biblestia.saberTipo;
 go 
 create proc Biblestia.saberTipo (@idMaterial int, @nomeBiblioteca varchar(60), @return varchar(60) output) 
@@ -146,4 +141,20 @@ as
 	begin
 		set @return = 'CD';
 	end
+go
+
+-- Remover uma participação de um leitor em um atividade
+drop proc Biblestia.removerParticipacao;
+go
+create proc Biblestia.removerParticipacao(@nomeAtividade varchar(60), @nomeBiblioteca varchar(60), @idLeitor int)
+as 
+	delete from Biblestia.AtividadeLeitor where nomeBiblioteca = @nomeBiblioteca and nomeAtividade = @nomeAtividade and idLeitor = @idLeitor;
+go
+
+-- Adicionar uma participação de um leitor em um atividade
+drop proc Biblestia.adicionarParticipacao;
+go
+create proc Biblestia.adicionarParticipacao(@nomeAtividade varchar(60), @nomeBiblioteca varchar(60), @idLeitor int)
+as 
+	insert into Biblestia.AtividadeLeitor values (@nomeBiblioteca, @nomeAtividade, @idLeitor)
 go

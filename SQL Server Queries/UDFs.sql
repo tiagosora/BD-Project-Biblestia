@@ -38,22 +38,13 @@ as
 			where nomeBiblioteca = @nomeBiblioteca;
 go
 
--- Obter todos os funcionários de uma biblioteca
+-- Obter todos os leitores de uma biblioteca
 drop function Biblestia.obterLeitores; 
 go 
 create function Biblestia.obterLeitores(@nomeBiblioteca varchar(60)) returns table
 as
 	return	select * from Biblestia.Leitor
 			where nomeBiblioteca = @nomeBiblioteca;
-go
-
--- Obter as atividades de um dado leitor
-drop function Biblestia.obterAtividadesLeitor; 
-go
-create function Biblestia.obterAtividadesLeitor(@idLeitor int, @nomeBiblioteca varchar(60)) returns table
-as
-	return	select * from Biblestia.AtividadeLeitor
-			where idLeitor = @idLeitor and nomeBiblioteca = @nomeBiblioteca;
 go
 
 -- Obter todas as atividades de uma biblioteca
@@ -136,7 +127,7 @@ drop function Biblestia.obterRequisicoes
 go
 create function Biblestia.obterRequisicoes(@nomeBiblioteca varchar(60)) returns table
 as
-	return	select * from RequisicaoDados
+	return	select * from Biblestia.RequisicaoDados
 			where nomeBiblioteca = @nomeBiblioteca;
 go
 
@@ -145,7 +136,7 @@ drop function Biblestia.obterRequisicoesMaterial
 go
 create function Biblestia.obterRequisicoesMaterial(@idMaterial int, @nomeBiblioteca varchar(60)) returns table 
 as
-	return	select * from RequisicaoDados
+	return	select * from Biblestia.RequisicaoDados
 			where idMaterial = @idMaterial and nomeBiblioteca = @nomeBiblioteca;
 go 
 
@@ -443,9 +434,73 @@ drop function Biblestia.nAtividadesLeitor
 go
 create function Biblestia.nAtividadesLeitor(@nomeBiblioteca varchar(60)) returns table 
 as 
-	return select idLeitor, count(*) as cont 
-		from Biblestia.AtividadeLeitor
-		where nomeBiblioteca = @nomeBiblioteca
-		group by idLeitor; 
+	return	select idLeitor, count(*) as cont 
+			from Biblestia.AtividadeLeitor
+			where nomeBiblioteca = @nomeBiblioteca
+			group by idLeitor; 
 go 
 
+-- Obter o número de leitores participantes de um atividade
+drop function Biblestia.nLeitoresParticipantes
+go
+create function Biblestia.nLeitoresParticipantes(@nomeAtividade varchar(60), @nomeBiblioteca varchar(60)) returns table 
+as 
+	return	select count(*) as cont
+			from (Biblestia.AtividadeLeitor join Biblestia.Leitor on AtividadeLeitor.idLeitor=Leitor.idLeitor)
+			where AtividadeLeitor.nomeBiblioteca = @nomeBiblioteca and nomeAtividade = @nomeAtividade
+go
+
+-- Obter os leitores de um atividade
+drop function Biblestia.leitoresAtividades
+go
+create function Biblestia.leitoresAtividades(@nomeAtividade varchar(60), @nomeBiblioteca varchar(60)) returns table 
+as 
+	return	select AtividadeLeitor.nomeAtividade, Leitor.*
+			from (Biblestia.AtividadeLeitor join Biblestia.Leitor on AtividadeLeitor.idLeitor=Leitor.idLeitor)
+			where AtividadeLeitor.nomeBiblioteca = @nomeBiblioteca and nomeAtividade = @nomeAtividade
+go
+
+-- Obter os leitores de um atividade ordenados por score de participaçao
+drop function Biblestia.obterScoreLeitor
+go
+create function Biblestia.obterScoreLeitor(@nomeBiblioteca varchar(60)) returns table 
+as 
+	return	select * from Biblestia.LeitoresTaxaParticipacao
+			where nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- Obter os número de atividades de uma biblioteca
+drop function Biblestia.nAtividades
+go
+create function Biblestia.nAtividades(@nomeBiblioteca varchar(60)) returns table 
+as 
+	return	select count(*) as cont from Biblestia.Atividade
+			where nomeBiblioteca = @nomeBiblioteca;
+go
+-- Obter os número de requisições de uma biblioteca
+drop function Biblestia.nRequisicoes
+go
+create function Biblestia.nRequisicoes(@nomeBiblioteca varchar(60)) returns table 
+as 
+	return	select count(*) as cont from Biblestia.Requisicao
+			where nomeBiblioteca = @nomeBiblioteca;
+go
+
+-- Obter o número de leitores de uma atividade
+drop function Biblestia.nLeitoresAtividade
+go
+create function Biblestia.nLeitoresAtividade(@nomeAtividade varchar(60), @nomeBiblioteca varchar(60)) returns table 
+as 
+	return	select count(*) as cont from Biblestia.AtividadeLeitor
+			where nomeBiblioteca = @nomeBiblioteca and nomeAtividade = @nomeAtividade;
+go
+
+-- Obter todas as atividades de um leitor
+drop function Biblestia.obterAtividadesLeitor
+go
+create function Biblestia.obterAtividadesLeitor(@idLeitor int, @nomeBiblioteca varchar(60)) returns table 
+as 
+	return	select Atividade.*
+			from  Biblestia.Atividade join Biblestia.AtividadeLeitor on (Atividade.nomeAtividade = AtividadeLeitor.nomeAtividade and Atividade.nomeBiblioteca = AtividadeLeitor.nomeBiblioteca)
+			where AtividadeLeitor.nomeBiblioteca = @nomeBiblioteca and AtividadeLeitor.idLeitor = @idLeitor;
+go
